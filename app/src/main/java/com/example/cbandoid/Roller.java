@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class Roller
 {
-    int mNum = 1;
-    int mSides = 2;
-    int[] Rolls;
-    int mSum;
+    private int mNum = 1;
+    private int mSides = 2;
+    private int[] Rolls;
+    private int mSum;
 
     Roller(int _Num, int _Sides)
     {
@@ -20,12 +20,23 @@ public class Roller
 
     void Rolling()
     {
+        mSum = 0;
         for (int i = 0; i < mNum; i++)
         {
             Random rand = new Random();
             Rolls[i] = rand.nextInt(mSides) + 1;
             mSum += Rolls[i];
         }
+    }
+
+    int GetNum()
+    {
+        return mNum;
+    }
+
+    int GetSides()
+    {
+        return mSides;
     }
 
     String GetRolls()
