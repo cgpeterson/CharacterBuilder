@@ -1,6 +1,7 @@
 package com.example.cbandoid;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
             result.append(" = Total: ").append(Total);
             result.append("\n");
+            resultsTxt.setMovementMethod((new ScrollingMovementMethod()));
             result.append(resultsTxt.getText());
             resultsTxt.setText(result);
         });
