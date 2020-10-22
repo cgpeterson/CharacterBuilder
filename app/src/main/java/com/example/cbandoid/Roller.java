@@ -21,12 +21,18 @@ public class Roller
     void Rolling()
     {
         mSum = 0;
+        Random rand = new Random();
         for (int i = 0; i < mNum; i++)
         {
-            Random rand = new Random();
             Rolls[i] = rand.nextInt(mSides) + 1;
             mSum += Rolls[i];
         }
+    }
+
+    void SetNum(int _Num)
+    {
+        mNum = _Num;
+        Rolls = new int[mNum];
     }
 
     int GetNum()
@@ -34,21 +40,19 @@ public class Roller
         return mNum;
     }
 
+    void SetSides(int _Sides)
+    {
+        mSides = _Sides;
+    }
+
     int GetSides()
     {
         return mSides;
     }
 
-    String GetRolls()
+    int GetRolls(int _index)
     {
-        String rolls = "";
-
-        for (int i = 0; i < Rolls.length; i++)
-        {
-            rolls += Rolls[i] + " ";
-        }
-
-        return rolls;
+        return Rolls[_index];
     }
 
     int GetSum()
