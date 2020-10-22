@@ -45,41 +45,43 @@ public class MainActivity extends AppCompatActivity {
             roller.SetSides(Integer.parseInt(sidesTxt.getText().toString()));
             roller.Rolling();
             int Total = roller.GetSum();
-            resultsTxt.append("\n" + roller.GetNum() + "d" + roller.GetSides() + " (" );
+            StringBuilder result = new StringBuilder("\n" + roller.GetNum() + "d" + roller.GetSides() + " (" );
             for (int i = 0; i < roller.GetNum(); i++)
             {
-                resultsTxt.append(String.valueOf(roller.GetRolls(i)));
+                result.append(roller.GetRolls(i));
                 if (i < roller.GetNum() - 1)
-                    resultsTxt.append(", ");
+                    result.append(", ");
             }
 
-            resultsTxt.append(") = " + roller.GetSum());
+            result.append(") = ").append(roller.GetSum());
 
             if (Integer.parseInt(mod1.getText().toString()) != 0)
             {
-                resultsTxt.append(" + " + mod1.getText());
+                result.append(" + ").append(mod1.getText());
                 Total += Integer.parseInt(mod1.getText().toString());
                 if (modTxt1.length() > 0)
-                    resultsTxt.append(" " + modTxt1.getText());
+                    result.append(" ").append(modTxt1.getText());
             }
 
             if (Integer.parseInt(mod2.getText().toString()) != 0)
             {
-                resultsTxt.append(" + " + mod2.getText());
+                result.append(" + ").append(mod2.getText());
                 Total += Integer.parseInt(mod2.getText().toString());
                 if (modTxt2.length() > 0)
-                    resultsTxt.append(" " + modTxt2.getText());
+                    result.append(" ").append(modTxt2.getText());
             }
 
             if (Integer.parseInt(mod3.getText().toString()) != 0)
             {
-                resultsTxt.append(" + " + mod3.getText());
+                result.append(" + ").append(mod3.getText());
                 Total += Integer.parseInt(mod3.getText().toString());
                 if (modTxt3.length() > 0)
-                    resultsTxt.append(" " + modTxt3.getText());
+                    result.append(" ").append(modTxt3.getText());
             }
 
-            resultsTxt.append(" = Total: " + Total);
+            result.append(" = Total: ").append(Total);
+            result.append(resultsTxt.getText());
+            resultsTxt.setText(result);
         });
     }
 }
