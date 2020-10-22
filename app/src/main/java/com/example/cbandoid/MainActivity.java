@@ -40,17 +40,9 @@ public class MainActivity extends AppCompatActivity {
         modTxt2=findViewById(R.id.ModTxt2);
         modTxt3=findViewById(R.id.ModTxt3);
 
-        numTxt.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus)
-                roller.SetNum(Integer.parseInt(numTxt.getText().toString()));
-        });
-
-        sidesTxt.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus)
-                roller.SetSides(Integer.parseInt(sidesTxt.getText().toString()));
-        });
-
         buttonroller.setOnClickListener(v -> {
+            roller.SetNum(Integer.parseInt(numTxt.getText().toString()));
+            roller.SetSides(Integer.parseInt(sidesTxt.getText().toString()));
             roller.Rolling();
             int Total = roller.GetSum();
             resultsTxt.append("\n" + roller.GetNum() + "d" + roller.GetSides() + " (" );
