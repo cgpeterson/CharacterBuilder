@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
             result.append(" = Total: ").append(Total);
             result.append("\n");
+            //Scrollbar code\/
             resultsTxt.setMovementMethod((new ScrollingMovementMethod()));
             result.append(resultsTxt.getText());
             resultsTxt.setText(result);
