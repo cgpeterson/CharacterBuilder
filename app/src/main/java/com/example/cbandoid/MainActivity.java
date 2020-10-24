@@ -56,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
 
             result.append(") = ").append(roller.GetSum());
 
+            try
+            {
+                Integer.parseInt(mod1.getText().toString());
+            }   catch (NumberFormatException e)
+            {
+                mod1.setText("0");
+            }
+
             if (Integer.parseInt(mod1.getText().toString()) != 0)
             {
                 if(Integer.parseInt(mod1.getText().toString()) > 0)
@@ -66,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
                     result.append(" ").append(modTxt1.getText());
             }
 
+            try
+            {
+                Integer.parseInt(mod2.getText().toString());
+            }   catch (NumberFormatException e)
+            {
+                mod2.setText("0");
+            }
+
             if (Integer.parseInt(mod2.getText().toString()) != 0)
             {
                 if(Integer.parseInt(mod2.getText().toString()) > 0)
@@ -74,6 +90,14 @@ public class MainActivity extends AppCompatActivity {
                 Total += Integer.parseInt(mod2.getText().toString());
                 if (modTxt2.length() > 0)
                     result.append(" ").append(modTxt2.getText());
+            }
+
+            try
+            {
+                Integer.parseInt(mod3.getText().toString());
+            }   catch (NumberFormatException e)
+            {
+                mod3.setText("0");
             }
 
             if (Integer.parseInt(mod3.getText().toString()) != 0)
