@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class RollerActivity extends AppCompatActivity {
 
     TextView resultsTxt;
     Button buttonroller;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_roller);
         Roller roller = new Roller(1,6);
         resultsTxt=findViewById(R.id.RollOutput);
         buttonroller=findViewById(R.id.buttonRoller);
