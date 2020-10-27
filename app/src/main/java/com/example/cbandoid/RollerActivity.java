@@ -19,6 +19,7 @@ public class RollerActivity extends AppCompatActivity {
     TextView modTxt1;
     TextView modTxt2;
     TextView modTxt3;
+    TextView Submenutitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,8 @@ public class RollerActivity extends AppCompatActivity {
         modTxt1=findViewById(R.id.ModTxt1);
         modTxt2=findViewById(R.id.ModTxt2);
         modTxt3=findViewById(R.id.ModTxt3);
+        Submenutitle=findViewById(R.id.submenutitle);
+        Submenutitle.setText("Dice Roller");
 
         buttonroller.setOnClickListener(v -> {
             roller.SetNum(Integer.parseInt(numTxt.getText().toString()));
