@@ -6,48 +6,28 @@
     android:layout_height="match_parent"
     android:background="#156100">
 
-    <androidx.appcompat.widget.ActionMenuView
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
-        android:background="#FFE083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </androidx.appcompat.widget.ActionMenuView>
-
-    <TextView
-        android:id="@+id/AppName"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#000000"
-        android:gravity="center_horizontal"
-        android:text="App Name"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/topbarmain" />
 
     <Button
         android:id="@+id/CharNameButton"
         android:layout_width="323dp"
         android:layout_height="61dp"
-        android:layout_marginTop="84dp"
-        android:background="#FFFFFF"
+        android:layout_marginTop="30dp"
+        android:background="#1A1A1A"
         android:text="Character Name"
         android:textColor="#000000"
         app:backgroundTint="#E3B84C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AppName" />
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <Button
         android:id="@+id/CreateNewCharButton"
         android:layout_width="323dp"
         android:layout_height="61dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:background="#E3B84C"
         android:text="Create New Character"
         android:textColor="#000000"
@@ -60,7 +40,7 @@
         android:id="@+id/SelectRulesetButton"
         android:layout_width="323dp"
         android:layout_height="61dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:background="#E3B84C"
         android:text="Select Ruleset"
         android:textColor="#000000"
@@ -73,7 +53,7 @@
         android:id="@+id/CreateRulesetButton"
         android:layout_width="323dp"
         android:layout_height="61dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:background="#E3B84C"
         android:text="Create New Ruleset"
         android:textColor="#000000"
@@ -86,7 +66,7 @@
         android:id="@+id/DiceRollButton"
         android:layout_width="323dp"
         android:layout_height="61dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:background="#E3B84C"
         android:text="Dice Roller"
         android:textColor="#000000"
