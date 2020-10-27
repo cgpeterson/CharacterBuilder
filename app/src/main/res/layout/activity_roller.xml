@@ -9,7 +9,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/topbarroller" />
+        layout="@layout/topbarsub" />
 
     <TextView
         android:id="@+id/DiceContext"
