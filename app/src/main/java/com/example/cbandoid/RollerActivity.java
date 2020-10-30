@@ -1,8 +1,10 @@
 package com.example.cbandoid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ public class RollerActivity extends AppCompatActivity {
     TextView modTxt2;
     TextView modTxt3;
     TextView Submenutitle;
+    ImageView Back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class RollerActivity extends AppCompatActivity {
         modTxt3=findViewById(R.id.ModTxt3);
         Submenutitle=findViewById(R.id.submenutitle);
         Submenutitle.setText("Dice Roller");
+        Back=findViewById(R.id.exitbutton);
 
         buttonroller.setOnClickListener(v -> {
             roller.SetNum(Integer.parseInt(numTxt.getText().toString()));
@@ -120,5 +124,9 @@ public class RollerActivity extends AppCompatActivity {
             result.append(resultsTxt.getText());
             resultsTxt.setText(result);
         });
+
+        Back.setOnClickListener(v -> {
+            startActivity(new Intent(RollerActivity.this, MainActivity.class));
+    });
     }
 }
