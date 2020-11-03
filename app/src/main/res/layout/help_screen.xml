@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D3A00">
+    <include
+        android:id="@+id/include"
+        layout="@layout/topbarsub" />
+
+    <TextView
+        android:id="@+id/contactTitle"
+        android:layout_width="253dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="4dp"
+        android:text="Contact us"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/contactTitle5"
+        android:layout_width="253dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:text="About"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/contactTitle2"
+        android:layout_width="204dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Email"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactTitle" />
+
+    <TextView
+        android:id="@+id/contactTitle3"
+        android:layout_width="204dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="Discord"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/codygmail" />
+
+    <TextView
+        android:id="@+id/dylangmail"
+        android:layout_width="244dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="reddylan4719@gmail.com"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactTitle2" />
+
+    <TextView
+        android:id="@+id/codygmail"
+        android:layout_width="244dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="peterson.cody16@gmail.com"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dylangmail" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="202dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="Nalkona #7787"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactTitle3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="202dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Dylan Thomas #1585"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="398dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Version: 0.2 \nCreated by Redkona\nCreated on October 20th 2020\n
+Last updated on November 3rd 2020"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactTitle5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

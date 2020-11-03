@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         pmenu.setOnClickListener(this::showMenu);
     }
 
-    private void showMenu(View v) {
+    public void showMenu(View v) {
         PopupMenu popMenu = new PopupMenu(MainActivity.this, v);
         popMenu.getMenuInflater().inflate(R.menu.popup_menu,popMenu.getMenu());
         popMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
