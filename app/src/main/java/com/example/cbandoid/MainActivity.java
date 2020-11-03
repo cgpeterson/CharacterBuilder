@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, RollerActivity.class));
         });
 
-        pmenu.setOnClickListener(this::showMenu);
+        pmenu.setOnClickListener(this::showPopMenu);
     }
 
-    private void showMenu(View v) {
+    private void showPopMenu(View v) {
         PopupMenu popMenu = new PopupMenu(MainActivity.this, v);
         popMenu.getMenuInflater().inflate(R.menu.popup_menu,popMenu.getMenu());
         popMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
