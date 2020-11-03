@@ -15,32 +15,35 @@
         android:layout_width="253dp"
         android:layout_height="57dp"
         android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
         android:text="Contact us"
+        android:textColor="#000000"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include"
-        android:gravity="center_horizontal"/>
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <TextView
-        android:id="@+id/contactTitle5"
+        android:id="@+id/aboutTitle"
         android:layout_width="253dp"
         android:layout_height="57dp"
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:text="About"
+        android:textColor="#000000"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/dylandiscord" />
 
     <TextView
-        android:id="@+id/contactTitle2"
+        android:id="@+id/emailTitle"
         android:layout_width="204dp"
         android:layout_height="41dp"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:text="Email"
+        android:textColor="#000000"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -48,12 +51,13 @@
         app:layout_constraintTop_toBottomOf="@+id/contactTitle" />
 
     <TextView
-        android:id="@+id/contactTitle3"
+        android:id="@+id/discordTitle"
         android:layout_width="204dp"
         android:layout_height="41dp"
         android:layout_marginTop="40dp"
         android:gravity="center_horizontal"
         android:text="Discord"
+        android:textColor="#000000"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -67,11 +71,12 @@
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:text="reddylan4719@gmail.com"
+        android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactTitle2" />
+        app:layout_constraintTop_toBottomOf="@+id/emailTitle" />
 
     <TextView
         android:id="@+id/codygmail"
@@ -80,6 +85,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:text="peterson.cody16@gmail.com"
+        android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
@@ -87,42 +93,49 @@
         app:layout_constraintTop_toBottomOf="@+id/dylangmail" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/codydiscord"
         android:layout_width="202dp"
         android:layout_height="33dp"
         android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:autoLink="web"
         android:text="Nalkona #7787"
+        android:linksClickable="true"
+        android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
-        android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactTitle3" />
+        app:layout_constraintTop_toBottomOf="@+id/discordTitle" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/dylandiscord"
         android:layout_width="202dp"
         android:layout_height="33dp"
         android:layout_marginTop="20dp"
+        android:autoLink="web"
         android:gravity="center_horizontal"
+        android:linksClickable="true"
         android:text="Dylan Thomas #1585"
+        android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/codydiscord" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/versionControl"
         android:layout_width="398dp"
         android:layout_height="114dp"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:text="Version: 0.2 \nCreated by Redkona\nCreated on October 20th 2020\n
 Last updated on November 3rd 2020"
+        android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactTitle5" />
+        app:layout_constraintTop_toBottomOf="@+id/aboutTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
