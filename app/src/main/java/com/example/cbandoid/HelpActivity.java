@@ -9,14 +9,19 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HelpActivity extends AppCompatActivity {
     TextView codydis;
     TextView dylandis;
+    TextView Submenutitle;
     ImageView Back;
+    ImageView pmenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +29,36 @@ public class HelpActivity extends AppCompatActivity {
 
         codydis=findViewById(R.id.codydiscord);
         dylandis=findViewById(R.id.dylandiscord);
+        pmenu=findViewById(R.id.popupbutton);
+        Submenutitle=findViewById(R.id.submenutitle);
+        Submenutitle.setText("Help");
 
         Back=findViewById(R.id.exitbutton);
+        pmenu.setOnClickListener(this::showPopMenu);
 
         Back.setOnClickListener(v -> {
             startActivity(new Intent(HelpActivity.this, MainActivity.class));});
+    }
+    private void showPopMenu(View v) {
+        PopupMenu popMenu = new PopupMenu(HelpActivity.this, v);
+        popMenu.getMenuInflater().inflate(R.menu.popup_menu, popMenu.getMenu());
+        popMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if (item.getItemId() == R.id.popup_profile) {
+                    startActivity(new Intent(HelpActivity.this, ProfileActivity.class));
+                }
+                if (item.getItemId() == R.id.popup_help) {
+                    Toast.makeText(HelpActivity.this, "You are already in Help", Toast.LENGTH_SHORT).show();
+
+                }
+                if (item.getItemId() == R.id.popup_settings) {
+                    //Placeholder code
+                    Toast.makeText(HelpActivity.this, "You clicked Settings", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
+        popMenu.show();
     }
 }
