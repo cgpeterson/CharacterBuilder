@@ -38,12 +38,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if(item.getItemId() == R.id.popup_profile) {
-                    //Placeholder code
-                    Toast.makeText(MainActivity.this, "You clicked Profile", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                 }
                 if(item.getItemId() == R.id.popup_help) {
-                    //Placeholder code
-                    Toast.makeText(MainActivity.this, "You clicked Help", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, HelpActivity.class));
                 }
                 if(item.getItemId() == R.id.popup_settings) {
                     //Placeholder code
