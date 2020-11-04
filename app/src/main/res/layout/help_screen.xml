@@ -27,7 +27,7 @@
         android:id="@+id/aboutTitle"
         android:layout_width="253dp"
         android:layout_height="57dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="100dp"
         android:gravity="center_horizontal"
         android:text="About"
         android:textColor="#000000"
@@ -134,8 +134,11 @@
 Last updated on November 3rd 2020"
         android:textColor="#000000"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/aboutTitle"
+        app:layout_constraintVertical_bias="0.319" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

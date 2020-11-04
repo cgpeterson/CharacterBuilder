@@ -1,16 +1,25 @@
 package com.example.cbandoid;
 
 import android.os.Bundle;
-import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-public class HelpActivity extends AppCompatActivity
-{
+import android.view.View;
+import android.widget.TextView;
+
+public class HelpActivity extends AppCompatActivity {
     TextView codydis;
     TextView dylandis;
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.help_screen);
+
+        codydis=findViewById(R.id.codydiscord);
+        dylandis=findViewById(R.id.dylandiscord);
+    }
 }
-//Discord Links\/
-//Dylan:    https://discordapp.com/users/628682539762188289
-//Cody:     https://discordapp.com/users/248668429232504832

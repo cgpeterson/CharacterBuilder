@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class RollerActivity extends AppCompatActivity {
+public class RollerActivity extends AppCompatActivity {
 
     TextView resultsTxt;
     Button buttonroller;
