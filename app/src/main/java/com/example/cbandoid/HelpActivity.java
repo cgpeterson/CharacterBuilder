@@ -1,6 +1,7 @@
 package com.example.cbandoid;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -9,6 +10,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -32,13 +34,18 @@ public class HelpActivity extends AppCompatActivity {
         pmenu=findViewById(R.id.popupbutton);
         Submenutitle=findViewById(R.id.submenutitle);
         Submenutitle.setText("Help");
-
+        TextView Here = (TextView) findViewById(R.id.linktext);
+        Here.setPaintFlags(Here.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        Here.setMovementMethod(LinkMovementMethod.getInstance());
         Back=findViewById(R.id.exitbutton);
+
         pmenu.setOnClickListener(this::showPopMenu);
 
         Back.setOnClickListener(v -> {
             startActivity(new Intent(HelpActivity.this, MainActivity.class));});
+
     }
+    //Redkona server: https://discord.gg/zn3UC6vGHb
     private void showPopMenu(View v) {
         PopupMenu popMenu = new PopupMenu(HelpActivity.this, v);
         popMenu.getMenuInflater().inflate(R.menu.popup_menu, popMenu.getMenu());

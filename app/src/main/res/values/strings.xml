@@ -5,7 +5,9 @@
     <string name="settings">Settings</string>
     <string name="roll">Roll</string>
     <string name="Dungeons_and_Dragons">Group1</string>
-
+    <string name="here">
+        <a href="https://discord.com/invite/zn3UC6vGHb">here</a>
+    </string>
 
 
 </resources>
