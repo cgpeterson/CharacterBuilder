@@ -145,12 +145,10 @@ public class RollerActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if(item.getItemId() == R.id.popup_profile) {
-                    //Placeholder code
-                    Toast.makeText(RollerActivity.this, "You clicked Profile", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RollerActivity.this, ProfileActivity.class));
                 }
                 if(item.getItemId() == R.id.popup_help) {
-                    //Placeholder code
-                    Toast.makeText(RollerActivity.this, "You clicked Help", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RollerActivity.this, HelpActivity.class));
                 }
                 if(item.getItemId() == R.id.popup_settings) {
                     //Placeholder code
