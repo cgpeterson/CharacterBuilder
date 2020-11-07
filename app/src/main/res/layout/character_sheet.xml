@@ -185,9 +185,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="205dp"
+        android:layout_width="160dp"
 
-        android:layout_height="280dp"
+        android:layout_height="260dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider">
 
@@ -195,25 +195,27 @@
             android:id="@+id/STRTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="30dp"
             android:text="STR"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/STRSub"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/AbilityModTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
             android:text="Ability Mod"
             android:textColor="#FFFFFF"
-            android:textSize="13dp"
-            app:layout_constraintStart_toEndOf="@+id/STRTitle"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -223,7 +225,7 @@
             android:layout_marginTop="10dp"
             android:text="Temp Mod"
             android:textColor="#FFFFFF"
-            android:textSize="13dp"
+            android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/AbilityModTitle"
             app:layout_constraintTop_toTopOf="parent" />
@@ -232,11 +234,11 @@
             android:id="@+id/DEXTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="DEX"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/STRSub" />
 
@@ -244,11 +246,11 @@
             android:id="@+id/CONTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="CON"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DEXSub" />
 
@@ -256,11 +258,11 @@
             android:id="@+id/INTTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="INT"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CONSub" />
 
@@ -268,11 +270,11 @@
             android:id="@+id/WISTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="WIS"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/INTSub" />
 
@@ -280,11 +282,11 @@
             android:id="@+id/CHATitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="CHA"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/WISSub" />
 
@@ -292,8 +294,8 @@
             android:id="@+id/STRSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="Strength"
             android:textColor="#FFFFFF"
             android:textSize="10dp"
@@ -304,8 +306,8 @@
             android:id="@+id/DEXSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="Dexterity"
             android:textColor="#FFFFFF"
             android:textSize="10dp"
@@ -316,8 +318,8 @@
             android:id="@+id/CONSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="Constitution"
             android:textColor="#FFFFFF"
             android:textSize="10dp"
@@ -328,8 +330,8 @@
             android:id="@+id/INTSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="Intelligence"
             android:textColor="#FFFFFF"
             android:textSize="10dp"
@@ -340,8 +342,8 @@
             android:id="@+id/WISSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="Wisdom"
             android:textColor="#FFFFFF"
             android:textSize="10dp"
@@ -352,189 +354,223 @@
             android:id="@+id/CHASub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:text="Charisma"
             android:textColor="#FFFFFF"
             android:textSize="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CHATitle" />
 
         <EditText
             android:id="@+id/STRABox"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="39dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="150"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRTitle"
             app:layout_constraintTop_toBottomOf="@+id/AbilityModTitle" />
 
         <EditText
             android:id="@+id/DEXABox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="2dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="72"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRTitle"
             app:layout_constraintTop_toBottomOf="@+id/STRABox" />
 
         <EditText
             android:id="@+id/CONABox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="2dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="54"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRTitle"
             app:layout_constraintTop_toBottomOf="@+id/DEXABox" />
 
         <EditText
             android:id="@+id/INTABox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="3dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="89"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRTitle"
             app:layout_constraintTop_toBottomOf="@+id/CONABox" />
 
         <EditText
             android:id="@+id/WISABox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="6dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="12"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRTitle"
             app:layout_constraintTop_toBottomOf="@+id/INTABox" />
 
         <EditText
             android:id="@+id/CHAABox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="675"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRTitle"
             app:layout_constraintTop_toBottomOf="@+id/WISABox" />
 
         <EditText
             android:id="@+id/STRTBox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="45"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRABox"
             app:layout_constraintTop_toBottomOf="@+id/TempModTitle" />
 
         <EditText
             android:id="@+id/DEXTBox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="2dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="24"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRABox"
             app:layout_constraintTop_toBottomOf="@+id/STRTBox" />
 
         <EditText
             android:id="@+id/CONTBox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="2dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="255"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRABox"
             app:layout_constraintTop_toBottomOf="@+id/DEXTBox" />
 
         <EditText
             android:id="@+id/INTTBox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="3dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="52"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRABox"
             app:layout_constraintTop_toBottomOf="@+id/CONTBox" />
 
         <EditText
             android:id="@+id/WISTBox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="6dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="557"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRABox"
             app:layout_constraintTop_toBottomOf="@+id/INTTBox" />
 
         <EditText
             android:id="@+id/CHATBox"
             android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="878"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/STRABox"
             app:layout_constraintTop_toBottomOf="@+id/WISTBox" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="105dp"
-        android:layout_height="280dp"
+        android:layout_width="150dp"
+        android:layout_height="260dp"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/divider">
 
@@ -549,7 +585,49 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/HPTitle2"
+            android:id="@+id/FortTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Fortitude"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HPTitle4" />
+
+        <TextView
+            android:id="@+id/HPTitle5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reflex"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FortTitle" />
+
+        <TextView
+            android:id="@+id/HPTitle6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Will"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HPTitle5" />
+
+        <TextView
+            android:id="@+id/HPTitle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Saving Throws"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CurrHPTitle" />
+
+        <TextView
+            android:id="@+id/CurrHPTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -558,6 +636,41 @@
             android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HPTitle" />
+
+        <TextView
+            android:id="@+id/TotalSaveTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Total"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/FortTitle"
+            app:layout_constraintTop_toBottomOf="@+id/HPTitle4" />
+
+        <TextView
+            android:id="@+id/BaseSaveTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Base"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/ActionSaveTitle"
+            app:layout_constraintStart_toEndOf="@+id/TotalSaveTitle"
+            app:layout_constraintTop_toBottomOf="@+id/HPTitle4" />
+
+        <TextView
+            android:id="@+id/ActionSaveTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Action"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/BaseSaveTitle"
+            app:layout_constraintTop_toBottomOf="@+id/HPTitle4" />
 
         <TextView
             android:id="@+id/HPOutput"
@@ -572,16 +685,82 @@
 
         <EditText
             android:id="@+id/CurrHPBox"
-            android:layout_width="40dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="39dp"
+            android:layout_height="33dp"
             android:ems="10"
+            android:hint="HP"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/HPTitle2"
+            app:layout_constraintStart_toEndOf="@+id/CurrHPTitle"
             app:layout_constraintTop_toBottomOf="@+id/HPOutput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="192dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/SPTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="SP:"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/GPTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="GP:"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SPTitle" />
+
+        <EditText
+            android:id="@+id/SPAmount"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@+id/SPTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/GPAmount"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@+id/SPTitle"
+            app:layout_constraintTop_toBottomOf="@+id/SPAmount" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
