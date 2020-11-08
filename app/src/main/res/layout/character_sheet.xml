@@ -572,6 +572,8 @@
             android:id="@+id/HPTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:text="HP Points:"
             android:textColor="#FFFFFF"
@@ -583,17 +585,21 @@
             android:id="@+id/FortTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
             android:text="Fortitude"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HPTitle4" />
+            app:layout_constraintTop_toBottomOf="@+id/TotalSaveTitle" />
 
         <TextView
             android:id="@+id/HPTitle5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
             android:text="Reflex"
             android:textColor="#FFFFFF"
@@ -605,6 +611,8 @@
             android:id="@+id/HPTitle6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
             android:text="Will"
             android:textColor="#FFFFFF"
@@ -628,6 +636,8 @@
             android:id="@+id/CurrHPTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="20dp"
             android:text="Current HP"
             android:textColor="#FFFFFF"
@@ -640,8 +650,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:text="Total"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -653,8 +663,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:text="Base"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -666,8 +676,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
             android:text="Action"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -677,121 +687,128 @@
         <TextView
             android:id="@+id/HPOutput"
             android:layout_width="300dp"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="#FFFFFF"
             android:textColor="#000000"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/HPTitle"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/FortTotal"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF"
+            android:text="Hi"
             android:textColor="#000000"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/TotalSaveTitle"
             app:layout_constraintStart_toStartOf="@+id/TotalSaveTitle"
-            app:layout_constraintTop_toBottomOf="@+id/TotalSaveTitle" />
+            app:layout_constraintTop_toTopOf="@+id/FortTitle" />
 
         <TextView
             android:id="@+id/FortBase"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:background="#FFFFFF"
             android:textColor="#000000"
-            app:layout_constraintEnd_toStartOf="@+id/ActionSaveTitle"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/BaseSaveTitle"
+            app:layout_constraintStart_toStartOf="@+id/BaseSaveTitle"
             app:layout_constraintTop_toBottomOf="@+id/TotalSaveTitle" />
 
         <TextView
             android:id="@+id/FortAction"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/ActionSaveTitle"
             app:layout_constraintStart_toStartOf="@+id/ActionSaveTitle"
-            app:layout_constraintTop_toBottomOf="@+id/TotalSaveTitle" />
+            app:layout_constraintTop_toTopOf="@+id/FortTitle" />
 
         <TextView
             android:id="@+id/ReflexAction"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/ActionSaveTitle"
             app:layout_constraintStart_toStartOf="@+id/ActionSaveTitle"
-            app:layout_constraintTop_toBottomOf="@+id/FortAction" />
+            app:layout_constraintTop_toTopOf="@+id/HPTitle5" />
 
         <TextView
             android:id="@+id/WillAction"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/ActionSaveTitle"
             app:layout_constraintStart_toStartOf="@+id/ActionSaveTitle"
-            app:layout_constraintTop_toBottomOf="@+id/ReflexAction" />
+            app:layout_constraintTop_toTopOf="@+id/HPTitle6" />
 
         <TextView
             android:id="@+id/ReflexBase"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:textColor="#000000"
-            app:layout_constraintEnd_toStartOf="@+id/ActionSaveTitle"
-            app:layout_constraintTop_toBottomOf="@+id/FortBase" />
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/BaseSaveTitle"
+            app:layout_constraintStart_toStartOf="@+id/BaseSaveTitle"
+            app:layout_constraintTop_toTopOf="@+id/HPTitle5" />
 
         <TextView
             android:id="@+id/WillBase"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:textColor="#000000"
-            app:layout_constraintEnd_toStartOf="@+id/ActionSaveTitle"
-            app:layout_constraintTop_toBottomOf="@+id/ReflexBase" />
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/BaseSaveTitle"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="@+id/BaseSaveTitle"
+            app:layout_constraintTop_toTopOf="@+id/HPTitle6" />
 
         <TextView
             android:id="@+id/ReflexTotal"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:textColor="#000000"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/FortTotal"
             app:layout_constraintStart_toStartOf="@+id/FortTotal"
-            app:layout_constraintTop_toBottomOf="@+id/FortTotal" />
+            app:layout_constraintTop_toTopOf="@+id/HPTitle5" />
 
         <TextView
             android:id="@+id/WillTotal"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:textColor="#000000"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/ReflexTotal"
             app:layout_constraintStart_toStartOf="@+id/ReflexTotal"
-            app:layout_constraintTop_toBottomOf="@+id/ReflexTotal" />
+            app:layout_constraintTop_toTopOf="@+id/HPTitle6" />
 
         <EditText
             android:id="@+id/CurrHPBox"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:hint="HP"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
             android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/CurrHPTitle"
             app:layout_constraintTop_toTopOf="@+id/CurrHPTitle" />
@@ -867,6 +884,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_marginTop="500dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -924,6 +942,15 @@
             android:textSize="14dp"
             app:layout_constraintStart_toEndOf="@+id/SPTitle"
             app:layout_constraintTop_toBottomOf="@+id/SPAmount" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="400sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
