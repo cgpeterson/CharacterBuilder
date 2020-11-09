@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     Button DiceRoller;
+    Button CharacterCreate;
     ImageView pmenu;
 
     @Override
@@ -22,10 +23,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_menu);
 
         DiceRoller=findViewById(R.id.DiceRollButton);
+        CharacterCreate=findViewById(R.id.CreateNewCharButton);
         pmenu=findViewById(R.id.mainpopupbutton);
 
         DiceRoller.setOnClickListener(v ->{
             startActivity(new Intent(MainActivity.this, RollerActivity.class));
+        });
+
+        CharacterCreate.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, ExpertCreateChar.class));
         });
 
         pmenu.setOnClickListener(this::showPopMenu);

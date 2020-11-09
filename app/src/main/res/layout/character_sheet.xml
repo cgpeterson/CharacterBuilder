@@ -146,7 +146,8 @@
         app:layout_constraintEnd_toStartOf="@+id/RaceSpin"
         app:layout_constraintStart_toEndOf="@+id/CharNameEdit"
         app:layout_constraintTop_toBottomOf="@+id/ClassTitle"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:entries="@array/Class_array"/>
 
     <Spinner
         android:id="@+id/RaceSpin"
@@ -156,7 +157,8 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RaceTitle"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:entries="@array/Race_array"/>
 
     <Spinner
         android:id="@+id/SizeSpin"
@@ -166,7 +168,8 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SizeTitle"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:entries="@array/Size_array"/>
 
     <EditText
         android:id="@+id/editTextNumberSigned"
