@@ -10,18 +10,21 @@
     </string>
     
     <string-array name="Class_array">
+        <item>-Class-</item>
         <item>Cleric</item>
         <item>Fighter</item>
         <item>Wizard</item>
         <item>Rogue</item>
     </string-array>
     <string-array name="Race_array">
+        <item>-Race-</item>
         <item>Human</item>
         <item>Elf</item>
         <item>Dwarf</item>
         <item>Orc</item>
     </string-array>
     <string-array name="Size_array">
+        <item>-Size-</item>
         <item>Large</item>
         <item>Medium</item>
         <item>Small</item>
