@@ -27,11 +27,14 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     Spinner Level;
     Spinner Race;
     Spinner Size;
+    TextView Submenutitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character_sheet);
+        Submenutitle=findViewById(R.id.submenutitle);
+        Submenutitle.setText("Character Sheet");
 
         //Define Variables
         FortA=findViewById(R.id.FortAction);
