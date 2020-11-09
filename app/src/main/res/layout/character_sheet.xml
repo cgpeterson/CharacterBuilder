@@ -94,8 +94,8 @@
         android:id="@+id/RaceTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
         android:text="Race"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
@@ -143,8 +143,9 @@
         android:layout_height="42dp"
         android:background="#80979797"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/RaceSpin"
-        app:layout_constraintStart_toEndOf="@+id/CharNameEdit"
+        app:layout_constraintEnd_toEndOf="@+id/ClassTitle"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/ClassTitle"
         app:layout_constraintTop_toBottomOf="@+id/ClassTitle"
         tools:visibility="visible"
         android:entries="@array/Class_array"/>
@@ -155,7 +156,8 @@
         android:layout_height="42dp"
         android:background="#80979797"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/RaceTitle"
+        app:layout_constraintStart_toStartOf="@+id/RaceTitle"
         app:layout_constraintTop_toBottomOf="@+id/RaceTitle"
         tools:visibility="visible"
         android:entries="@array/Race_array"/>
@@ -580,7 +582,7 @@
             android:layout_marginTop="10dp"
             android:text="Hit Points:"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -624,7 +626,7 @@
             app:layout_constraintTop_toBottomOf="@+id/HPTitle5" />
 
         <TextView
-            android:id="@+id/HPTitle4"
+            android:id="@+id/SavingThrowsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -644,7 +646,7 @@
             android:layout_marginTop="20dp"
             android:text="Current HP"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HPTitle" />
 
@@ -659,7 +661,7 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/BaseSaveTitle"
-            app:layout_constraintTop_toBottomOf="@+id/HPTitle4" />
+            app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
 
         <TextView
             android:id="@+id/BaseSaveTitle"
@@ -672,7 +674,7 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/ActionSaveTitle"
-            app:layout_constraintTop_toBottomOf="@+id/HPTitle4" />
+            app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
 
         <TextView
             android:id="@+id/ActionSaveTitle"
@@ -685,19 +687,35 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HPTitle4" />
+            app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
 
         <TextView
             android:id="@+id/HPOutput"
-            android:layout_width="300dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:text="9"
             android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/HPTitle"
             app:layout_constraintStart_toEndOf="@+id/HPTitle"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ACTotalOutput2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:text="9999"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ACTitle"
+            app:layout_constraintEnd_toEndOf="@+id/ACTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/ACTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/ACTitle" />
 
         <TextView
             android:id="@+id/FortTotal"
@@ -803,18 +821,38 @@
 
         <EditText
             android:id="@+id/CurrHPBox"
-            android:layout_width="300dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:gravity="center_horizontal"
             android:hint="HP"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
+            android:text="9"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/CurrHPTitle"
             app:layout_constraintStart_toEndOf="@+id/CurrHPTitle"
             app:layout_constraintTop_toTopOf="@+id/CurrHPTitle" />
+
+        <EditText
+            android:id="@+id/ACTempBox"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="HP"
+            android:inputType="numberSigned"
+            android:numeric="integer"
+            android:selectAllOnFocus="false"
+            android:text="9"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ACTitle"
+            app:layout_constraintEnd_toEndOf="@+id/ACTempTitle"
+            app:layout_constraintStart_toStartOf="@+id/ACTempTitle"
+            app:layout_constraintTop_toTopOf="@+id/ACTitle" />
 
         <TextView
             android:id="@+id/FortPlus"
@@ -881,6 +919,43 @@
             app:layout_constraintBottom_toBottomOf="@+id/WillAction"
             app:layout_constraintEnd_toStartOf="@+id/FortAction"
             app:layout_constraintStart_toEndOf="@+id/FortBase" />
+
+        <TextView
+            android:id="@+id/ACTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="AC:"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/SavingThrowsTitle"
+            app:layout_constraintStart_toEndOf="@+id/CurrHPBox"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ACTotalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Total"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/ACTitle"
+            app:layout_constraintStart_toEndOf="@+id/ACTitle" />
+
+        <TextView
+            android:id="@+id/ACTempTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Temp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/ACTitle"
+            app:layout_constraintStart_toEndOf="@+id/ACTotalTitle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
