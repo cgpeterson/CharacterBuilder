@@ -160,7 +160,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
 
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider">
 
@@ -172,8 +172,8 @@
             android:layout_marginLeft="5dp"
             android:text="STR"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/STRSub"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/STRABox"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/STRABox" />
 
@@ -184,7 +184,7 @@
             android:layout_marginTop="5dp"
             android:text="Ability Mod"
             android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/TempModTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -196,7 +196,7 @@
             android:layout_marginTop="5dp"
             android:text="Temp Mod"
             android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/AbilityModTitle"
             app:layout_constraintTop_toTopOf="parent" />
@@ -209,7 +209,8 @@
             android:layout_marginLeft="5dp"
             android:text="DEX"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/DEXABox"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/DEXABox" />
 
@@ -221,7 +222,8 @@
             android:layout_marginLeft="5dp"
             android:text="CON"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/CONABox"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/CONABox" />
 
@@ -233,7 +235,8 @@
             android:layout_marginLeft="5dp"
             android:text="INT"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/INTABox"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/INTABox" />
 
@@ -245,7 +248,8 @@
             android:layout_marginLeft="5dp"
             android:text="WIS"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/WISABox"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/WISABox" />
 
@@ -257,7 +261,8 @@
             android:layout_marginLeft="5dp"
             android:text="CHA"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/CHAABox"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/CHAABox" />
 
@@ -269,7 +274,7 @@
             android:layout_marginLeft="5dp"
             android:text="Strength"
             android:textColor="#FFFFFF"
-            android:textSize="10dp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/STRTitle" />
 
@@ -281,7 +286,7 @@
             android:layout_marginLeft="5dp"
             android:text="Dexterity"
             android:textColor="#FFFFFF"
-            android:textSize="10dp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DEXTitle" />
 
@@ -293,7 +298,7 @@
             android:layout_marginLeft="5dp"
             android:text="Constitution"
             android:textColor="#FFFFFF"
-            android:textSize="10dp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CONTitle" />
 
@@ -305,7 +310,7 @@
             android:layout_marginLeft="5dp"
             android:text="Intelligence"
             android:textColor="#FFFFFF"
-            android:textSize="10dp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/INTTitle" />
 
@@ -317,7 +322,7 @@
             android:layout_marginLeft="5dp"
             android:text="Wisdom"
             android:textColor="#FFFFFF"
-            android:textSize="10dp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/WISTitle" />
 
@@ -329,14 +334,14 @@
             android:layout_marginLeft="5dp"
             android:text="Charisma"
             android:textColor="#FFFFFF"
-            android:textSize="10dp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CHATitle" />
 
         <EditText
             android:id="@+id/STRABox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:ems="10"
             android:inputType="numberSigned"
@@ -344,7 +349,7 @@
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/AbilityModTitle"
             app:layout_constraintStart_toStartOf="@+id/AbilityModTitle"
             app:layout_constraintTop_toBottomOf="@+id/AbilityModTitle" />
@@ -352,7 +357,7 @@
         <EditText
             android:id="@+id/DEXABox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:ems="10"
             android:inputType="numberSigned"
@@ -360,7 +365,7 @@
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/AbilityModTitle"
             app:layout_constraintStart_toStartOf="@+id/AbilityModTitle"
             app:layout_constraintTop_toBottomOf="@+id/STRABox" />
@@ -368,7 +373,7 @@
         <EditText
             android:id="@+id/CONABox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:ems="10"
             android:inputType="numberSigned"
@@ -376,7 +381,7 @@
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/AbilityModTitle"
             app:layout_constraintStart_toStartOf="@+id/AbilityModTitle"
             app:layout_constraintTop_toBottomOf="@+id/DEXABox" />
@@ -384,7 +389,7 @@
         <EditText
             android:id="@+id/INTABox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:ems="10"
             android:inputType="numberSigned"
@@ -392,7 +397,7 @@
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/AbilityModTitle"
             app:layout_constraintStart_toStartOf="@+id/AbilityModTitle"
             app:layout_constraintTop_toBottomOf="@+id/CONABox" />
@@ -400,7 +405,7 @@
         <EditText
             android:id="@+id/WISABox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:ems="10"
             android:inputType="numberSigned"
@@ -408,7 +413,7 @@
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/AbilityModTitle"
             app:layout_constraintStart_toStartOf="@+id/AbilityModTitle"
             app:layout_constraintTop_toBottomOf="@+id/INTABox" />
@@ -416,7 +421,7 @@
         <EditText
             android:id="@+id/CHAABox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:ems="10"
             android:inputType="numberSigned"
@@ -424,7 +429,7 @@
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/AbilityModTitle"
             app:layout_constraintStart_toStartOf="@+id/AbilityModTitle"
             app:layout_constraintTop_toBottomOf="@+id/WISABox" />
@@ -432,98 +437,92 @@
         <EditText
             android:id="@+id/STRTBox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="7dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/TempModTitle"
             app:layout_constraintStart_toStartOf="@+id/TempModTitle"
-            app:layout_constraintTop_toBottomOf="@+id/TempModTitle" />
+            app:layout_constraintTop_toTopOf="@+id/STRABox" />
 
         <EditText
             android:id="@+id/DEXTBox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/TempModTitle"
             app:layout_constraintStart_toStartOf="@+id/TempModTitle"
-            app:layout_constraintTop_toBottomOf="@+id/STRTBox" />
+            app:layout_constraintTop_toTopOf="@+id/DEXABox" />
 
         <EditText
             android:id="@+id/CONTBox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/TempModTitle"
             app:layout_constraintStart_toStartOf="@+id/TempModTitle"
-            app:layout_constraintTop_toBottomOf="@+id/DEXTBox" />
+            app:layout_constraintTop_toTopOf="@+id/CONABox" />
 
         <EditText
             android:id="@+id/INTTBox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/TempModTitle"
             app:layout_constraintStart_toStartOf="@+id/TempModTitle"
-            app:layout_constraintTop_toBottomOf="@+id/CONTBox" />
+            app:layout_constraintTop_toTopOf="@+id/INTABox" />
 
         <EditText
             android:id="@+id/WISTBox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/TempModTitle"
             app:layout_constraintStart_toStartOf="@+id/TempModTitle"
-            app:layout_constraintTop_toBottomOf="@+id/INTTBox" />
+            app:layout_constraintTop_toTopOf="@+id/WISABox" />
 
         <EditText
             android:id="@+id/CHATBox"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberSigned"
             android:numeric="integer"
             android:selectAllOnFocus="false"
             android:text="0"
             android:textColor="#FFFFFF"
-            android:textSize="19sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/TempModTitle"
             app:layout_constraintStart_toStartOf="@+id/TempModTitle"
-            app:layout_constraintTop_toBottomOf="@+id/WISTBox" />
+            app:layout_constraintTop_toTopOf="@+id/CHAABox" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
