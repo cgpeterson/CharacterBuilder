@@ -32,75 +32,84 @@
         android:id="@+id/ClassTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:text="Class"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/RaceTitle"
-        app:layout_constraintStart_toEndOf="@+id/CharNameTitle"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
-
-    <TextView
-        android:id="@+id/PlayerNameTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Player Name"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CharNameEdit" />
 
     <TextView
+        android:id="@+id/LevelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Level:"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ClassSpin" />
+
+    <TextView
+        android:id="@+id/PlayerNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Name"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CharNameEdit"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <TextView
         android:id="@+id/SexTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
         android:text="Sex"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/SizeTitle"
-        app:layout_constraintStart_toEndOf="@+id/AgeTitle"
-        app:layout_constraintTop_toBottomOf="@+id/ClassSpin" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlayerNameEdit" />
 
     <TextView
         android:id="@+id/SizeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:text="Size"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ClassSpin" />
+        app:layout_constraintTop_toBottomOf="@+id/SexEdit" />
 
     <TextView
         android:id="@+id/AgeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="10dp"
         android:text="Age"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/PlayerNameTitle"
-        app:layout_constraintTop_toBottomOf="@+id/ClassSpin" />
+        app:layout_constraintEnd_toStartOf="@+id/SizeTitle"
+        app:layout_constraintStart_toEndOf="@+id/LevelEditbox"
+        app:layout_constraintTop_toTopOf="@+id/SizeTitle" />
 
     <TextView
         android:id="@+id/RaceTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
         android:text="Race"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        app:layout_constraintStart_toEndOf="@+id/ClassTitle"
+        app:layout_constraintTop_toBottomOf="@+id/CharNameEdit" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/CharNameEdit"
@@ -111,6 +120,7 @@
         android:hint="Character Name Here"
         android:textColor="#FFFFFF"
         android:textColorHint="#C1C1C1"
+        app:layout_constraintEnd_toEndOf="@+id/CharNameTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CharNameTitle" />
 
@@ -118,12 +128,11 @@
         android:id="@+id/PlayerNameEdit"
         android:layout_width="184dp"
         android:layout_height="42dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:hint="Player Name Here"
         android:textColor="#FFFFFF"
         android:textColorHint="#C1C1C1"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/PlayerNameTitle"
+        app:layout_constraintStart_toStartOf="@+id/PlayerNameTitle"
         app:layout_constraintTop_toBottomOf="@+id/PlayerNameTitle" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -133,8 +142,8 @@
         android:hint="Char. sex"
         android:textColor="#FFFFFF"
         android:textColorHint="#C1C1C1"
-        app:layout_constraintEnd_toStartOf="@+id/SizeSpin"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberSigned"
+        app:layout_constraintEnd_toEndOf="@+id/SexTitle"
+        app:layout_constraintStart_toStartOf="@+id/SexTitle"
         app:layout_constraintTop_toBottomOf="@+id/SexTitle" />
 
     <Spinner
@@ -167,32 +176,47 @@
         android:layout_width="56dp"
         android:layout_height="42dp"
         android:background="#80979797"
+        android:entries="@array/Size_array"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/SizeTitle"
+        app:layout_constraintStart_toStartOf="@+id/SizeTitle"
         app:layout_constraintTop_toBottomOf="@+id/SizeTitle"
-        tools:visibility="visible"
-        android:entries="@array/Size_array"/>
+        tools:visibility="visible" />
 
     <EditText
-        android:id="@+id/editTextNumberSigned"
+        android:id="@+id/AgeEditbox"
         android:layout_width="44dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberSigned"
-        app:layout_constraintStart_toEndOf="@+id/PlayerNameEdit"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/AgeTitle"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/AgeTitle"
         app:layout_constraintTop_toBottomOf="@+id/AgeTitle" />
+
+    <EditText
+        android:id="@+id/LevelEditbox"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/LevelTitle"
+        app:layout_constraintStart_toEndOf="@+id/LevelTitle"
+        app:layout_constraintTop_toTopOf="@+id/LevelTitle" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:background="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned" />
+        app:layout_constraintTop_toBottomOf="@+id/SizeSpin" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
