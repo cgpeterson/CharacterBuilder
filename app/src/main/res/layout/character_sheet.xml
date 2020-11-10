@@ -996,7 +996,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="40dp"
             android:text="Acrobatics (DEX)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1009,7 +1009,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Animal Handling (WIS)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1022,7 +1022,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Arcana (INT)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1035,7 +1035,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Athletics (STR)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1048,7 +1048,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Deception (CHA)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1061,7 +1061,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="History (INT)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1074,7 +1074,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Insight (WIS)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1087,7 +1087,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Intimidation (CHA)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1100,7 +1100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Investigation (INT)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1113,7 +1113,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Medicine (WIS)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1126,7 +1126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Nature (INT)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1139,7 +1139,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Perception (WIS)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1152,7 +1152,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Performance (CHA)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1165,7 +1165,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Persuasion (CHA)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1178,7 +1178,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Religion (INT)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1191,7 +1191,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Sleight of Hand (DEX)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1204,7 +1204,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Stealth (DEX)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1217,7 +1217,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Survival (WIS)"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -1235,6 +1235,786 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/SkillsTotalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Total"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/AcrobaticsTitle"
+            app:layout_constraintStart_toEndOf="@+id/AnimalHandTitle"
+            app:layout_constraintTop_toBottomOf="@+id/SkillsTitle" />
+
+        <TextView
+            android:id="@+id/SkillsAbilityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ability"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/AcrobaticsTitle"
+            app:layout_constraintEnd_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toBottomOf="@+id/SkillsTitle" />
+
+        <TextView
+            android:id="@+id/SkillsRankTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Rank"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/AcrobaticsTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SkillsTitle" />
+
+        <TextView
+            android:id="@+id/AnimalHandTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AnimalHandTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/AnimalHandTitle" />
+
+        <TextView
+            android:id="@+id/AnimalHandAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AnimalHandTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/AnimalHandTitle" />
+
+        <TextView
+            android:id="@+id/ArcanaTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ArcanaTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/ArcanaTitle" />
+
+        <TextView
+            android:id="@+id/ArcanaAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ArcanaTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/ArcanaTitle" />
+
+        <TextView
+            android:id="@+id/AthleticsTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AthleticsTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/AthleticsTitle" />
+
+        <TextView
+            android:id="@+id/AthleticsAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AthleticsTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/AthleticsTitle" />
+
+        <TextView
+            android:id="@+id/DeceptionTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/DeceptionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/DeceptionTitle" />
+
+        <TextView
+            android:id="@+id/DeceptionAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/DeceptionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/DeceptionTitle" />
+
+        <TextView
+            android:id="@+id/HistoryTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/HistoryTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/HistoryTitle" />
+
+        <TextView
+            android:id="@+id/HistoryAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/HistoryTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/HistoryTitle" />
+
+        <TextView
+            android:id="@+id/InsightTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InsightTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/InsightTitle" />
+
+        <TextView
+            android:id="@+id/InsightAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InsightTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/InsightTitle" />
+
+        <TextView
+            android:id="@+id/IntimidationTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/IntimidationTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/IntimidationTitle" />
+
+        <TextView
+            android:id="@+id/IntimidationAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/IntimidationTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/IntimidationTitle" />
+
+        <TextView
+            android:id="@+id/InvestigationTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InvestigationTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/InvestigationTitle" />
+
+        <TextView
+            android:id="@+id/InvestigationAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InvestigationTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/InvestigationTitle" />
+
+        <TextView
+            android:id="@+id/MedicineTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/MedicineTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/MedicineTitle" />
+
+        <TextView
+            android:id="@+id/MedicineAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/MedicineTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/MedicineTitle" />
+
+        <TextView
+            android:id="@+id/NatureTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/NatureTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/NatureTitle" />
+
+        <TextView
+            android:id="@+id/NatureAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/NatureTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/NatureTitle" />
+
+        <TextView
+            android:id="@+id/PerceptionTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerceptionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/PerceptionTitle" />
+
+        <TextView
+            android:id="@+id/PerceptionAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerceptionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/PerceptionTitle" />
+
+        <TextView
+            android:id="@+id/PerformanceTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerformanceTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/PerformanceTitle" />
+
+        <TextView
+            android:id="@+id/PerformanceAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerformanceTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/PerformanceTitle" />
+
+        <TextView
+            android:id="@+id/PersuasionTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PersusionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/PersusionTitle" />
+
+        <TextView
+            android:id="@+id/PersuasionAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PersusionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/PersusionTitle" />
+
+        <TextView
+            android:id="@+id/ReligionTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ReligionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/ReligionTitle" />
+
+        <TextView
+            android:id="@+id/ReligionAbiltiy"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ReligionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/ReligionTitle" />
+
+        <TextView
+            android:id="@+id/SleightHandTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SleightHandTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/SleightHandTitle" />
+
+        <TextView
+            android:id="@+id/SleightHandAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SleightHandTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/SleightHandTitle" />
+
+        <TextView
+            android:id="@+id/StealthTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/StealthTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/StealthTitle" />
+
+        <TextView
+            android:id="@+id/StealthAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/StealthTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/StealthTitle" />
+
+        <TextView
+            android:id="@+id/SurvivalTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SurvivalTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/SurvivalTitle" />
+
+        <TextView
+            android:id="@+id/SurvivalAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SurvivalTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/SurvivalTitle" />
+
+        <TextView
+            android:id="@+id/AcrobaticsTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AcrobaticsTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
+            app:layout_constraintTop_toTopOf="@+id/AcrobaticsTitle" />
+
+        <TextView
+            android:id="@+id/AcrobaticsAbility"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AcrobaticsTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
+            app:layout_constraintTop_toTopOf="@+id/AcrobaticsTitle" />
+
+        <EditText
+            android:id="@+id/AcrobaticsRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AcrobaticsTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/AcrobaticsTitle" />
+
+        <EditText
+            android:id="@+id/AnimalHandRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AnimalHandTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/AnimalHandTitle" />
+
+        <EditText
+            android:id="@+id/ArcanaRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ArcanaTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/ArcanaTitle" />
+
+        <EditText
+            android:id="@+id/AthleticsRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AthleticsTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/AthleticsTitle" />
+
+        <EditText
+            android:id="@+id/DeceptionRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/DeceptionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/DeceptionTitle" />
+
+        <EditText
+            android:id="@+id/HistoryRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/HistoryTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/HistoryTitle" />
+
+        <EditText
+            android:id="@+id/InsightRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InsightTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toBottomOf="@+id/HistoryTitle" />
+
+        <EditText
+            android:id="@+id/IntimidationRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/IntimidationTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/IntimidationTitle" />
+
+        <EditText
+            android:id="@+id/InvestigationRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InvestigationTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/InvestigationTitle" />
+
+        <EditText
+            android:id="@+id/MedicineRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/MedicineTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/MedicineTitle" />
+
+        <EditText
+            android:id="@+id/NatureRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/NatureTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/NatureTitle" />
+
+        <EditText
+            android:id="@+id/PerceptionRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerceptionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/PerceptionTitle" />
+
+        <EditText
+            android:id="@+id/PerformanceRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerformanceTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/PerformanceTitle" />
+
+        <EditText
+            android:id="@+id/PersuasionRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PersusionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/PersusionTitle" />
+
+        <EditText
+            android:id="@+id/ReligionRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ReligionTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/ReligionTitle" />
+
+        <EditText
+            android:id="@+id/SleightHandRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SleightHandTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/SleightHandTitle" />
+
+        <EditText
+            android:id="@+id/StealthRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/StealthTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/StealthTitle" />
+
+        <EditText
+            android:id="@+id/SurvivalRank"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#E3E3E3"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SurvivalTitle"
+            app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
+            app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
+            app:layout_constraintTop_toTopOf="@+id/SurvivalTitle" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
