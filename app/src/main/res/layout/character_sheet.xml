@@ -1877,7 +1877,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/InsightTitle"
             app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
             app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
-            app:layout_constraintTop_toBottomOf="@+id/HistoryTitle" />
+            app:layout_constraintTop_toTopOf="@+id/InsightTitle" />
 
         <EditText
             android:id="@+id/IntimidationRank"
@@ -2045,6 +2045,18 @@
             app:layout_constraintTop_toTopOf="@+id/SurvivalTitle" />
 
         <TextView
+            android:id="@+id/AcrobaticsPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AcrobaticsTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsRank"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsAbility"
+            app:layout_constraintTop_toTopOf="@+id/AcrobaticsTotal" />
+
+        <TextView
             android:id="@+id/AcrobaticsEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2069,6 +2081,18 @@
             app:layout_constraintTop_toTopOf="@+id/AnimalHandTotal" />
 
         <TextView
+            android:id="@+id/AnimalHandPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AnimalHandTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AnimalHandRank"
+            app:layout_constraintStart_toEndOf="@+id/AnimalHandAbility"
+            app:layout_constraintTop_toTopOf="@+id/AnimalHandTotal" />
+
+        <TextView
             android:id="@+id/ArcanaEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2078,6 +2102,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/ArcanaTotal"
             app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
             app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/ArcanaTotal" />
+
+        <TextView
+            android:id="@+id/ArcanaPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ArcanaTotal"
+            app:layout_constraintEnd_toStartOf="@+id/ArcanaRank"
+            app:layout_constraintStart_toEndOf="@+id/ArcanaAbility"
             app:layout_constraintTop_toTopOf="@+id/ArcanaTotal" />
 
         <TextView
@@ -2093,6 +2129,18 @@
             app:layout_constraintTop_toTopOf="@+id/AthleticsTotal" />
 
         <TextView
+            android:id="@+id/AthleticsPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AthleticsTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AthleticsRank"
+            app:layout_constraintStart_toEndOf="@+id/AthleticsAbility"
+            app:layout_constraintTop_toTopOf="@+id/AthleticsTotal" />
+
+        <TextView
             android:id="@+id/DeceptionEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2102,6 +2150,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/DeceptionTotal"
             app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
             app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/DeceptionTotal" />
+
+        <TextView
+            android:id="@+id/DeceptionPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/DeceptionTotal"
+            app:layout_constraintEnd_toStartOf="@+id/DeceptionRank"
+            app:layout_constraintStart_toEndOf="@+id/DeceptionAbility"
             app:layout_constraintTop_toTopOf="@+id/DeceptionTotal" />
 
         <TextView
@@ -2117,6 +2177,18 @@
             app:layout_constraintTop_toTopOf="@+id/HistoryTotal" />
 
         <TextView
+            android:id="@+id/HistoryPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/HistoryTotal"
+            app:layout_constraintEnd_toStartOf="@+id/HistoryRank"
+            app:layout_constraintStart_toEndOf="@+id/HistoryAbility"
+            app:layout_constraintTop_toTopOf="@+id/HistoryTotal" />
+
+        <TextView
             android:id="@+id/InsightEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2126,6 +2198,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/InsightTotal"
             app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
             app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/InsightTotal" />
+
+        <TextView
+            android:id="@+id/InsightPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InsightTotal"
+            app:layout_constraintEnd_toStartOf="@+id/InsightRank"
+            app:layout_constraintStart_toEndOf="@+id/InsightAbility"
             app:layout_constraintTop_toTopOf="@+id/InsightTotal" />
 
         <TextView
@@ -2141,6 +2225,18 @@
             app:layout_constraintTop_toTopOf="@+id/IntimidationTotal" />
 
         <TextView
+            android:id="@+id/IntimidationPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/IntimidationTotal"
+            app:layout_constraintEnd_toStartOf="@+id/IntimidationRank"
+            app:layout_constraintStart_toEndOf="@+id/IntimidationAbility"
+            app:layout_constraintTop_toTopOf="@+id/IntimidationTotal" />
+
+        <TextView
             android:id="@+id/InvestigationEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2150,6 +2246,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/InvestigationTotal"
             app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
             app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/InvestigationTotal" />
+
+        <TextView
+            android:id="@+id/InvestigationPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InvestigationTotal"
+            app:layout_constraintEnd_toStartOf="@+id/InvestigationRank"
+            app:layout_constraintStart_toEndOf="@+id/InvestigationAbility"
             app:layout_constraintTop_toTopOf="@+id/InvestigationTotal" />
 
         <TextView
@@ -2165,6 +2273,18 @@
             app:layout_constraintTop_toTopOf="@+id/MedicineTotal" />
 
         <TextView
+            android:id="@+id/MedicinePlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/MedicineTotal"
+            app:layout_constraintEnd_toStartOf="@+id/MedicineRank"
+            app:layout_constraintStart_toEndOf="@+id/MedicineAbility"
+            app:layout_constraintTop_toTopOf="@+id/MedicineTotal" />
+
+        <TextView
             android:id="@+id/NatureEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2174,6 +2294,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/NatureTotal"
             app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
             app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/NatureTotal" />
+
+        <TextView
+            android:id="@+id/NaturePlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/NatureTotal"
+            app:layout_constraintEnd_toStartOf="@+id/NatureRank"
+            app:layout_constraintStart_toEndOf="@+id/NatureAbility"
             app:layout_constraintTop_toTopOf="@+id/NatureTotal" />
 
         <TextView
@@ -2189,6 +2321,18 @@
             app:layout_constraintTop_toTopOf="@+id/PerceptionTotal" />
 
         <TextView
+            android:id="@+id/PerceptionPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerceptionTotal"
+            app:layout_constraintEnd_toStartOf="@+id/PerceptionRank"
+            app:layout_constraintStart_toEndOf="@+id/PerceptionAbility"
+            app:layout_constraintTop_toTopOf="@+id/PerceptionTotal" />
+
+        <TextView
             android:id="@+id/PerformanceEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2198,6 +2342,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/PerformanceTotal"
             app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
             app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/PerformanceTotal" />
+
+        <TextView
+            android:id="@+id/PerformancePlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerformanceTotal"
+            app:layout_constraintEnd_toStartOf="@+id/PerformanceRank"
+            app:layout_constraintStart_toEndOf="@+id/PerformanceAbility"
             app:layout_constraintTop_toTopOf="@+id/PerformanceTotal" />
 
         <TextView
@@ -2213,6 +2369,18 @@
             app:layout_constraintTop_toTopOf="@+id/PersuasionTotal" />
 
         <TextView
+            android:id="@+id/PersuasionPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PersuasionTotal"
+            app:layout_constraintEnd_toStartOf="@+id/PersuasionRank"
+            app:layout_constraintStart_toEndOf="@+id/PersuasionAbility"
+            app:layout_constraintTop_toTopOf="@+id/PersuasionTotal" />
+
+        <TextView
             android:id="@+id/ReligionEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2222,6 +2390,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/ReligionTotal"
             app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
             app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/ReligionTotal" />
+
+        <TextView
+            android:id="@+id/ReligionPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ReligionTotal"
+            app:layout_constraintEnd_toStartOf="@+id/ReligionRank"
+            app:layout_constraintStart_toEndOf="@+id/ReligionAbiltiy"
             app:layout_constraintTop_toTopOf="@+id/ReligionTotal" />
 
         <TextView
@@ -2237,6 +2417,18 @@
             app:layout_constraintTop_toTopOf="@+id/SleightHandTotal" />
 
         <TextView
+            android:id="@+id/SleightHandPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SleightHandTotal"
+            app:layout_constraintEnd_toStartOf="@+id/SleightHandRank"
+            app:layout_constraintStart_toEndOf="@+id/SleightHandAbility"
+            app:layout_constraintTop_toTopOf="@+id/SleightHandTotal" />
+
+        <TextView
             android:id="@+id/StealthEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2249,6 +2441,18 @@
             app:layout_constraintTop_toTopOf="@+id/StealthTotal" />
 
         <TextView
+            android:id="@+id/StealthPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/StealthTotal"
+            app:layout_constraintEnd_toStartOf="@+id/StealthRank"
+            app:layout_constraintStart_toEndOf="@+id/StealthAbility"
+            app:layout_constraintTop_toTopOf="@+id/StealthTotal" />
+
+        <TextView
             android:id="@+id/SurvivalEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2258,6 +2462,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/SurvivalTotal"
             app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
             app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/SurvivalTotal" />
+
+        <TextView
+            android:id="@+id/SurvivalPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SurvivalTotal"
+            app:layout_constraintEnd_toStartOf="@+id/SurvivalRank"
+            app:layout_constraintStart_toEndOf="@+id/SurvivalAbility"
             app:layout_constraintTop_toTopOf="@+id/SurvivalTotal" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
