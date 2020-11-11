@@ -947,7 +947,7 @@
 
         <EditText
             android:id="@+id/CharacterInventoryInput"
-            android:layout_width="220dp"
+            android:layout_width="210dp"
             android:layout_height="170dp"
             android:ems="10"
             android:gravity="start|top"
@@ -956,13 +956,19 @@
             android:textColor="#FFFFFF"
             android:textColorHint="#CDCDCD"
             android:textSize="18sp"
+            android:isScrollContainer="true"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right"
+            android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/divider2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CharacterInventoryTitle" />
 
         <EditText
             android:id="@+id/CharacterBioInput"
-            android:layout_width="220dp"
+            android:layout_width="210dp"
             android:layout_height="170dp"
             android:ems="10"
             android:gravity="start|top"
@@ -971,6 +977,12 @@
             android:textColor="#FFFFFF"
             android:textColorHint="#CDCDCD"
             android:textSize="18sp"
+            android:isScrollContainer="true"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/divider2"
             app:layout_constraintTop_toBottomOf="@+id/CharacterInventoryTitle" />
