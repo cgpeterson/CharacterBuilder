@@ -16,9 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ExpertCreateChar extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView FortA;
-    TextView RefA;
-    TextView WillA;
     TextView AModTitle;
     EditText STR;
     EditText DEX;
@@ -31,6 +28,14 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     Spinner Race;
     Spinner Size;
     TextView Submenutitle;
+    EditText[] abilities;
+    TextView[] strDerived = new TextView[2];
+    TextView[] dexDerived = new TextView[4];
+    TextView[] conDerived = new TextView[1];
+    TextView[] intDerived = new TextView[5];
+    TextView[] wisDerived = new TextView[6];
+    TextView[] chaDerived = new TextView[4];
+    TextView[][] abilitiesDerived = {strDerived,dexDerived,conDerived,intDerived,wisDerived,chaDerived};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +45,6 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         Submenutitle.setText("Character Sheet");
 
         //Define Variables
-        FortA=findViewById(R.id.FortAction);
-        RefA=findViewById(R.id.ReflexAction);
-        WillA=findViewById(R.id.WillAction);
         AModTitle=findViewById(R.id.AbilityModTitle);
         STR=findViewById(R.id.STRABox);
         DEX=findViewById(R.id.DEXABox);
@@ -50,9 +52,32 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         INT=findViewById(R.id.INTABox);
         WIS=findViewById(R.id.WISABox);
         CHA=findViewById(R.id.CHAABox);
+        abilities = new EditText[] {STR,DEX,CON,INT,WIS,CHA};
         Class=findViewById(R.id.ClassSpin);
         Race=findViewById(R.id.RaceSpin);
         Size=findViewById(R.id.SizeSpin);
+        strDerived[0]=findViewById(R.id.AthleticsAbility);
+        strDerived[1]=findViewById(R.id.GrappleStrength);
+        dexDerived[0]=findViewById(R.id.ReflexAction);
+        dexDerived[1]=findViewById(R.id.AcrobaticsAbility);
+        dexDerived[2]=findViewById(R.id.SleightHandAbility);
+        dexDerived[3]=findViewById(R.id.StealthAbility);
+        conDerived[0]=findViewById(R.id.FortAction);
+        intDerived[0]=findViewById(R.id.ArcanaAbility);
+        intDerived[1]=findViewById(R.id.HistoryAbility);
+        intDerived[2]=findViewById(R.id.InvestigationAbility);
+        intDerived[3]=findViewById(R.id.NatureAbility);
+        intDerived[4]=findViewById(R.id.ReligionAbiltiy);
+        wisDerived[0]=findViewById(R.id.WillAction);
+        wisDerived[1]=findViewById(R.id.AnimalHandAbility);
+        wisDerived[2]=findViewById(R.id.InsightAbility);
+        wisDerived[3]=findViewById(R.id.MedicineAbility);
+        wisDerived[4]=findViewById(R.id.PerceptionAbility);
+        wisDerived[5]=findViewById(R.id.SurvivalAbility);
+        chaDerived[0]=findViewById(R.id.DeceptionAbility);
+        chaDerived[1]=findViewById(R.id.IntimidationAbility);
+        chaDerived[2]=findViewById(R.id.PerformanceAbility);
+        chaDerived[3]=findViewById(R.id.PersuasionAbility);
         ArrayAdapter<CharSequence> classAdapter = ArrayAdapter.createFromResource(this, R.array.Class_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> raceAdapter = ArrayAdapter.createFromResource(this, R.array.Race_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> sizeAdapter = ArrayAdapter.createFromResource(this, R.array.Size_array, android.R.layout.simple_spinner_item);
@@ -78,7 +103,11 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                     } catch (Exception e) {
                         STR.setText("0");
                     }
-                    abilityCheck();
+
+                    if (abilityCheck())
+                    {
+                        Derive();
+                    }
             }
         });
         DEX.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -90,7 +119,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                     } catch (Exception e) {
                         DEX.setText("0");
                     }
-                    abilityCheck();
+                if (abilityCheck())
+                {
+                    Derive();
+                }
             }
         });
         CON.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -102,7 +134,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                     } catch (Exception e) {
                         CON.setText("0");
                     }
-                    abilityCheck();
+                if (abilityCheck())
+                {
+                    Derive();
+                }
             }
         });
         INT.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -114,7 +149,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                     } catch (Exception e) {
                         INT.setText("0");
                     }
-                    abilityCheck();
+                if (abilityCheck())
+                {
+                    Derive();
+                }
             }
         });
         WIS.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -126,7 +164,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                     } catch (Exception e) {
                         WIS.setText("0");
                     }
-                    abilityCheck();
+                if (abilityCheck())
+                {
+                    Derive();
+                }
             }
         });
         CHA.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -138,7 +179,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                     } catch (Exception e) {
                         CHA.setText("0");
                     }
-                    abilityCheck();
+                if (abilityCheck())
+                {
+                    Derive();
+                }
             }
         });
     }
@@ -229,7 +273,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
 
     }
 
-    private void abilityCheck()
+    private boolean abilityCheck()
     {
         int strMax = 4;
         int strMin = -2;
@@ -322,8 +366,24 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             Toast toast = Toast.makeText(getApplicationContext(),"Over Spent",Toast.LENGTH_LONG);
             toast.show();
             AModTitle.setTextColor(Color.parseColor("#FF0000"));
+        } else if (sumPoints == pointMax){
+            AModTitle.setTextColor(Color.parseColor("#FFFFFF"));
+            return true;
         } else {
             AModTitle.setTextColor(Color.parseColor("#FFFFFF"));
+        }
+
+        return false;
+    }
+
+    private void Derive()
+    {
+        for (int i = 0; i < abilitiesDerived.length; i++)
+        {
+            for (int j = 0; j < abilitiesDerived[i].length; j++)
+            {
+                abilitiesDerived[i][j].setText(abilities[i].getText().toString());
+            }
         }
     }
 }
