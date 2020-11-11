@@ -9,7 +9,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="40dp"
     android:background="#0D3A00">
 
     <include
@@ -21,7 +20,7 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/CharNameEdit"
-        android:layout_width="184dp"
+        android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
@@ -34,7 +33,7 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/PlayerNameEdit"
-        android:layout_width="184dp"
+        android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
@@ -931,11 +930,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout5"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+        app:layout_constraintTop_toBottomOf="@+id/divider7">
 
         <View
             android:id="@+id/divider2"
@@ -946,49 +945,58 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/SPTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="SP:"
+        <EditText
+            android:id="@+id/CharacterInventoryInput"
+            android:layout_width="220dp"
+            android:layout_height="170dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Character Inventory"
+            android:inputType="textMultiLine"
             android:textColor="#FFFFFF"
-            android:textSize="15dp"
+            android:textColorHint="#CDCDCD"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/divider2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/GPTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:text="GP:"
-            android:textColor="#FFFFFF"
-            android:textSize="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SPTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/CharacterInventoryTitle" />
 
         <EditText
-            android:id="@+id/SPAmount"
-            android:layout_width="85dp"
-            android:layout_height="35dp"
+            android:id="@+id/CharacterBioInput"
+            android:layout_width="220dp"
+            android:layout_height="170dp"
             android:ems="10"
-            android:inputType="numberSigned"
+            android:gravity="start|top"
+            android:hint="Character Inventory"
+            android:inputType="textMultiLine"
             android:textColor="#FFFFFF"
-            android:textSize="14dp"
-            app:layout_constraintStart_toEndOf="@+id/SPTitle"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColorHint="#CDCDCD"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/divider2"
+            app:layout_constraintTop_toBottomOf="@+id/CharacterInventoryTitle" />
 
-        <EditText
-            android:id="@+id/GPAmount"
-            android:layout_width="85dp"
-            android:layout_height="35dp"
-            android:ems="10"
-            android:inputType="numberSigned"
+        <TextView
+            android:id="@+id/CharacterInventoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Character Inventory"
             android:textColor="#FFFFFF"
-            android:textSize="14dp"
-            app:layout_constraintStart_toEndOf="@+id/SPTitle"
-            app:layout_constraintTop_toBottomOf="@+id/SPAmount" />
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/divider2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/divider2" />
+
+        <TextView
+            android:id="@+id/CharacterBioTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Character Bio"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/divider2"
+            app:layout_constraintTop_toTopOf="@+id/divider2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -2024,30 +2032,737 @@
             app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
             app:layout_constraintTop_toTopOf="@+id/SurvivalTitle" />
 
+        <TextView
+            android:id="@+id/AcrobaticsEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AcrobaticsTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/AcrobaticsTotal" />
+
+        <TextView
+            android:id="@+id/AnimalHandEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AnimalHandTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/AnimalHandTotal" />
+
+        <TextView
+            android:id="@+id/ArcanaEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ArcanaTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/ArcanaTotal" />
+
+        <TextView
+            android:id="@+id/AthleticsEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AthleticsTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/AthleticsTotal" />
+
+        <TextView
+            android:id="@+id/DeceptionEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/DeceptionTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/DeceptionTotal" />
+
+        <TextView
+            android:id="@+id/HistoryEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/HistoryTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/HistoryTotal" />
+
+        <TextView
+            android:id="@+id/InsightEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InsightTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/InsightTotal" />
+
+        <TextView
+            android:id="@+id/IntimidationEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/IntimidationTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/IntimidationTotal" />
+
+        <TextView
+            android:id="@+id/InvestigationEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/InvestigationTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/InvestigationTotal" />
+
+        <TextView
+            android:id="@+id/MedicineEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/MedicineTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/MedicineTotal" />
+
+        <TextView
+            android:id="@+id/NatureEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/NatureTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/NatureTotal" />
+
+        <TextView
+            android:id="@+id/PerceptionEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerceptionTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/PerceptionTotal" />
+
+        <TextView
+            android:id="@+id/PerformanceEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PerformanceTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/PerformanceTotal" />
+
+        <TextView
+            android:id="@+id/PersuasionEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/PersuasionTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/PersuasionTotal" />
+
+        <TextView
+            android:id="@+id/ReligionEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ReligionTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/ReligionTotal" />
+
+        <TextView
+            android:id="@+id/SleightHandEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SleightHandTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/SleightHandTotal" />
+
+        <TextView
+            android:id="@+id/StealthEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/StealthTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/StealthTotal" />
+
+        <TextView
+            android:id="@+id/SurvivalEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/SurvivalTotal"
+            app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
+            app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
+            app:layout_constraintTop_toTopOf="@+id/SurvivalTotal" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider5">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/AttacksTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Attacks"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ExtraAttacksTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Extra Attack Bonuses"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/BaseAttackBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/BaseAttackBox" />
+
+        <TextView
+            android:id="@+id/BaseAttackTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Base Attack Bonus:"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AttacksTitle" />
+
+        <TextView
+            android:id="@+id/GrappleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Grapple"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BaseAttackBox" />
+
+        <TextView
+            android:id="@+id/DMGTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="DMG"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/WeaponAttackInput"
+            app:layout_constraintTop_toTopOf="@+id/WeaponsAttacksTitle" />
+
+        <TextView
+            android:id="@+id/DMGTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/WeaponsAttackType"
+            app:layout_constraintStart_toStartOf="@+id/WeaponsAttackType"
+            app:layout_constraintTop_toTopOf="@+id/WeaponsAttacksTitle" />
+
+        <TextView
+            android:id="@+id/WeaponsAttacksTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Weapons &amp; Attacks"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/WeaponAttackInput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GrappleModifierTitle" />
+
+        <TextView
+            android:id="@+id/GrappleModifierTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Modifier"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/GrappleTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GrappleTitle" />
+
+        <TextView
+            android:id="@+id/GrappleTotalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Total"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleModifierTitle"
+            app:layout_constraintEnd_toEndOf="@+id/GrappleTotal"
+            app:layout_constraintStart_toStartOf="@+id/GrappleTotal"
+            app:layout_constraintTop_toTopOf="@+id/GrappleModifierTitle" />
+
+        <TextView
+            android:id="@+id/GrappleAttackBonusTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Base Attack \nBonus"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleModifierTitle"
+            app:layout_constraintEnd_toEndOf="@+id/GrappleBaseAttackBonus"
+            app:layout_constraintStart_toStartOf="@+id/GrappleBaseAttackBonus"
+            app:layout_constraintTop_toTopOf="@+id/GrappleModifierTitle" />
+
+        <TextView
+            android:id="@+id/GrappleSizeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Size \nModifier"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleModifierTitle"
+            app:layout_constraintEnd_toEndOf="@+id/GrappleSize"
+            app:layout_constraintStart_toStartOf="@+id/GrappleSize"
+            app:layout_constraintTop_toTopOf="@+id/GrappleModifierTitle" />
+
+        <TextView
+            android:id="@+id/grappleSizeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Misc. \nModifier"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleModifierTitle"
+            app:layout_constraintEnd_toEndOf="@+id/grappleSize"
+            app:layout_constraintStart_toStartOf="@+id/grappleSize"
+            app:layout_constraintTop_toTopOf="@+id/GrappleModifierTitle" />
+
+        <TextView
+            android:id="@+id/GrappleStrengthTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Strength \nModifier"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleModifierTitle"
+            app:layout_constraintEnd_toEndOf="@+id/GrappleStrength"
+            app:layout_constraintStart_toStartOf="@+id/GrappleStrength"
+            app:layout_constraintTop_toTopOf="@+id/GrappleModifierTitle" />
+
+        <EditText
+            android:id="@+id/BaseAttackBox"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#DCDCDC"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/BaseAttackTitle"
+            app:layout_constraintStart_toEndOf="@+id/BaseAttackTitle"
+            app:layout_constraintTop_toTopOf="@+id/BaseAttackTitle" />
+
+        <EditText
+            android:id="@+id/ExtraAttackBox"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#DDDDDD"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/BaseAttackTitle"
+            app:layout_constraintEnd_toEndOf="@+id/ExtraAttacksTitle"
+            app:layout_constraintStart_toEndOf="@+id/BaseAttackBox"
+            app:layout_constraintTop_toTopOf="@+id/BaseAttackTitle" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/WeaponAttackInput"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Your Weapon/Attack"
+            android:textColorHint="#CDCDCD"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/WeaponsAttacksTitle" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/WeaponAttackInput2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Your Weapon/Attack"
+            android:textColorHint="#CDCDCD"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/WeaponAttackInput" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/WeaponAttackInput3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Your Weapon/Attack"
+            android:textColorHint="#CDCDCD"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/WeaponAttackInput2" />
+
+        <TextView
+            android:id="@+id/DMGOutput"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput"
+            app:layout_constraintEnd_toEndOf="@+id/DMGTitle"
+            app:layout_constraintStart_toStartOf="@+id/DMGTitle"
+            app:layout_constraintTop_toBottomOf="@+id/WeaponsAttacksTitle" />
+
+        <TextView
+            android:id="@+id/DMGOutput2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput2"
+            app:layout_constraintEnd_toEndOf="@+id/DMGTitle"
+            app:layout_constraintStart_toStartOf="@+id/DMGTitle"
+            app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput2" />
+
+        <TextView
+            android:id="@+id/DMGOutput3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput3"
+            app:layout_constraintEnd_toEndOf="@+id/DMGTitle"
+            app:layout_constraintStart_toStartOf="@+id/DMGTitle"
+            app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput3" />
+
+        <TextView
+            android:id="@+id/GrappleTotal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+            app:layout_constraintStart_toEndOf="@+id/GrappleTitle"
+            app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+        <TextView
+            android:id="@+id/GrappleBaseAttackBonus"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+            app:layout_constraintStart_toEndOf="@+id/GrappleTotal"
+            app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+        <TextView
+            android:id="@+id/GrappleStrength"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+            app:layout_constraintStart_toEndOf="@+id/GrappleBaseAttackBonus"
+            app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+        <TextView
+            android:id="@+id/GrappleSize"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+            app:layout_constraintStart_toEndOf="@+id/GrappleStrength"
+            app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+        <TextView
+            android:id="@+id/grappleSize"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+            app:layout_constraintStart_toEndOf="@+id/GrappleSize"
+            app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+        <Spinner
+            android:id="@+id/WeaponsAttackType"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="#80979797"
+            app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/DMGOutput"
+            app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput" />
+
+        <Spinner
+            android:id="@+id/WeaponsAttackType2"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="#80979797"
+            app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/DMGOutput"
+            app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput2" />
+
+        <Spinner
+            android:id="@+id/WeaponsAttackType3"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="#80979797"
+            app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/DMGOutput"
+            app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput3" />
+
+        <TextView
+            android:id="@+id/GrappleEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
+            app:layout_constraintEnd_toStartOf="@+id/GrappleBaseAttackBonus"
+            app:layout_constraintStart_toEndOf="@+id/GrappleTotal"
+            app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
+
+        <TextView
+            android:id="@+id/GrapplePlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
+            app:layout_constraintEnd_toStartOf="@+id/GrappleStrength"
+            app:layout_constraintStart_toEndOf="@+id/GrappleBaseAttackBonus"
+            app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
+
+        <TextView
+            android:id="@+id/GrapplePlus2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
+            app:layout_constraintEnd_toStartOf="@+id/GrappleSize"
+            app:layout_constraintStart_toEndOf="@+id/GrappleStrength"
+            app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
+
+        <TextView
+            android:id="@+id/GrapplePlus3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
+            app:layout_constraintEnd_toStartOf="@+id/grappleSize"
+            app:layout_constraintStart_toEndOf="@+id/GrappleSize"
+            app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6" />
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6">
+
+        <EditText
+            android:id="@+id/GPAmount"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/GPTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/GPTitle"
+            app:layout_constraintTop_toTopOf="@+id/GPTitle" />
+
+        <TextView
+            android:id="@+id/SPTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="SP:"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SPTitle2" />
+
+        <TextView
+            android:id="@+id/SPTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Currency"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/GPTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="GP:"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SPTitle" />
+
+        <EditText
+            android:id="@+id/SPAmount"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:textColor="#FFFFFF"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/SPTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/SPTitle"
+            app:layout_constraintTop_toTopOf="@+id/SPTitle" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+<!--We're going on a trip in our favorite wheelchairs, going throoooooouuuuuuuugh the grass, little handicaps.-->
