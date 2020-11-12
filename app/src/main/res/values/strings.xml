@@ -29,6 +29,10 @@
         <item>Medium</item>
         <item>Small</item>
     </string-array>
-
-
+    <string-array name="Type_array">
+        <item>-Type-</item>
+        <item>Light</item>
+        <item>One-Handed</item>
+        <item>Two-Handed</item>
+    </string-array>
 </resources>

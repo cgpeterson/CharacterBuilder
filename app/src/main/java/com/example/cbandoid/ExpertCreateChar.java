@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -16,7 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ExpertCreateChar extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    EditText CharName;
     TextView AModTitle;
+    TextView FortBase;
+    TextView RefBase;
+    TextView WillBase;
+    TextView AttackBase;
     EditText STR;
     EditText DEX;
     EditText CON;
@@ -24,9 +30,19 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     EditText WIS;
     EditText CHA;
     Spinner Class;
-    Spinner Level;
+    EditText Level;
     Spinner Race;
     Spinner Size;
+    Spinner WType0;
+    Spinner WType1;
+    Spinner WType2;
+    TextView HP;
+    TextView AC;
+    TextView gsizeMod;
+    TextView gattackMod;
+    TextView dmg0;
+    TextView dmg1;
+    TextView dmg2;
     TextView Submenutitle;
     EditText[] abilities;
     TextView[] strDerived = new TextView[2];
@@ -45,7 +61,12 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         Submenutitle.setText("Character Sheet");
 
         //Define Variables
+        CharName=findViewById(R.id.CharNameEdit);
         AModTitle=findViewById(R.id.AbilityModTitle);
+        FortBase=findViewById(R.id.FortBase);
+        RefBase=findViewById(R.id.ReflexBase);
+        WillBase=findViewById(R.id.WillBase);
+        AttackBase=findViewById(R.id.BaseAttackBox);
         STR=findViewById(R.id.STRABox);
         DEX=findViewById(R.id.DEXABox);
         CON=findViewById(R.id.CONABox);
@@ -54,8 +75,19 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         CHA=findViewById(R.id.CHAABox);
         abilities = new EditText[] {STR,DEX,CON,INT,WIS,CHA};
         Class=findViewById(R.id.ClassSpin);
+        Level=findViewById(R.id.LevelEditbox);
         Race=findViewById(R.id.RaceSpin);
         Size=findViewById(R.id.SizeSpin);
+        WType0=findViewById(R.id.WeaponsAttackType);
+        WType1=findViewById(R.id.WeaponsAttackType2);
+        WType2=findViewById(R.id.WeaponsAttackType3);
+        HP=findViewById(R.id.HPOutput);
+        AC=findViewById(R.id.ACTotalOutput2);
+        gsizeMod=findViewById(R.id.GrappleSize);
+        gattackMod=findViewById(R.id.GrappleBaseAttackBonus);
+        dmg0=findViewById(R.id.DMGOutput);
+        dmg1=findViewById(R.id.DMGOutput2);
+        dmg2=findViewById(R.id.DMGOutput3);
         strDerived[0]=findViewById(R.id.AthleticsAbility);
         strDerived[1]=findViewById(R.id.GrappleStrength);
         dexDerived[0]=findViewById(R.id.ReflexAction);
@@ -81,6 +113,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         ArrayAdapter<CharSequence> classAdapter = ArrayAdapter.createFromResource(this, R.array.Class_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> raceAdapter = ArrayAdapter.createFromResource(this, R.array.Race_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> sizeAdapter = ArrayAdapter.createFromResource(this, R.array.Size_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this, R.array.Type_array, android.R.layout.simple_spinner_item);
 
         //Set Defaults
         classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -89,11 +122,19 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         Race.setAdapter(raceAdapter);
         sizeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Size.setAdapter(sizeAdapter);
+        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        WType0.setAdapter(typeAdapter);
+        WType1.setAdapter(typeAdapter);
+        WType2.setAdapter(typeAdapter);
+
 
         //Actions
         Class.setOnItemSelectedListener(this);
         Race.setOnItemSelectedListener(this);
         Size.setOnItemSelectedListener(this);
+        WType0.setOnItemSelectedListener(this);
+        WType1.setOnItemSelectedListener(this);
+        WType2.setOnItemSelectedListener(this);
         STR.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -185,6 +226,32 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 }
             }
         });
+        Level.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus)
+                {
+                    try {
+                        Integer.parseInt(Level.getText().toString());
+                    } catch (Exception e)
+                    {
+                        Level.setText("1");
+                    }
+
+                    if (Class.getSelectedItemPosition() != 0)
+                        SetSaves();
+                }
+            }
+        });
+        CharName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus)
+                {
+                    Submenutitle.setText(CharName.getText().toString());
+                }
+            }
+        });
     }
 
     @Override
@@ -197,21 +264,29 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                     case 1:
                         //placeholder
                         Toast toast1 = Toast.makeText(getApplicationContext(), "Cleric",Toast.LENGTH_LONG);
+                        if (Level.getText().length() > 0)
+                            SetSaves();
                         toast1.show();
                         break;
                     case 2:
                         //placeholder
                         Toast toast2 = Toast.makeText(getApplicationContext(),"Fighter",Toast.LENGTH_LONG);
+                        if (Level.getText().length() > 0)
+                            SetSaves();
                         toast2.show();
                         break;
                     case 3:
                         //placeholder
                         Toast toast3 = Toast.makeText(getApplicationContext(),"Wizard",Toast.LENGTH_LONG);
+                        if (Level.getText().length() > 0)
+                            SetSaves();
                         toast3.show();
                         break;
                     case 4:
                         //placeholder
                         Toast toast4 = Toast.makeText(getApplicationContext(),"Rogue",Toast.LENGTH_LONG);
+                        if (Level.getText().length() > 0)
+                            SetSaves();
                         toast4.show();
                         break;
                 }
@@ -251,17 +326,59 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                     case 1:
                         //placeholder
                         Toast toast1 = Toast.makeText(getApplicationContext(),"Large",Toast.LENGTH_LONG);
+                        gsizeMod.setText("1");
                         toast1.show();
                         break;
                     case 2:
                         //placeholder
                         Toast toast2 = Toast.makeText(getApplicationContext(),"Medium",Toast.LENGTH_LONG);
+                        gsizeMod.setText("0");
                         toast2.show();
                         break;
                     case 3:
                         //placeholder
                         Toast toast3 = Toast.makeText(getApplicationContext(),"Small",Toast.LENGTH_LONG);
+                        gsizeMod.setText("-1");
                         toast3.show();
+                        break;
+                }
+                break;
+            case R.id.WeaponsAttackType:
+                switch (position) {
+                    case 1:
+                        dmg0.setText(SetDmg(1));
+                        break;
+                    case 2:
+                        dmg0.setText(SetDmg(2));
+                        break;
+                    case 3:
+                        dmg0.setText(SetDmg(3));
+                        break;
+                }
+                break;
+            case R.id.WeaponsAttackType2:
+                switch (position) {
+                    case 1:
+                        dmg1.setText(SetDmg(1));
+                        break;
+                    case 2:
+                        dmg1.setText(SetDmg(2));
+                        break;
+                    case 3:
+                        dmg1.setText(SetDmg(3));
+                        break;
+                }
+                break;
+            case R.id.WeaponsAttackType3:
+                switch (position) {
+                    case 1:
+                        dmg2.setText(SetDmg(1));
+                        break;
+                    case 2:
+                        dmg1.setText(SetDmg(2));
+                        break;
+                    case 3:
+                        dmg1.setText(SetDmg(3));
                         break;
                 }
                 break;
@@ -385,5 +502,84 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 abilitiesDerived[i][j].setText(abilities[i].getText().toString());
             }
         }
+    }
+
+    private String SetDmg(int position)
+    {
+        String dmg = "";
+
+        switch (Size.getSelectedItemPosition())
+        {
+            case 1:
+                dmg = "3";
+                break;
+            case 2:
+                dmg = "2";
+                break;
+            case 3:
+                dmg = "1";
+                break;
+        }
+
+        switch (position)
+        {
+            case 1:
+                dmg += "d4";
+                if (Integer.parseInt(STR.getText().toString()) >= 0)
+                    dmg += "+";
+                dmg += STR.getText().toString();
+                break;
+            case 2:
+                dmg += "d6";
+                if (Integer.parseInt(STR.getText().toString()) >= 0)
+                    dmg += "+";
+                dmg += STR.getText().toString();
+                break;
+            case 3:
+                dmg += "d8";
+                if (Integer.parseInt(STR.getText().toString()) >= 0)
+                    dmg += "+";
+                dmg += String.valueOf((int)(Integer.parseInt(STR.getText().toString())* 1.5));
+                break;
+        }
+
+        return dmg;
+    }
+
+    private void SetSaves() {
+        int lvl = Integer.parseInt(Level.getText().toString());
+
+        switch (Class.getSelectedItemPosition()) {
+            //Cleric
+            case 1:
+                FortBase.setText(String.valueOf((int) lvl / 2));
+                RefBase.setText(String.valueOf((int) lvl / 3));
+                WillBase.setText(String.valueOf((int) lvl));
+                AttackBase.setText(String.valueOf((int) lvl / 3));
+                break;
+            //Fighter
+            case 2:
+                FortBase.setText(String.valueOf((int) lvl));
+                RefBase.setText(String.valueOf((int) lvl / 2));
+                WillBase.setText(String.valueOf((int) lvl / 3));
+                AttackBase.setText(String.valueOf((int) lvl));
+                break;
+            //Wizard
+            case 3:
+                FortBase.setText(String.valueOf((int) lvl / 3));
+                RefBase.setText(String.valueOf((int) lvl / 2));
+                WillBase.setText(String.valueOf((int) lvl));
+                AttackBase.setText(String.valueOf((int) lvl / 4));
+                break;
+            //Rogue
+            case 4:
+                FortBase.setText(String.valueOf((int) lvl / 2));
+                RefBase.setText(String.valueOf((int) lvl));
+                WillBase.setText(String.valueOf((int) lvl / 3));
+                AttackBase.setText(String.valueOf((int) lvl / 2));
+                break;
+        }
+
+        gattackMod.setText(AttackBase.getText().toString());
     }
 }
