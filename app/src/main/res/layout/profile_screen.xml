@@ -5,30 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0D3A00">
-    <include
-        android:id="@+id/include"
-        layout="@layout/topbarsub"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/include"
-        android:layout_marginTop="0dp"
-        android:background="#000000" >
+        <include
+            android:id="@+id/include"
+            layout="@layout/topbarsub"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ExpandableListView
             android:id="@+id/expandedlist"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/include"
+            android:layout_marginTop="0dp"
             android:background="#0D3A00"
+            android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="#FFFFFF"/>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
 
 </RelativeLayout>

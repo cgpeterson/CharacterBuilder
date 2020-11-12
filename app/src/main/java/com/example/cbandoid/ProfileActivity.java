@@ -2,16 +2,15 @@ package com.example.cbandoid;
 
 import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,14 +18,19 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ProfileActivity extends AppCompatActivity
 {
 
     ExpandableListView expand;
+    ExpandableListAdapter expandAdapt;
+
+
+
     TextView Submenutitle;
-    List<String> chargroup;
-    HashMap<String, List<String>> charitem;
+    List<String> ruleSet;
+    Map<String, List<String>> characters;
     ImageView Back;
     ImageView pmenu;
 
@@ -40,10 +44,13 @@ public class ProfileActivity extends AppCompatActivity
         pmenu=findViewById(R.id.popupbutton);
 
 
-        expand=findViewById(R.id.expandedlist);
-        chargroup = new ArrayList<>();
-        charitem = new HashMap<>();
+        expand = (ExpandableListView) findViewById(R.id.expandedlist);
         ListData();
+
+        expandAdapt = new ProfileAdapter(this, ruleSet, characters);
+        expand.setAdapter(expandAdapt);
+
+
 
         Back=findViewById(R.id.exitbutton);
         pmenu.setOnClickListener(this::showPopMenu);
@@ -76,6 +83,15 @@ public class ProfileActivity extends AppCompatActivity
 
     private void ListData()
     {
-        chargroup.add(getString(R.string.Dungeons_and_Dragons));
+        ruleSet = new ArrayList<>();
+        characters = new HashMap<>();
+        ruleSet.add("Champion Forge");
+
+        List<String> champForge = new ArrayList<>();
+        champForge.add("Character 1");
+        champForge.add("Character 2");
+        champForge.add("Character 3");
+
+        characters.put(ruleSet.get(0),champForge);
     }
 }
