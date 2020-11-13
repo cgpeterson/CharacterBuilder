@@ -1,9 +1,12 @@
 package com.example.cbandoid;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.strictmode.SqliteObjectLeakedViolation;
+import android.util.Xml;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +21,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.gson.Gson;
+
+import org.xmlpull.v1.XmlSerializer;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class ExpertCreateChar extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -278,6 +291,76 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             }
         });
         Back.setOnClickListener(v -> {
+            FileOutputStream fos;
+            try {
+                fos = new FileOutputStream(CharName.getText().toString());
+
+               String data = Level.getText().toString();
+               data += ";";
+                data += String.valueOf(Class.getSelectedItemPosition());
+                data += ";";
+                data += String.valueOf(Race.getSelectedItemPosition());
+                data += ";";
+                data += String.valueOf(Size.getSelectedItemPosition());
+                data += ";";
+                for (int i = 0; i < abilities.length; i++)
+                {
+                    data += abilities[i].getText().toString();
+                    data += ";";
+                }
+                for (int i = 0; i < SkillRanks.length; i++)
+                {
+                    data += SkillRanks[i].getText().toString();
+                    data += ";";
+                }
+                EditText W0 = findViewById(R.id.WeaponAttackInput);
+                EditText W1 = findViewById(R.id.WeaponAttackInput2);
+                EditText W2 = findViewById(R.id.WeaponAttackInput3);
+                if (W0.getText().toString().length() > 0) {
+                    data += W0.getText().toString();
+                    data += ";";
+                    data += dmg0.getText().toString();
+                    data += ";";
+                    data += String.valueOf(WType0.getSelectedItemPosition());
+                }
+                if (W1.getText().toString().length() > 0) {
+                    data += W1.getText().toString();
+                    data += ";";
+                    data += dmg1.getText().toString();
+                    data += ";";
+                    data += String.valueOf(WType1.getSelectedItemPosition());
+                }
+                if (W2.getText().toString().length() > 0) {
+                    data += W2.getText().toString();
+                    data += ";";
+                    data += dmg2.getText().toString();
+                    data += ";";
+                    data += String.valueOf(WType2.getSelectedItemPosition());
+                }
+                data += ";";
+                EditText SP = findViewById(R.id.SPAmount);
+                EditText GP = findViewById(R.id.GPAmount);
+                EditText Inv = findViewById(R.id.CharacterInventoryInput);
+                EditText Bio = findViewById(R.id.CharacterBioInput);
+                data += SP.getText().toString();
+                data += ";";
+                data += GP.getText().toString();
+                data += ";";
+                data += Inv.getText().toString();
+                data += ";";
+                data += Bio.getText().toString();
+                data += "end";
+
+                fos.write(data.getBytes());
+
+                fos.close();
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             startActivity(new Intent(ExpertCreateChar.this, MainActivity.class));
         });
         pmenu.setOnClickListener(this::showPopMenu);
@@ -614,12 +697,31 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
 
     private void Totals()
     {
-        for (int i = 0; i < 18; i++)
+        for (int i = 0; i < SkillTotals.length; i++)
         {
-            SkillTotals[i].setText(String.valueOf(Integer.parseInt(SkillAbilities[i].getText().toString()) + Integer.parseInt(SkillRanks[i].getText().toString())));
+            int sability;
+            try {
+                sability = Integer.parseInt(SkillAbilities[i].getText().toString());
+            } catch (Exception e) {
+                sability = 0;
+            }
+            int srank;
+            try {
+                srank = Integer.parseInt(SkillRanks[i].getText().toString());
+            } catch (Exception e) {
+                SkillRanks[i].setText("0");
+                srank = 0;
+            }
+            int total = sability + srank;
+            SkillTotals[i].setText(String.valueOf(total));
         }
 
         Roller roll;
+        try{
+            Integer.parseInt(Level.getText().toString());
+        } catch (Exception e) {
+            Level.setText("1");
+        }
         switch (Class.getSelectedItemPosition())
         {
             case 1:
@@ -643,22 +745,31 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         {
             RollTot += roll.GetRolls(i);
         }
-        HP.setText(String.valueOf(Integer.parseInt(CON.getText().toString()) + RollTot));
+        try {
+            HP.setText(String.valueOf(Integer.parseInt(CON.getText().toString()) + RollTot));
+        } catch (Exception e) {
+            HP.setText("0");
+        }
         EditText ACTemp = findViewById(R.id.ACTempBox);
         try {
             Integer.parseInt(ACTemp.getText().toString());
+            AC.setText(String.valueOf(Integer.parseInt(DEX.getText().toString()) + 10 + Integer.parseInt(ACTemp.getText().toString())));
         } catch (Exception e)
         {
-            ACTemp.setText("0");
+            AC.setText("0");
         }
-        AC.setText(String.valueOf(Integer.parseInt(DEX.getText().toString()) + 10 + Integer.parseInt(ACTemp.getText().toString())));
+
         //Saves
-        TextView FortTot = findViewById(R.id.FortTotal);
-        TextView ReflTot = findViewById(R.id.ReflexTotal);
-        TextView WillTot = findViewById(R.id.WillTotal);
-        FortTot.setText(String.valueOf(Integer.parseInt(FortBase.getText().toString()) + Integer.parseInt(conDerived[0].getText().toString())));
-        ReflTot.setText(String.valueOf(Integer.parseInt(RefBase.getText().toString()) + Integer.parseInt(dexDerived[0].getText().toString())));
-        WillTot.setText(String.valueOf(Integer.parseInt(WillBase.getText().toString()) + Integer.parseInt(wisDerived[0].getText().toString())));
+        try {
+            TextView FortTot = findViewById(R.id.FortTotal);
+            TextView ReflTot = findViewById(R.id.ReflexTotal);
+            TextView WillTot = findViewById(R.id.WillTotal);
+            FortTot.setText(String.valueOf(Integer.parseInt(FortBase.getText().toString()) + Integer.parseInt(conDerived[0].getText().toString())));
+            ReflTot.setText(String.valueOf(Integer.parseInt(RefBase.getText().toString()) + Integer.parseInt(dexDerived[0].getText().toString())));
+            WillTot.setText(String.valueOf(Integer.parseInt(WillBase.getText().toString()) + Integer.parseInt(wisDerived[0].getText().toString())));
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
     }
 
     private void showPopMenu(View v) {
