@@ -176,7 +176,6 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider">
@@ -546,10 +545,11 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout2"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider3">
+                app:layout_constraintTop_toBottomOf="@+id/divider3"
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/HPTitle"
@@ -941,11 +941,12 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout5"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider7">
+                app:layout_constraintTop_toBottomOf="@+id/divider7"
+                android:paddingBottom="5dp">
 
                 <View
                     android:id="@+id/divider2"
@@ -2495,7 +2496,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider5">
+                app:layout_constraintTop_toBottomOf="@+id/divider5"
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/AttacksTitle"
