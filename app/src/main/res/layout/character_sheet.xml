@@ -945,14 +945,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider7"
-                android:paddingBottom="5dp">
+                app:layout_constraintTop_toBottomOf="@+id/divider7">
 
                 <View
                     android:id="@+id/divider2"
-                    android:layout_width="3dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="5dp"
+                    android:layout_height="215dp"
                     android:background="#000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -984,7 +984,7 @@
                     android:layout_height="170dp"
                     android:ems="10"
                     android:gravity="start|top"
-                    android:hint="Character Inventory"
+                    android:hint="Character Bio"
                     android:inputType="textMultiLine"
                     android:isScrollContainer="true"
                     android:overScrollMode="ifContentScrolls"
@@ -1003,23 +1003,25 @@
                     android:id="@+id/CharacterInventoryTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="Character Inventory"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toStartOf="@+id/divider2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/divider2" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/CharacterBioTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="Character Bio"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/divider2"
-                    app:layout_constraintTop_toTopOf="@+id/divider2" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
