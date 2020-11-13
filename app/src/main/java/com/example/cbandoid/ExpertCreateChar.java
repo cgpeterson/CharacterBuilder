@@ -1,13 +1,17 @@
 package com.example.cbandoid;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.strictmode.SqliteObjectLeakedViolation;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -24,11 +28,17 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     TextView WillBase;
     TextView AttackBase;
     EditText STR;
+    EditText STRT;
     EditText DEX;
+    EditText DEXT;
     EditText CON;
+    EditText CONT;
     EditText INT;
+    EditText INTT;
     EditText WIS;
+    EditText WIST;
     EditText CHA;
+    EditText CHAT;
     Spinner Class;
     EditText Level;
     Spinner Race;
@@ -44,7 +54,12 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     TextView dmg1;
     TextView dmg2;
     TextView Submenutitle;
+    ImageView Back;
+    ImageView pmenu;
     EditText[] abilities;
+    EditText[] SkillRanks = new EditText[18];
+    TextView[] SkillTotals = new TextView[18];
+    TextView[] SkillAbilities = new TextView[18];
     TextView[] strDerived = new TextView[2];
     TextView[] dexDerived = new TextView[4];
     TextView[] conDerived = new TextView[1];
@@ -59,6 +74,8 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         setContentView(R.layout.character_sheet);
         Submenutitle=findViewById(R.id.submenutitle);
         Submenutitle.setText("Character Sheet");
+        Back=findViewById(R.id.exitbutton);
+        pmenu=findViewById(R.id.popupbutton);
 
         //Define Variables
         CharName=findViewById(R.id.CharNameEdit);
@@ -73,7 +90,67 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         INT=findViewById(R.id.INTABox);
         WIS=findViewById(R.id.WISABox);
         CHA=findViewById(R.id.CHAABox);
-        abilities = new EditText[] {STR,DEX,CON,INT,WIS,CHA};
+        STRT=findViewById(R.id.STRTBox);
+        DEXT=findViewById(R.id.DEXTBox);
+        CONT=findViewById(R.id.CONTBox);
+        INTT=findViewById(R.id.INTTBox);
+        WIST=findViewById(R.id.WISTBox);
+        CHAT=findViewById(R.id.CHATBox);
+        abilities = new EditText[] {STR,DEX,CON,INT,WIS,CHA,STRT,DEXT,CONT,INTT,WIST,CHAT};
+        SkillTotals[0]=findViewById(R.id.AcrobaticsTotal);
+        SkillTotals[1]=findViewById(R.id.AnimalHandTotal);
+        SkillTotals[2]=findViewById(R.id.ArcanaTotal);
+        SkillTotals[3]=findViewById(R.id.AthleticsTotal);
+        SkillTotals[4]=findViewById(R.id.DeceptionTotal);
+        SkillTotals[5]=findViewById(R.id.HistoryTotal);
+        SkillTotals[6]=findViewById(R.id.InsightTotal);
+        SkillTotals[7]=findViewById(R.id.IntimidationTotal);
+        SkillTotals[8]=findViewById(R.id.InvestigationTotal);
+        SkillTotals[9]=findViewById(R.id.MedicineTotal);
+        SkillTotals[10]=findViewById(R.id.NatureTotal);
+        SkillTotals[11]=findViewById(R.id.PerceptionTotal);
+        SkillTotals[12]=findViewById(R.id.PerformanceTotal);
+        SkillTotals[13]=findViewById(R.id.PersuasionTotal);
+        SkillTotals[14]=findViewById(R.id.ReligionTotal);
+        SkillTotals[15]=findViewById(R.id.SleightHandTotal);
+        SkillTotals[16]=findViewById(R.id.StealthTotal);
+        SkillTotals[17]=findViewById(R.id.SurvivalTotal);
+        SkillAbilities[0]=findViewById(R.id.AcrobaticsAbility);
+        SkillAbilities[1]=findViewById(R.id.AnimalHandAbility);
+        SkillAbilities[2]=findViewById(R.id.ArcanaAbility);
+        SkillAbilities[3]=findViewById(R.id.AthleticsAbility);
+        SkillAbilities[4]=findViewById(R.id.DeceptionAbility);
+        SkillAbilities[5]=findViewById(R.id.HistoryAbility);
+        SkillAbilities[6]=findViewById(R.id.InsightAbility);
+        SkillAbilities[7]=findViewById(R.id.IntimidationAbility);
+        SkillAbilities[8]=findViewById(R.id.InvestigationAbility);
+        SkillAbilities[9]=findViewById(R.id.MedicineAbility);
+        SkillAbilities[10]=findViewById(R.id.NatureAbility);
+        SkillAbilities[11]=findViewById(R.id.PerceptionAbility);
+        SkillAbilities[12]=findViewById(R.id.PerformanceAbility);
+        SkillAbilities[13]=findViewById(R.id.PersuasionAbility);
+        SkillAbilities[14]=findViewById(R.id.ReligionAbiltiy);
+        SkillAbilities[15]=findViewById(R.id.SleightHandAbility);
+        SkillAbilities[16]=findViewById(R.id.StealthAbility);
+        SkillAbilities[17]=findViewById(R.id.SurvivalAbility);
+        SkillRanks[0]=findViewById(R.id.AcrobaticsRank);
+        SkillRanks[1]=findViewById(R.id.AnimalHandRank);
+        SkillRanks[2]=findViewById(R.id.ArcanaRank);
+        SkillRanks[3]=findViewById(R.id.AthleticsRank);
+        SkillRanks[4]=findViewById(R.id.DeceptionRank);
+        SkillRanks[5]=findViewById(R.id.HistoryRank);
+        SkillRanks[6]=findViewById(R.id.InsightRank);
+        SkillRanks[7]=findViewById(R.id.IntimidationRank);
+        SkillRanks[8]=findViewById(R.id.InvestigationRank);
+        SkillRanks[9]=findViewById(R.id.MedicineRank);
+        SkillRanks[10]=findViewById(R.id.NatureRank);
+        SkillRanks[11]=findViewById(R.id.PerceptionRank);
+        SkillRanks[12]=findViewById(R.id.PerformanceRank);
+        SkillRanks[13]=findViewById(R.id.PersuasionRank);
+        SkillRanks[14]=findViewById(R.id.ReligionRank);
+        SkillRanks[15]=findViewById(R.id.SleightHandRank);
+        SkillRanks[16]=findViewById(R.id.StealthRank);
+        SkillRanks[17]=findViewById(R.id.SurvivalRank);
         Class=findViewById(R.id.ClassSpin);
         Level=findViewById(R.id.LevelEditbox);
         Race=findViewById(R.id.RaceSpin);
@@ -135,97 +212,45 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         WType0.setOnItemSelectedListener(this);
         WType1.setOnItemSelectedListener(this);
         WType2.setOnItemSelectedListener(this);
-        STR.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus)
-                    try {
-                        Integer.parseInt(STR.getText().toString());
-                    } catch (Exception e) {
-                        STR.setText("0");
-                    }
 
-                    if (abilityCheck())
+        for (int i = 0; i < abilities.length; i++)
+        {
+            int finalI = i;
+            abilities[i].setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus)
                     {
-                        Derive();
+                        try {
+                            abilities[finalI].setText(String.valueOf(Integer.parseInt(abilities[finalI].getText().toString())));
+                        } catch (Exception e) {
+                            abilities[finalI].setText("0");
+                        }
+                        if (abilityCheck())
+                        {
+                            Derive();
+                        }
                     }
-            }
-        });
-        DEX.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus)
-                    try {
-                        Integer.parseInt(DEX.getText().toString());
-                    } catch (Exception e) {
-                        DEX.setText("0");
-                    }
-                if (abilityCheck())
-                {
-                    Derive();
                 }
-            }
-        });
-        CON.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus)
-                    try {
-                        Integer.parseInt(CON.getText().toString());
-                    } catch (Exception e) {
-                        CON.setText("0");
+            });
+        }
+        for (int i = 0; i < SkillRanks.length; i++)
+        {
+            int finalI = i;
+            SkillRanks[i].setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus) {
+                        try {
+                            SkillRanks[finalI].setText(String.valueOf(Integer.parseInt(SkillRanks[finalI].getText().toString())));
+                        } catch (Exception e) {
+                            SkillRanks[finalI].setText("0");
+                        }
+                        Totals();
                     }
-                if (abilityCheck())
-                {
-                    Derive();
                 }
-            }
-        });
-        INT.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus)
-                    try {
-                        Integer.parseInt(INT.getText().toString());
-                    } catch (Exception e) {
-                        INT.setText("0");
-                    }
-                if (abilityCheck())
-                {
-                    Derive();
-                }
-            }
-        });
-        WIS.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus)
-                    try {
-                        Integer.parseInt(WIS.getText().toString());
-                    } catch (Exception e) {
-                        WIS.setText("0");
-                    }
-                if (abilityCheck())
-                {
-                    Derive();
-                }
-            }
-        });
-        CHA.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus)
-                    try {
-                        Integer.parseInt(CHA.getText().toString());
-                    } catch (Exception e) {
-                        CHA.setText("0");
-                    }
-                if (abilityCheck())
-                {
-                    Derive();
-                }
-            }
-        });
+            });
+        }
         Level.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -252,6 +277,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 }
             }
         });
+        Back.setOnClickListener(v -> {
+            startActivity(new Intent(ExpertCreateChar.this, MainActivity.class));
+        });
+        pmenu.setOnClickListener(this::showPopMenu);
     }
 
     @Override
@@ -499,7 +528,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         {
             for (int j = 0; j < abilitiesDerived[i].length; j++)
             {
-                abilitiesDerived[i][j].setText(abilities[i].getText().toString());
+                abilitiesDerived[i][j].setText(String.valueOf(Integer.parseInt(abilities[i].getText().toString()) + Integer.parseInt(abilities[i+6].getText().toString())));
             }
         }
     }
@@ -581,5 +610,76 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         }
 
         gattackMod.setText(AttackBase.getText().toString());
+    }
+
+    private void Totals()
+    {
+        for (int i = 0; i < 18; i++)
+        {
+            SkillTotals[i].setText(String.valueOf(Integer.parseInt(SkillAbilities[i].getText().toString()) + Integer.parseInt(SkillRanks[i].getText().toString())));
+        }
+
+        Roller roll;
+        switch (Class.getSelectedItemPosition())
+        {
+            case 1:
+                roll = new Roller(Integer.parseInt(Level.getText().toString()),8);
+                roll.Rolling();
+                break;
+            case 2:
+                roll = new Roller(Integer.parseInt(Level.getText().toString()),10);
+                roll.Rolling();
+                break;
+            case 3:
+                roll = new Roller(Integer.parseInt(Level.getText().toString()),4);
+                roll.Rolling();
+                break;
+            default:
+                roll = new Roller(Integer.parseInt(Level.getText().toString()),6);
+                roll.Rolling();
+        }
+        int RollTot = 0;
+        for (int i = 0; i < Integer.parseInt(Level.getText().toString()); i++)
+        {
+            RollTot += roll.GetRolls(i);
+        }
+        HP.setText(String.valueOf(Integer.parseInt(CON.getText().toString()) + RollTot));
+        EditText ACTemp = findViewById(R.id.ACTempBox);
+        try {
+            Integer.parseInt(ACTemp.getText().toString());
+        } catch (Exception e)
+        {
+            ACTemp.setText("0");
+        }
+        AC.setText(String.valueOf(Integer.parseInt(DEX.getText().toString()) + 10 + Integer.parseInt(ACTemp.getText().toString())));
+        //Saves
+        TextView FortTot = findViewById(R.id.FortTotal);
+        TextView ReflTot = findViewById(R.id.ReflexTotal);
+        TextView WillTot = findViewById(R.id.WillTotal);
+        FortTot.setText(String.valueOf(Integer.parseInt(FortBase.getText().toString()) + Integer.parseInt(conDerived[0].getText().toString())));
+        ReflTot.setText(String.valueOf(Integer.parseInt(RefBase.getText().toString()) + Integer.parseInt(dexDerived[0].getText().toString())));
+        WillTot.setText(String.valueOf(Integer.parseInt(WillBase.getText().toString()) + Integer.parseInt(wisDerived[0].getText().toString())));
+    }
+
+    private void showPopMenu(View v) {
+        PopupMenu popMenu = new PopupMenu(ExpertCreateChar.this, v);
+        popMenu.getMenuInflater().inflate(R.menu.popup_menu,popMenu.getMenu());
+        popMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if(item.getItemId() == R.id.popup_profile) {
+                    startActivity(new Intent(ExpertCreateChar.this, ProfileActivity.class));
+                }
+                if(item.getItemId() == R.id.popup_help) {
+                    startActivity(new Intent(ExpertCreateChar.this, HelpActivity.class));
+                }
+                if(item.getItemId() == R.id.popup_settings) {
+                    //Placeholder code
+                    Toast.makeText(ExpertCreateChar.this, "You clicked Settings", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
+        popMenu.show();
     }
 }

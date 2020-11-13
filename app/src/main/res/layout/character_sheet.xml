@@ -203,7 +203,7 @@
             android:id="@+id/TempModTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:text="Temp Mod"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -2498,18 +2498,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/ExtraAttacksTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Extra Attack Bonuses"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/BaseAttackBox"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/BaseAttackBox" />
-
-        <TextView
             android:id="@+id/BaseAttackTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -2667,20 +2655,6 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/BaseAttackTitle"
             app:layout_constraintStart_toEndOf="@+id/BaseAttackTitle"
-            app:layout_constraintTop_toTopOf="@+id/BaseAttackTitle" />
-
-        <EditText
-            android:id="@+id/ExtraAttackBox"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberSigned"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#DDDDDD"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/BaseAttackTitle"
-            app:layout_constraintEnd_toEndOf="@+id/ExtraAttacksTitle"
-            app:layout_constraintStart_toEndOf="@+id/BaseAttackBox"
             app:layout_constraintTop_toTopOf="@+id/BaseAttackTitle" />
 
         <com.google.android.material.textfield.TextInputEditText
