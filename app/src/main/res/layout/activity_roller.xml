@@ -12,41 +12,53 @@
         layout="@layout/topbarsub" />
 
     <TextView
-        android:id="@+id/DiceContext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:id="@+id/NumDiceTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:autoSizeTextType="uniform"
         android:editable="false"
         android:text="Number of Dice"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="0sp"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/DiceDivide"
+        app:layout_constraintEnd_toStartOf="@+id/DiceDivide"
+        app:layout_constraintHeight_default="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintWidth_default="spread" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="33dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="72dp"
+        android:id="@+id/NumSidesTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
         android:editable="false"
         android:text="Number of Sides"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="0sp"
+        app:layout_constraintBottom_toTopOf="@+id/DiceDivide"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/DiceContext"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/DiceDivide"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintWidth_default="spread" />
 
     <EditText
         android:id="@+id/NumTxt"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
-        android:layout_width="136dp"
-        android:layout_height="46dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
+        android:autoText="false"
         android:ems="10"
         android:hint="Type Here"
         android:inputType="number"
@@ -54,15 +66,23 @@
         android:selectAllOnFocus="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/textView7"
-        app:layout_constraintStart_toStartOf="@+id/DiceContext"
-        app:layout_constraintTop_toBottomOf="@+id/DiceContext" />
+        app:layout_constraintBottom_toTopOf="@+id/HorModDivide"
+        app:layout_constraintEnd_toEndOf="@+id/NumDiceTitle"
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintStart_toStartOf="@+id/NumDiceTitle"
+        app:layout_constraintTop_toBottomOf="@+id/NumDiceTitle"
+        app:layout_constraintWidth_default="spread"
+        tools:ignore="MissingPrefix" />
 
     <EditText
         android:id="@+id/SidesTxt"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
-        android:layout_width="122dp"
-        android:layout_height="46dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
         android:ems="10"
         android:hint="Type Here"
         android:inputType="number"
@@ -70,19 +90,27 @@
         android:selectAllOnFocus="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintBottom_toTopOf="@+id/HorModDivide"
+        app:layout_constraintEnd_toEndOf="@+id/ModTxt1"
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/NumSidesTitle"
+        app:layout_constraintTop_toTopOf="@+id/DiceDivide"
+        app:layout_constraintWidth_default="spread" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/DTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="d"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/DiceContext"
-        app:layout_constraintTop_toBottomOf="@+id/DiceContext" />
+        app:layout_constraintEnd_toStartOf="@+id/DiceDivide"
+        app:layout_constraintBottom_toBottomOf="@id/NumTxt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/NumTxt"
+        app:layout_constraintTop_toTopOf="@+id/NumTxt" />
 
     <TextView
         android:id="@+id/textView8"
@@ -92,20 +120,21 @@
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintStart_toEndOf="@+id/SidesTxt"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/SidesTxt"
+        app:layout_constraintEnd_toEndOf="@+id/NumSidesTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/SidesTxt" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="8dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="120dp"
         android:background="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.857"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRoller">
+        app:layout_constraintTop_toBottomOf="@+id/Mod3">
 
 
     </RelativeLayout>
@@ -113,9 +142,15 @@
     <Button
         android:id="@+id/buttonRoller"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="252dp"
-        android:layout_height="70dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginBottom="15dp"
+        android:autoSizeTextType="uniform"
         android:background="@drawable/goldbuttonfinal"
         android:fontFamily="sans-serif"
         android:text="@string/roll"
@@ -123,11 +158,12 @@
         android:textSize="36sp"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-
+        app:layout_constraintHeight_default="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ModTxt3"
+        app:layout_constraintWidth_default="spread"
         tools:ignore="MissingPrefix" />
 
     <EditText
@@ -160,7 +196,6 @@
         android:id="@+id/ModTxt1"
         android:layout_width="257dp"
         android:layout_height="43dp"
-        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Modifier Name"
         android:inputType="textPersonName"
@@ -168,7 +203,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Mod1"
-        app:layout_constraintTop_toBottomOf="@+id/SidesTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/HorModDivide" />
 
     <EditText
         android:id="@+id/Mod3"
@@ -202,7 +237,7 @@
         android:id="@+id/Mod1"
         android:layout_width="104dp"
         android:layout_height="43dp"
-        android:layout_marginTop="20dp"
+
         android:ems="10"
         android:inputType="numberSigned"
         android:numeric="integer"
@@ -210,7 +245,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/ModTxt1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NumTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/HorModDivide" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -236,13 +271,14 @@
             android:text="Roll Results"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="40sp"
+            android:textSize="0sp"
             app:layout_constraintBottom_toTopOf="@+id/RollOutput"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_default="spread" />
+            app:layout_constraintWidth_default="spread"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:id="@+id/RollOutput"
@@ -267,8 +303,27 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_default="spread" />
+            app:layout_constraintWidth_default="spread"
+            tools:ignore="MissingPrefix"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/DiceDivide"
+        android:layout_width="5dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/HorModDivide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <View
+        android:id="@+id/HorModDivide"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DTitle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
