@@ -13,7 +13,7 @@
     <Button
         android:id="@+id/CharNameButton"
         android:layout_width="450dp"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:background="@drawable/goldbuttonfinal"
         android:text="Character Name"
         android:textColor="#000000"
@@ -28,7 +28,7 @@
     <Button
         android:id="@+id/CreateNewCharButton"
         android:layout_width="450dp"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:background="@drawable/goldbuttonfinal"
         android:text="Create New Character"
         android:textColor="#000000"
@@ -43,7 +43,7 @@
     <Button
         android:id="@+id/SelectRulesetButton"
         android:layout_width="450dp"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:background="@drawable/goldbuttonfinal"
         android:text="Select Ruleset"
         android:textColor="#000000"
@@ -58,7 +58,7 @@
     <Button
         android:id="@+id/CreateRulesetButton"
         android:layout_width="450dp"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:background="@drawable/goldbuttonfinal"
         android:text="Create New Ruleset"
         android:textColor="#000000"
@@ -73,7 +73,7 @@
     <Button
         android:id="@+id/DiceRollButton"
         android:layout_width="450dp"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:background="@drawable/goldbuttonfinal"
         android:text="Dice Roller"
         android:textColor="#000000"
