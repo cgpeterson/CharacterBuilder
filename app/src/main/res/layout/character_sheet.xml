@@ -568,12 +568,11 @@
                     android:id="@+id/FortTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="5dp"
                     android:text="Fortitude"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/FortTotal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/TotalSaveTitle" />
 
@@ -581,12 +580,11 @@
                     android:id="@+id/HPTitle5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="10dp"
                     android:text="Reflex"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/ReflexTotal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/FortTitle" />
 
@@ -594,12 +592,11 @@
                     android:id="@+id/HPTitle6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="10dp"
                     android:text="Will"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/WillTotal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/HPTitle5" />
 
@@ -633,12 +630,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginRight="30dp"
                     android:text="Total"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toStartOf="@+id/BaseSaveTitle"
+                    app:layout_constraintStart_toStartOf="@+id/SavingThrowsTitle"
                     app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
 
                 <TextView
@@ -646,12 +642,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginRight="30dp"
                     android:text="Base"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toStartOf="@+id/ActionSaveTitle"
+                    app:layout_constraintStart_toEndOf="@+id/TotalSaveTitle"
                     app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
 
                 <TextView
@@ -659,12 +654,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:layout_marginEnd="50dp"
-                    android:layout_marginRight="50dp"
                     android:text="Ability"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/BaseSaveTitle"
                     app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
 
                 <TextView
