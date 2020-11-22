@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.text.method.LinkMovementMethod;
+import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -44,7 +45,42 @@ public class HelpActivity extends AppCompatActivity {
         Back.setOnClickListener(v -> {
             startActivity(new Intent(HelpActivity.this, MainActivity.class));});
 
+        DisplayMetrics display = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(display);
+        int height = display.heightPixels;
+        int width = display.widthPixels;
+        double widthInch = Math.pow(display.widthPixels/display.xdpi,2);
+        double heightInch = Math.pow(display.heightPixels/display.ydpi,2);
+        double screenInch = Math.sqrt(widthInch+heightInch);
+        screenInch =  (double)Math.round(screenInch * 10) / 10;
+
+        int textMega;
+        int textTitle;
+        int subText;
+        if (screenInch >= 6)
+        {
+            textMega = width/20;
+            textTitle = width/30;
+            subText = width/35;
+        }
+        else if (screenInch <= 6 && screenInch >= 5)
+        {
+            textMega = width/35;
+            textTitle = width/55;
+            subText = width/52;
+        }
+        else
+        {
+            textMega = width/35;
+            textTitle = width/50;
+            subText = width/52;
+        }
+
+        codydis.setTextSize(subText);
+        dylandis.setTextSize(subText);
+
     }
+
     //Redkona server: https://discord.gg/zn3UC6vGHb
     private void showPopMenu(View v) {
         PopupMenu popMenu = new PopupMenu(HelpActivity.this, v);
