@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class RollerActivity extends AppCompatActivity {
 
@@ -28,6 +27,11 @@ public class RollerActivity extends AppCompatActivity {
     TextView modTxt2;
     TextView modTxt3;
     TextView Submenutitle;
+    TextView numDiceTitle;
+    TextView numSidesTitle;
+    TextView dTitle;
+    TextView sidesTitle;
+    TextView rollResults;
     ImageView Back;
     ImageView pmenu;
 
@@ -55,6 +59,60 @@ public class RollerActivity extends AppCompatActivity {
         Submenutitle.setText("Dice Roller");
         Back=findViewById(R.id.exitbutton);
         pmenu=findViewById(R.id.popupbutton);
+        numDiceTitle =findViewById(R.id.NumDiceTitle);
+        numSidesTitle =findViewById(R.id.NumSidesTitle);
+        dTitle=findViewById(R.id.DTitle);
+        sidesTitle=findViewById(R.id.SidesTitle);
+        rollResults=findViewById(R.id.RollResultsTitle);
+        DisplayMetrics display = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(display);
+        int height = display.heightPixels;
+        int width = display.widthPixels;
+        double widthInch = Math.pow(display.widthPixels/display.xdpi,2);
+        double heightInch = Math.pow(display.heightPixels/display.ydpi,2);
+        double screenInch = Math.sqrt(widthInch+heightInch);
+        screenInch =  (double)Math.round(screenInch * 10) / 10;
+
+        int textMega;
+        int textTitle;
+        int textEdit;
+        if (screenInch >= 6)
+        {
+            textMega = width/20;
+            textTitle = width/30;
+            textEdit = width/35;
+        }
+        if (screenInch <= 6 && screenInch >= 5)
+        {
+            textMega = width/35;
+            textTitle = width/55;
+            textEdit = width/52;
+        }
+        else
+        {
+            textMega = width/35;
+            textTitle = width/50;
+            textEdit = width/52;
+        }
+        numDiceTitle.setTextSize(textTitle);
+        numSidesTitle.setTextSize(textTitle);
+        numTxt.setTextSize(textEdit);
+        sidesTxt.setTextSize(textEdit);
+        dTitle.setTextSize(textEdit);
+        sidesTitle.setTextSize(textEdit);
+        mod1.setTextSize(textEdit);
+        mod2.setTextSize(textEdit);
+        mod3.setTextSize(textEdit);
+        modTxt1.setTextSize(textEdit);
+        modTxt2.setTextSize(textEdit);
+        modTxt3.setTextSize(textEdit);
+        rollResults.setTextSize(textMega);
+        //pixel 3 xl = 6.89
+        //nexus 7 = 9.06
+        //nexus
+
+        //Adapted from: https://stackoverflow.com/questions/4743116/get-screen-width-and-height-in-android#:~:text=Display%20display%20%3D%20getWindowManager().,size)%3B%20int%20width%20%3D%20size.
+        //Also adapted from: https://stackoverflow.com/questions/2193457/is-there-a-way-to-determine-android-physical-screen-height-in-cm-or-inches
 
         buttonroller.setOnClickListener(v -> {
             roller.SetNum(Integer.parseInt(numTxt.getText().toString()));
