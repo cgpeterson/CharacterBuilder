@@ -54,14 +54,46 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     TextView fortTotal;
     TextView reflexTotal;
     TextView willTotal;
+    TextView skillsTitle;
+    TextView skillsTotalTitle;
+    TextView skillsAbilityTitle;
+    TextView skillsRankTitle;
     TextView totalSaveTitle;
     TextView baseSaveTitle;
     TextView abilitySaveTitle;
+    TextView grappleTitle;
+    TextView grappleBaseAttackBonusTitle;
+    TextView grappleModifierTitle;
+    TextView grappleStrengthTitle;
+    TextView grappleSizeTitle;
+    TextView grappleMiscTitle;
+    TextView grappleTotalTitle;
+    TextView grappleTotal;
+    TextView grappleBaseAttackBonus;
+    TextView grappleStrength;
+    TextView grappleSize;
+    TextView grappleMisc;
+    TextView weaponsAttacksTitle;
+    TextView dmgTitle;
+    TextView typeTitle;
     TextView AModTitle;
     TextView FortBase;
     TextView RefBase;
     TextView WillBase;
+    TextView attacksTitle;
+    TextView baseAttackTitle;
+    TextView extraAttacksTitle;
+    EditText extraAttackBox;
     TextView AttackBase;
+    TextView currencyTitle;
+    TextView spTitle;
+    TextView gpTitle;
+    EditText spAmount;
+    EditText gpAmount;
+    TextView characterInventoryTitle;
+    TextView characterBioTitle;
+    EditText characterInventoryInput;
+    EditText characterBioInput;
     EditText STR;
     EditText STRT;
     EditText DEX;
@@ -95,6 +127,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     EditText[] SkillRanks = new EditText[18];
     TextView[] SkillTotals = new TextView[18];
     TextView[] SkillAbilities = new TextView[18];
+    TextView[] SkillTitles = new TextView[18];
     TextView[] strDerived = new TextView[2];
     TextView[] dexDerived = new TextView[4];
     TextView[] conDerived = new TextView[1];
@@ -102,6 +135,8 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     TextView[] wisDerived = new TextView[6];
     TextView[] chaDerived = new TextView[4];
     TextView[][] abilitiesDerived = {strDerived,dexDerived,conDerived,intDerived,wisDerived,chaDerived};
+    EditText[] weaponAttackInput = new EditText[3];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +176,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         fortTitle=findViewById(R.id.FortTitle);
         reflexTitle=findViewById(R.id.ReflexTitle);
         willTitle=findViewById(R.id.WillTitle);
+        skillsTitle=findViewById(R.id.SkillsTitle);
+        skillsTotalTitle=findViewById(R.id.SkillsTotalTitle);
+        skillsAbilityTitle=findViewById(R.id.SkillsAbilityTitle);
+        skillsRankTitle=findViewById(R.id.SkillsRankTitle);
         totalSaveTitle=findViewById(R.id.TotalSaveTitle);
         baseSaveTitle=findViewById(R.id.BaseSaveTitle);
         abilitySaveTitle=findViewById(R.id.AbilitySaveTitle);
@@ -148,7 +187,33 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         FortBase=findViewById(R.id.FortBase);
         RefBase=findViewById(R.id.ReflexBase);
         WillBase=findViewById(R.id.WillBase);
+        attacksTitle=findViewById(R.id.AttacksTitle);
+        baseAttackTitle=findViewById(R.id.BaseAttackTitle);
+        extraAttacksTitle=findViewById(R.id.ExtraAttacksTitle);
+        extraAttackBox=findViewById(R.id.ExtraAttackBox);
         AttackBase=findViewById(R.id.BaseAttackBox);
+        grappleTitle=findViewById(R.id.GrappleTitle);
+        grappleTotalTitle=findViewById(R.id.GrappleTotalTitle);
+        grappleModifierTitle=findViewById(R.id.GrappleModifierTitle);
+        grappleBaseAttackBonusTitle=findViewById(R.id.GrappleAttackBonusTitle);
+        grappleStrengthTitle=findViewById(R.id.GrappleStrengthTitle);
+        grappleSizeTitle=findViewById(R.id.GrappleSizeTitle);
+        grappleMiscTitle=findViewById(R.id.GrappleMiscTitle);
+        grappleTotal=findViewById(R.id.GrappleTotal);
+        grappleBaseAttackBonus=findViewById(R.id.GrappleBaseAttackBonus);
+        grappleStrength=findViewById(R.id.GrappleStrength);
+        grappleSize=findViewById(R.id.GrappleSize);
+        grappleMisc=findViewById(R.id.GrappleMisc);
+        weaponsAttacksTitle=findViewById(R.id.WeaponsAttacksTitle);
+        dmgTitle=findViewById(R.id.DMGTitle);
+        typeTitle=findViewById(R.id.TypeTitle);
+        characterInventoryTitle=findViewById(R.id.CharacterInventoryTitle);
+        characterBioTitle=findViewById(R.id.CharacterBioTitle);
+        characterInventoryInput=findViewById(R.id.CharacterInventoryInput);
+        characterBioInput=findViewById(R.id.CharacterBioInput);
+        weaponAttackInput[0]=findViewById(R.id.WeaponAttackInput);
+        weaponAttackInput[1]=findViewById(R.id.WeaponAttackInput2);
+        weaponAttackInput[2]=findViewById(R.id.WeaponAttackInput3);
         STR=findViewById(R.id.STRABox);
         DEX=findViewById(R.id.DEXABox);
         CON=findViewById(R.id.CONABox);
@@ -161,6 +226,11 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         INTT=findViewById(R.id.INTTBox);
         WIST=findViewById(R.id.WISTBox);
         CHAT=findViewById(R.id.CHATBox);
+        currencyTitle=findViewById(R.id.CurrencyTitle);
+        spTitle=findViewById(R.id.SPTitle);
+        gpTitle=findViewById(R.id.GPTitle);
+        spAmount=findViewById(R.id.SPAmount);
+        gpAmount=findViewById(R.id.GPAmount);
         abilities = new EditText[] {STR,DEX,CON,INT,WIS,CHA,STRT,DEXT,CONT,INTT,WIST,CHAT};
         SkillTotals[0]=findViewById(R.id.AcrobaticsTotal);
         SkillTotals[1]=findViewById(R.id.AnimalHandTotal);
@@ -216,6 +286,24 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         SkillRanks[15]=findViewById(R.id.SleightHandRank);
         SkillRanks[16]=findViewById(R.id.StealthRank);
         SkillRanks[17]=findViewById(R.id.SurvivalRank);
+        SkillTitles[0]=findViewById(R.id.AcrobaticsTitle);
+        SkillTitles[1]=findViewById(R.id.AnimalHandTitle);
+        SkillTitles[2]=findViewById(R.id.ArcanaTitle);
+        SkillTitles[3]=findViewById(R.id.AthleticsTitle);
+        SkillTitles[4]=findViewById(R.id.DeceptionTitle);
+        SkillTitles[5]=findViewById(R.id.HistoryTitle);
+        SkillTitles[6]=findViewById(R.id.InsightTitle);
+        SkillTitles[7]=findViewById(R.id.IntimidationTitle);
+        SkillTitles[8]=findViewById(R.id.InvestigationTitle);
+        SkillTitles[9]=findViewById(R.id.MedicineTitle);
+        SkillTitles[10]=findViewById(R.id.NatureTitle);
+        SkillTitles[11]=findViewById(R.id.PerceptionTitle);
+        SkillTitles[12]=findViewById(R.id.PerformanceTitle);
+        SkillTitles[13]=findViewById(R.id.PersuasionTitle);
+        SkillTitles[14]=findViewById(R.id.ReligionTitle);
+        SkillTitles[15]=findViewById(R.id.SleightHandTitle);
+        SkillTitles[16]=findViewById(R.id.StealthTitle);
+        SkillTitles[17]=findViewById(R.id.SurvivalTitle);
         Class=findViewById(R.id.ClassSpin);
         Level=findViewById(R.id.LevelEditbox);
         Race=findViewById(R.id.RaceSpin);
@@ -276,7 +364,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         {
             text35 = width/35;
             text30 = width/40;
-            text25 = width/35;
+            text25 = width/50;
             text20 = width/60;
 
         }
@@ -284,7 +372,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         {
             text35 = width/60;
             text30 = width/65;
-            text25 = width/52;
+            text25 = width/80;
             text20 = width/85;
 
         }
@@ -292,7 +380,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         {
             text35 = width/55;
             text30 = width/60;
-            text25 = width/52;
+            text25 = width/70;
             text20 = width/80;
 
         }
@@ -333,10 +421,94 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         totalSaveTitle.setTextSize(text30);
         baseSaveTitle.setTextSize(text30);
         abilitySaveTitle.setTextSize(text30);
+        skillsTitle.setTextSize(text35);
+        skillsTotalTitle.setTextSize(text30);
+        skillsAbilityTitle.setTextSize(text30);
+        skillsRankTitle.setTextSize(text30);
+        attacksTitle.setTextSize(text35);
+        baseAttackTitle.setTextSize(text30);
+        AttackBase.setTextSize(text30);
+        extraAttacksTitle.setTextSize(text25);
+        extraAttackBox.setTextSize(text30);
+        grappleTitle.setTextSize(text30);
+        grappleModifierTitle.setTextSize(text20);
+        grappleTotalTitle.setTextSize(text20);
+        grappleBaseAttackBonusTitle.setTextSize(text20);
+        grappleStrengthTitle.setTextSize(text20);
+        grappleSizeTitle.setTextSize(text20);
+        grappleMiscTitle.setTextSize(text20);
+        grappleTotal.setTextSize(text30);
+        grappleBaseAttackBonus.setTextSize(text30);
+        grappleStrength.setTextSize(text30);
+        grappleSize.setTextSize(text30);
+        grappleMisc.setTextSize(text30);
+        weaponsAttacksTitle.setTextSize(text35);
+        dmgTitle.setTextSize(text35);
+        typeTitle.setTextSize(text35);
+        currencyTitle.setTextSize(text35);
+        spTitle.setTextSize(text30);
+        gpTitle.setTextSize(text30);
+        spAmount.setTextSize(text30);
+        gpAmount.setTextSize(text30);
+        characterInventoryTitle.setTextSize(text30);
+        characterBioTitle.setTextSize(text30);
+        characterInventoryInput.setTextSize(text20);
+        characterBioInput.setTextSize(text20);
+        dmg0.setTextSize(text30);
+        dmg1.setTextSize(text30);
+        dmg2.setTextSize(text30);
+        for (int i = 0; i < strDerived.length; i++)
+        {
+            strDerived[i].setTextSize(text30);
+        }
+        for (int i = 0; i < dexDerived.length; i++)
+        {
+            dexDerived[i].setTextSize(text30);
+        }
         for (int i = 0; i < conDerived.length; i++)
         {
             conDerived[i].setTextSize(text30);
         }
+        for (int i = 0; i < conDerived.length; i++)
+        {
+            conDerived[i].setTextSize(text30);
+        }
+        for (int i = 0; i < intDerived.length; i++)
+        {
+            intDerived[i].setTextSize(text30);
+        }
+        for (int i = 0; i < wisDerived.length; i++)
+        {
+            wisDerived[i].setTextSize(text30);
+        }
+        for (int i = 0; i < chaDerived.length; i++)
+        {
+            chaDerived[i].setTextSize(text30);
+        }
+        for (int i = 0; i < SkillRanks.length; i++)
+        {
+            SkillRanks[i].setTextSize(text30);
+            SkillRanks[i].setText("0");
+        }
+        for (int i = 0; i < SkillAbilities.length; i++)
+        {
+            SkillAbilities[i].setTextSize(text30);
+        }
+        for (int i = 0; i < SkillTotals.length; i++)
+        {
+            SkillTotals[i].setTextSize(text30);
+        }
+        for (int i = 0; i < SkillTitles.length; i++)
+        {
+            SkillTitles[i].setTextSize(text30);
+        }
+        for (int i = 0; i < weaponAttackInput.length; i++)
+        {
+            weaponAttackInput[i].setTextSize(text25);
+        }
+        acTempBox.setText("0");
+        AttackBase.setText("0");
+        extraAttackBox.setText("0");
 
 
         //Adapted from: https://stackoverflow.com/questions/4743116/get-screen-width-and-height-in-android#:~:text=Display%20display%20%3D%20getWindowManager().,size)%3B%20int%20width%20%3D%20size.

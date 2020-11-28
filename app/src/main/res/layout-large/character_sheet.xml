@@ -968,7 +968,7 @@
                     android:scrollbars="vertical"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#CDCDCD"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:verticalScrollbarPosition="right"
                     android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -990,7 +990,7 @@
                     android:scrollbars="vertical"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#CDCDCD"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:verticalScrollbarPosition="right"
                     android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -1028,7 +1028,9 @@
                 android:id="@+id/constraintLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider4">
 
@@ -1202,7 +1204,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/PerceptionTitle" />
 
                 <TextView
-                    android:id="@+id/PersusionTitle"
+                    android:id="@+id/PersuasionTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -1225,7 +1227,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="30sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/PersusionTitle" />
+                    app:layout_constraintTop_toBottomOf="@+id/PersuasionTitle" />
 
                 <TextView
                     android:id="@+id/SleightHandTitle"
@@ -1637,10 +1639,10 @@
                     android:gravity="center_horizontal"
                     android:textColor="#000000"
                     android:textSize="30sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/PersusionTitle"
+                    app:layout_constraintBottom_toBottomOf="@+id/PersuasionTitle"
                     app:layout_constraintEnd_toEndOf="@+id/SkillsTotalTitle"
                     app:layout_constraintStart_toStartOf="@+id/SkillsTotalTitle"
-                    app:layout_constraintTop_toTopOf="@+id/PersusionTitle" />
+                    app:layout_constraintTop_toTopOf="@+id/PersuasionTitle" />
 
                 <TextView
                     android:id="@+id/PersuasionAbility"
@@ -1650,10 +1652,10 @@
                     android:gravity="center_horizontal"
                     android:textColor="#000000"
                     android:textSize="30sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/PersusionTitle"
+                    app:layout_constraintBottom_toBottomOf="@+id/PersuasionTitle"
                     app:layout_constraintEnd_toEndOf="@+id/SkillsAbilityTitle"
                     app:layout_constraintStart_toStartOf="@+id/SkillsAbilityTitle"
-                    app:layout_constraintTop_toTopOf="@+id/PersusionTitle" />
+                    app:layout_constraintTop_toTopOf="@+id/PersuasionTitle" />
 
                 <TextView
                     android:id="@+id/ReligionTotal"
@@ -1990,10 +1992,10 @@
                     android:textColor="#FFFFFF"
                     android:textColorHint="#E3E3E3"
                     android:textSize="30sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/PersusionTitle"
+                    app:layout_constraintBottom_toBottomOf="@+id/PersuasionTitle"
                     app:layout_constraintEnd_toEndOf="@+id/SkillsRankTitle"
                     app:layout_constraintStart_toStartOf="@+id/SkillsRankTitle"
-                    app:layout_constraintTop_toTopOf="@+id/PersusionTitle" />
+                    app:layout_constraintTop_toTopOf="@+id/PersuasionTitle" />
 
                 <EditText
                     android:id="@+id/ReligionRank"
@@ -2554,12 +2556,12 @@
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textSize="35sp"
-                    app:layout_constraintEnd_toStartOf="@+id/DMGTitle2"
+                    app:layout_constraintEnd_toStartOf="@+id/TypeTitle"
                     app:layout_constraintStart_toEndOf="@+id/WeaponsAttacksTitle"
                     app:layout_constraintTop_toTopOf="@+id/WeaponsAttacksTitle" />
 
                 <TextView
-                    android:id="@+id/DMGTitle2"
+                    android:id="@+id/TypeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Type"
@@ -2637,7 +2639,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/GrappleSize" />
 
                 <TextView
-                    android:id="@+id/grappleSizeTitle"
+                    android:id="@+id/GrappleMiscTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -2671,6 +2673,7 @@
                     android:textColor="#FFFFFF"
                     android:textColorHint="#DCDCDC"
                     android:textSize="30sp"
+                    android:gravity="center_horizontal"
                     app:layout_constraintBottom_toBottomOf="@+id/BaseAttackTitle"
                     app:layout_constraintEnd_toStartOf="@+id/ExtraAttackBox"
                     app:layout_constraintStart_toEndOf="@+id/BaseAttackTitle"
@@ -2681,6 +2684,7 @@
                     android:layout_width="250sp"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:gravity="center_horizontal"
                     android:inputType="numberSigned"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#DDDDDD"
@@ -2727,12 +2731,13 @@
 
                 <TextView
                     android:id="@+id/DMGOutput"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#FFFFFF"
                     android:gravity="center_horizontal"
                     android:textColor="#000000"
                     android:textSize="30sp"
+                    android:minWidth="100sp"
                     app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput"
                     app:layout_constraintEnd_toEndOf="@+id/DMGTitle"
                     app:layout_constraintStart_toStartOf="@+id/DMGTitle"
@@ -2740,12 +2745,13 @@
 
                 <TextView
                     android:id="@+id/DMGOutput2"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#FFFFFF"
                     android:gravity="center_horizontal"
                     android:textColor="#000000"
                     android:textSize="30sp"
+                    android:minWidth="100sp"
                     app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput2"
                     app:layout_constraintEnd_toEndOf="@+id/DMGTitle"
                     app:layout_constraintStart_toStartOf="@+id/DMGTitle"
@@ -2753,12 +2759,13 @@
 
                 <TextView
                     android:id="@+id/DMGOutput3"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#FFFFFF"
                     android:gravity="center_horizontal"
                     android:textColor="#000000"
                     android:textSize="30sp"
+                    android:minWidth="100sp"
                     app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput3"
                     app:layout_constraintEnd_toEndOf="@+id/DMGTitle"
                     app:layout_constraintStart_toStartOf="@+id/DMGTitle"
@@ -2942,7 +2949,7 @@
                     android:ems="10"
                     android:inputType="numberSigned"
                     android:textColor="#FFFFFF"
-                    android:textSize="25dp"
+                    android:textSize="30dp"
                     app:layout_constraintBottom_toBottomOf="@+id/GPTitle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/GPTitle"
@@ -2957,10 +2964,10 @@
                     android:textColor="#FFFFFF"
                     android:textSize="30sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/SPTitle2" />
+                    app:layout_constraintTop_toBottomOf="@+id/CurrencyTitle" />
 
                 <TextView
-                    android:id="@+id/SPTitle2"
+                    android:id="@+id/CurrencyTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Currency"
@@ -2988,7 +2995,7 @@
                     android:ems="10"
                     android:inputType="numberSigned"
                     android:textColor="#FFFFFF"
-                    android:textSize="25dp"
+                    android:textSize="30dp"
                     app:layout_constraintBottom_toBottomOf="@+id/SPTitle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/SPTitle"
