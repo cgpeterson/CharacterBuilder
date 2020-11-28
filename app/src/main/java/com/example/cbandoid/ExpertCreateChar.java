@@ -1,40 +1,62 @@
 package com.example.cbandoid;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.strictmode.SqliteObjectLeakedViolation;
-import android.util.Xml;
+import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.gson.Gson;
-
-import org.xmlpull.v1.XmlSerializer;
-
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 
 public class ExpertCreateChar extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     EditText CharName;
+    EditText PlayName;
+    EditText Age;
+    EditText Sex;
+    TextView TMTitle;
+    TextView strTitle;
+    TextView dexTitle;
+    TextView conTitle;
+    TextView intTitle;
+    TextView wisTitle;
+    TextView chaTitle;
+    TextView strSub;
+    TextView dexSub;
+    TextView conSub;
+    TextView intSub;
+    TextView wisSub;
+    TextView chaSub;
+    TextView hpTitle;
+    TextView currHPTitle;
+    EditText currHPBox;
+    TextView acTitle;
+    TextView acTotalTitle;
+    TextView acTempTitle;
+    EditText acTempBox;
+    TextView savingThrowsTitle;
+    TextView fortTitle;
+    TextView reflexTitle;
+    TextView willTitle;
+    TextView fortTotal;
+    TextView reflexTotal;
+    TextView willTotal;
+    TextView totalSaveTitle;
+    TextView baseSaveTitle;
+    TextView abilitySaveTitle;
     TextView AModTitle;
     TextView FortBase;
     TextView RefBase;
@@ -92,6 +114,36 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
 
         //Define Variables
         CharName=findViewById(R.id.CharNameEdit);
+        PlayName=findViewById(R.id.PlayerNameEdit);
+        Age=findViewById(R.id.AgeEditbox);
+        Sex=findViewById(R.id.SexEdit);
+        TMTitle=findViewById(R.id.TempModTitle);
+        strTitle=findViewById(R.id.STRTitle);
+        dexTitle=findViewById(R.id.DEXTitle);
+        conTitle=findViewById(R.id.CONTitle);
+        intTitle=findViewById(R.id.INTTitle);
+        wisTitle=findViewById(R.id.WISTitle);
+        chaTitle=findViewById(R.id.CHATitle);
+        strSub=findViewById(R.id.STRSub);
+        dexSub=findViewById(R.id.DEXSub);
+        conSub=findViewById(R.id.CONSub);
+        intSub=findViewById(R.id.INTSub);
+        wisSub=findViewById(R.id.WISSub);
+        chaSub=findViewById(R.id.CHASub);
+        hpTitle=findViewById(R.id.HPTitle);
+        currHPTitle=findViewById(R.id.CurrHPTitle);
+        currHPBox=findViewById(R.id.CurrHPBox);
+        acTitle=findViewById(R.id.ACTitle);
+        acTotalTitle=findViewById(R.id.ACTotalTitle);
+        acTempTitle=findViewById(R.id.ACTempTitle);
+        acTempBox=findViewById(R.id.ACTempBox);
+        savingThrowsTitle=findViewById(R.id.SavingThrowsTitle);
+        fortTitle=findViewById(R.id.FortTitle);
+        reflexTitle=findViewById(R.id.ReflexTitle);
+        willTitle=findViewById(R.id.WillTitle);
+        totalSaveTitle=findViewById(R.id.TotalSaveTitle);
+        baseSaveTitle=findViewById(R.id.BaseSaveTitle);
+        abilitySaveTitle=findViewById(R.id.AbilitySaveTitle);
         AModTitle=findViewById(R.id.AbilityModTitle);
         FortBase=findViewById(R.id.FortBase);
         RefBase=findViewById(R.id.ReflexBase);
@@ -172,7 +224,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         WType1=findViewById(R.id.WeaponsAttackType2);
         WType2=findViewById(R.id.WeaponsAttackType3);
         HP=findViewById(R.id.HPOutput);
-        AC=findViewById(R.id.ACTotalOutput2);
+        AC=findViewById(R.id.ACTotalOutput);
         gsizeMod=findViewById(R.id.GrappleSize);
         gattackMod=findViewById(R.id.GrappleBaseAttackBonus);
         dmg0=findViewById(R.id.DMGOutput);
@@ -180,17 +232,17 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         dmg2=findViewById(R.id.DMGOutput3);
         strDerived[0]=findViewById(R.id.AthleticsAbility);
         strDerived[1]=findViewById(R.id.GrappleStrength);
-        dexDerived[0]=findViewById(R.id.ReflexAction);
+        dexDerived[0]=findViewById(R.id.ReflexAbility);
         dexDerived[1]=findViewById(R.id.AcrobaticsAbility);
         dexDerived[2]=findViewById(R.id.SleightHandAbility);
         dexDerived[3]=findViewById(R.id.StealthAbility);
-        conDerived[0]=findViewById(R.id.FortAction);
+        conDerived[0]=findViewById(R.id.FortAbility);
         intDerived[0]=findViewById(R.id.ArcanaAbility);
         intDerived[1]=findViewById(R.id.HistoryAbility);
         intDerived[2]=findViewById(R.id.InvestigationAbility);
         intDerived[3]=findViewById(R.id.NatureAbility);
         intDerived[4]=findViewById(R.id.ReligionAbiltiy);
-        wisDerived[0]=findViewById(R.id.WillAction);
+        wisDerived[0]=findViewById(R.id.WillAbility);
         wisDerived[1]=findViewById(R.id.AnimalHandAbility);
         wisDerived[2]=findViewById(R.id.InsightAbility);
         wisDerived[3]=findViewById(R.id.MedicineAbility);
@@ -204,6 +256,91 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         ArrayAdapter<CharSequence> raceAdapter = ArrayAdapter.createFromResource(this, R.array.Race_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> sizeAdapter = ArrayAdapter.createFromResource(this, R.array.Size_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this, R.array.Type_array, android.R.layout.simple_spinner_item);
+
+        //Resize code
+        DisplayMetrics display = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(display);
+        int height = display.heightPixels;
+        int width = display.widthPixels;
+        double widthInch = Math.pow(display.widthPixels/display.xdpi,2);
+        double heightInch = Math.pow(display.heightPixels/display.ydpi,2);
+        double screenInch = Math.sqrt(widthInch+heightInch);
+        screenInch =  (double)Math.round(screenInch * 10) / 10;
+
+        int text35;
+        int text30;
+        int text25;
+        int text20;
+        int nameBox = (width/2) - 50;
+        if (screenInch >= 6.8)
+        {
+            text35 = width/35;
+            text30 = width/40;
+            text25 = width/35;
+            text20 = width/60;
+
+        }
+        else if (screenInch < 6.8 && screenInch >= 5)
+        {
+            text35 = width/60;
+            text30 = width/65;
+            text25 = width/52;
+            text20 = width/85;
+
+        }
+        else
+        {
+            text35 = width/55;
+            text30 = width/60;
+            text25 = width/52;
+            text20 = width/80;
+
+        }
+        CharName.setTextSize(text30);
+        CharName.getLayoutParams().width = nameBox;
+        PlayName.getLayoutParams().width = nameBox;
+        PlayName.setTextSize(text30);
+        Level.setTextSize(text30);
+        Age.setTextSize(text30);
+        Sex.setTextSize(text30);
+        AModTitle.setTextSize(text30);
+        TMTitle.setTextSize(text30);
+        strTitle.setTextSize(text35);
+        dexTitle.setTextSize(text35);
+        conTitle.setTextSize(text35);
+        intTitle.setTextSize(text35);
+        wisTitle.setTextSize(text35);
+        chaTitle.setTextSize(text35);
+        strSub.setTextSize(text20);
+        dexSub.setTextSize(text20);
+        conSub.setTextSize(text20);
+        intSub.setTextSize(text20);
+        wisSub.setTextSize(text20);
+        chaSub.setTextSize(text20);
+        hpTitle.setTextSize(text35);
+        currHPTitle.setTextSize(text35);
+        HP.setTextSize(text30);
+        currHPBox.setTextSize(text30);
+        acTitle.setTextSize(text35);
+        acTotalTitle.setTextSize(text30);
+        acTempTitle.setTextSize(text30);
+        AC.setTextSize(text30);
+        acTempBox.setTextSize(text30);
+        savingThrowsTitle.setTextSize(text35);
+        fortTitle.setTextSize(text35);
+        reflexTitle.setTextSize(text35);
+        willTitle.setTextSize(text35);
+        totalSaveTitle.setTextSize(text30);
+        baseSaveTitle.setTextSize(text30);
+        abilitySaveTitle.setTextSize(text30);
+        for (int i = 0; i < conDerived.length; i++)
+        {
+            conDerived[i].setTextSize(text30);
+        }
+
+
+        //Adapted from: https://stackoverflow.com/questions/4743116/get-screen-width-and-height-in-android#:~:text=Display%20display%20%3D%20getWindowManager().,size)%3B%20int%20width%20%3D%20size.
+        //Also adapted from: https://stackoverflow.com/questions/2193457/is-there-a-way-to-determine-android-physical-screen-height-in-cm-or-inches
 
         //Set Defaults
         classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -761,12 +898,12 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
 
         //Saves
         try {
-            TextView FortTot = findViewById(R.id.FortTotal);
-            TextView ReflTot = findViewById(R.id.ReflexTotal);
-            TextView WillTot = findViewById(R.id.WillTotal);
-            FortTot.setText(String.valueOf(Integer.parseInt(FortBase.getText().toString()) + Integer.parseInt(conDerived[0].getText().toString())));
-            ReflTot.setText(String.valueOf(Integer.parseInt(RefBase.getText().toString()) + Integer.parseInt(dexDerived[0].getText().toString())));
-            WillTot.setText(String.valueOf(Integer.parseInt(WillBase.getText().toString()) + Integer.parseInt(wisDerived[0].getText().toString())));
+            fortTotal = findViewById(R.id.FortTotal);
+            reflexTotal = findViewById(R.id.ReflexTotal);
+            willTotal = findViewById(R.id.WillTotal);
+            fortTotal.setText(String.valueOf(Integer.parseInt(FortBase.getText().toString()) + Integer.parseInt(conDerived[0].getText().toString())));
+            reflexTotal.setText(String.valueOf(Integer.parseInt(RefBase.getText().toString()) + Integer.parseInt(dexDerived[0].getText().toString())));
+            willTotal.setText(String.valueOf(Integer.parseInt(WillBase.getText().toString()) + Integer.parseInt(wisDerived[0].getText().toString())));
         } catch (Exception e) {
             e.getStackTrace();
         }

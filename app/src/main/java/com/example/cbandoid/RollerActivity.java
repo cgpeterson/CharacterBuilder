@@ -82,7 +82,7 @@ public class RollerActivity extends AppCompatActivity {
             textTitle = width/30;
             textEdit = width/35;
         }
-        else if (screenInch <= 6 && screenInch >= 5)
+        else if (screenInch < 6.8 && screenInch >= 5)
         {
             textMega = width/35;
             textTitle = width/55;
