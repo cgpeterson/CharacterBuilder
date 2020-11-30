@@ -15,17 +15,20 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ProfileActivity extends AppCompatActivity
-{
+public class ProfileActivity extends AppCompatActivity {
 
     ExpandableListView expand;
     ExpandableListAdapter expandAdapt;
-
 
 
     TextView Submenutitle;
@@ -35,13 +38,12 @@ public class ProfileActivity extends AppCompatActivity
     ImageView pmenu;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_screen);
-        Submenutitle=findViewById(R.id.submenutitle);
+        Submenutitle = findViewById(R.id.submenutitle);
         Submenutitle.setText("Profile");
-        pmenu=findViewById(R.id.popupbutton);
+        pmenu = findViewById(R.id.popupbutton);
 
 
         expand = (ExpandableListView) findViewById(R.id.expandedlist);
@@ -51,14 +53,15 @@ public class ProfileActivity extends AppCompatActivity
         expand.setAdapter(expandAdapt);
 
 
-
-        Back=findViewById(R.id.exitbutton);
+        Back = findViewById(R.id.exitbutton);
         pmenu.setOnClickListener(this::showPopMenu);
 
         Back.setOnClickListener(v -> {
-            startActivity(new Intent(ProfileActivity.this, MainActivity.class));});
+            startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+        });
 
     }
+
     private void showPopMenu(View v) {
         PopupMenu popMenu = new PopupMenu(ProfileActivity.this, v);
         popMenu.getMenuInflater().inflate(R.menu.popup_menu, popMenu.getMenu());
@@ -81,17 +84,42 @@ public class ProfileActivity extends AppCompatActivity
         popMenu.show();
     }
 
-    private void ListData()
-    {
+    private void ListData() {
         ruleSet = new ArrayList<>();
         characters = new HashMap<>();
         ruleSet.add("Champion Forge");
+        List<String> champForge = new ArrayList<>(Load());
 
+        characters.put(ruleSet.get(0), champForge);
+    }
+
+    //ToDo: Load for specific characters as well as fix settings not found issue
+    private List<String> Load() {
         List<String> champForge = new ArrayList<>();
-        champForge.add("Character 1");
-        champForge.add("Character 2");
-        champForge.add("Character 3");
+        try {
+            FileInputStream input = new FileInputStream("settings.txt");
+            StringBuilder name = new StringBuilder();
 
-        characters.put(ruleSet.get(0),champForge);
+            int i = input.read();
+            while (i != -1) {
+                //ToDo: find more flexible solution
+                if (i != 0) {
+                    name.append((char) i);
+                } else {
+                    champForge.add(name.toString());
+                    name = new StringBuilder();
+                }
+                i = input.read();
+            }
+
+            input.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+            champForge.add("Character 1");
+            champForge.add("Character 2");
+            champForge.add("Character 3");
+        }
+        return champForge;
     }
 }

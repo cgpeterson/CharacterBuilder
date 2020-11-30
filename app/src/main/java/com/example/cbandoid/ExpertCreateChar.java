@@ -1,5 +1,6 @@
 package com.example.cbandoid;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,6 +18,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -600,77 +604,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             }
         });
         Back.setOnClickListener(v -> {
-            FileOutputStream fos;
-            try {
-                fos = new FileOutputStream(CharName.getText().toString());
-
-               String data = Level.getText().toString();
-               data += ";";
-                data += String.valueOf(Class.getSelectedItemPosition());
-                data += ";";
-                data += String.valueOf(Race.getSelectedItemPosition());
-                data += ";";
-                data += String.valueOf(Size.getSelectedItemPosition());
-                data += ";";
-                for (int i = 0; i < abilities.length; i++)
-                {
-                    data += abilities[i].getText().toString();
-                    data += ";";
-                }
-                for (int i = 0; i < SkillRanks.length; i++)
-                {
-                    data += SkillRanks[i].getText().toString();
-                    data += ";";
-                }
-                EditText W0 = findViewById(R.id.WeaponAttackInput);
-                EditText W1 = findViewById(R.id.WeaponAttackInput2);
-                EditText W2 = findViewById(R.id.WeaponAttackInput3);
-                if (W0.getText().toString().length() > 0) {
-                    data += W0.getText().toString();
-                    data += ";";
-                    data += dmg0.getText().toString();
-                    data += ";";
-                    data += String.valueOf(WType0.getSelectedItemPosition());
-                }
-                if (W1.getText().toString().length() > 0) {
-                    data += W1.getText().toString();
-                    data += ";";
-                    data += dmg1.getText().toString();
-                    data += ";";
-                    data += String.valueOf(WType1.getSelectedItemPosition());
-                }
-                if (W2.getText().toString().length() > 0) {
-                    data += W2.getText().toString();
-                    data += ";";
-                    data += dmg2.getText().toString();
-                    data += ";";
-                    data += String.valueOf(WType2.getSelectedItemPosition());
-                }
-                data += ";";
-                EditText SP = findViewById(R.id.SPAmount);
-                EditText GP = findViewById(R.id.GPAmount);
-                EditText Inv = findViewById(R.id.CharacterInventoryInput);
-                EditText Bio = findViewById(R.id.CharacterBioInput);
-                data += SP.getText().toString();
-                data += ";";
-                data += GP.getText().toString();
-                data += ";";
-                data += Inv.getText().toString();
-                data += ";";
-                data += Bio.getText().toString();
-                data += "end";
-
-                fos.write(data.getBytes());
-
-                fos.close();
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            startActivity(new Intent(ExpertCreateChar.this, MainActivity.class));
+            SaveAlert(new Intent(ExpertCreateChar.this, MainActivity.class));
         });
         pmenu.setOnClickListener(this::showPopMenu);
     }
@@ -1088,10 +1022,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if(item.getItemId() == R.id.popup_profile) {
-                    startActivity(new Intent(ExpertCreateChar.this, ProfileActivity.class));
+                    SaveAlert(new Intent(ExpertCreateChar.this, ProfileActivity.class));
                 }
                 if(item.getItemId() == R.id.popup_help) {
-                    startActivity(new Intent(ExpertCreateChar.this, HelpActivity.class));
+                    SaveAlert(new Intent(ExpertCreateChar.this, HelpActivity.class));
                 }
                 if(item.getItemId() == R.id.popup_settings) {
                     //Placeholder code
@@ -1100,6 +1034,117 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 return true;
             }
         });
+
         popMenu.show();
     }
+
+    private void SaveAlert(Intent exitDirection)
+    {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ExpertCreateChar.this);
+        builder.setTitle("Save Character?");
+        builder.setMessage("The page is exiting would you like to save before exiting?");
+        builder.setBackground(getResources().getDrawable(R.drawable.save_dialog_bg));
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Save();
+                startActivity(exitDirection);
+            }
+        });
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(exitDirection);
+            }
+        });
+        builder.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {}
+        });
+        builder.show();
+    }
+
+    private void Save() {
+            FileOutputStream fos;
+            try {
+                fos = new FileOutputStream(CharName.getText().toString());
+
+                String data = Level.getText().toString();
+                data += ";";
+                data += String.valueOf(Class.getSelectedItemPosition());
+                data += ";";
+                data += String.valueOf(Race.getSelectedItemPosition());
+                data += ";";
+                data += String.valueOf(Size.getSelectedItemPosition());
+                data += ";";
+                for (int i = 0; i < abilities.length; i++) {
+                    data += abilities[i].getText().toString();
+                    data += ";";
+                }
+                for (int i = 0; i < SkillRanks.length; i++) {
+                    data += SkillRanks[i].getText().toString();
+                    data += ";";
+                }
+                EditText W0 = findViewById(R.id.WeaponAttackInput);
+                EditText W1 = findViewById(R.id.WeaponAttackInput2);
+                EditText W2 = findViewById(R.id.WeaponAttackInput3);
+                if (W0.getText().toString().length() > 0) {
+                    data += W0.getText().toString();
+                    data += ";";
+                    data += dmg0.getText().toString();
+                    data += ";";
+                    data += String.valueOf(WType0.getSelectedItemPosition());
+                }
+                if (W1.getText().toString().length() > 0) {
+                    data += W1.getText().toString();
+                    data += ";";
+                    data += dmg1.getText().toString();
+                    data += ";";
+                    data += String.valueOf(WType1.getSelectedItemPosition());
+                }
+                if (W2.getText().toString().length() > 0) {
+                    data += W2.getText().toString();
+                    data += ";";
+                    data += dmg2.getText().toString();
+                    data += ";";
+                    data += String.valueOf(WType2.getSelectedItemPosition());
+                }
+                data += ";";
+                EditText SP = findViewById(R.id.SPAmount);
+                EditText GP = findViewById(R.id.GPAmount);
+                EditText Inv = findViewById(R.id.CharacterInventoryInput);
+                EditText Bio = findViewById(R.id.CharacterBioInput);
+                data += SP.getText().toString();
+                data += ";";
+                data += GP.getText().toString();
+                data += ";";
+                data += Inv.getText().toString();
+                data += ";";
+                data += Bio.getText().toString();
+                data += "end";
+
+                fos.write(data.getBytes());
+
+                fos.close();
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            //update settings to remember saved name
+            try {
+                fos = new FileOutputStream("settings.txt", true);
+                String saveName = CharName.getText().toString() + "\0";
+                fos.write(saveName.getBytes());
+                fos.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
+
+
+
 }
