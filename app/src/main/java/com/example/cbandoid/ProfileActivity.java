@@ -93,11 +93,11 @@ public class ProfileActivity extends AppCompatActivity {
         characters.put(ruleSet.get(0), champForge);
     }
 
-    //ToDo: Load for specific characters as well as fix settings not found issue
+    //ToDo: Load for specific characters
     private List<String> Load() {
         List<String> champForge = new ArrayList<>();
         try {
-            FileInputStream input = new FileInputStream("settings.txt");
+            FileInputStream input = openFileInput("settings.txt");
             StringBuilder name = new StringBuilder();
 
             int i = input.read();
@@ -116,6 +116,7 @@ public class ProfileActivity extends AppCompatActivity {
         }
         catch (Exception e) {
             e.getStackTrace();
+            e.printStackTrace();
             champForge.add("Character 1");
             champForge.add("Character 2");
             champForge.add("Character 3");

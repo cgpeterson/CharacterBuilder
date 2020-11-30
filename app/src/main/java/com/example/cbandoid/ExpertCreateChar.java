@@ -1,5 +1,6 @@
 package com.example.cbandoid;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -20,10 +21,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 public class ExpertCreateChar extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -1067,7 +1070,18 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     private void Save() {
             FileOutputStream fos;
             try {
-                fos = new FileOutputStream(CharName.getText().toString());
+                File charfile = new File(getApplicationContext().getFilesDir(), CharName.getText().toString());
+
+                if (!charfile.exists())
+                {
+                    try
+                    {
+                        charfile.createNewFile();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                fos = openFileOutput(CharName.getText().toString(), MODE_PRIVATE);
 
                 String data = Level.getText().toString();
                 data += ";";
@@ -1134,7 +1148,19 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             }
             //update settings to remember saved name
             try {
-                fos = new FileOutputStream("settings.txt", true);
+                File settings = new File(getApplicationContext().getFilesDir(), "settings.txt");
+
+                if (!settings.exists())
+                {
+                    try
+                    {
+                        settings.createNewFile();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                fos = openFileOutput("settings.txt", Context.MODE_APPEND);
                 String saveName = CharName.getText().toString() + "\0";
                 fos.write(saveName.getBytes());
                 fos.close();
