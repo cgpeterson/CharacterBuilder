@@ -27,16 +27,19 @@
         <item name="materialAlertDialogTitleTextStyle">@style/TitleTheme</item>
         <item name="materialAlertDialogBodyTextStyle">@style/BodyTheme</item>
         <item name="buttonBarPositiveButtonStyle">@style/ButtonsTheme</item>
-        <item name="buttonBarNegativeButtonStyle">@style/ButtonsTheme</item>
+        <item name="buttonBarNegativeButtonStyle">@style/ButtonsThemeNeg</item>
         <item name="buttonBarNeutralButtonStyle">@style/ButtonsTheme</item>
-
-
     </style>
 
     <style name="ButtonsTheme" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="backgroundTint">@color/old_gold</item>
         <item name="android:textColor">@color/black</item>
+    </style>
 
+    <style name="ButtonsThemeNeg" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">@color/old_gold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">10dp</item>
     </style>
 
     <style name="TitleTheme" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
