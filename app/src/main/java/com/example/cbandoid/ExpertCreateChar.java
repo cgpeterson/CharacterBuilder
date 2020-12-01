@@ -1043,7 +1043,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
 
     private void SaveAlert(Intent exitDirection)
     {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ExpertCreateChar.this);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ExpertCreateChar.this, R.style.CharacterSheetTheme);
         builder.setTitle("Save Character?");
         builder.setMessage("The page is exiting would you like to save before exiting?");
         builder.setBackground(getResources().getDrawable(R.drawable.save_dialog_bg));
