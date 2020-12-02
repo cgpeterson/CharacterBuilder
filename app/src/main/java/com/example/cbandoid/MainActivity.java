@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button LoadCharacter;
     Button DiceRoller;
     Button CharacterCreate;
     ImageView pmenu;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
 
+        LoadCharacter=findViewById(R.id.CharNameButton);
         DiceRoller=findViewById(R.id.DiceRollButton);
         CharacterCreate=findViewById(R.id.CreateNewCharButton);
         pmenu=findViewById(R.id.mainpopupbutton);
@@ -57,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         popMenu.show();
+    }
+
+    public Button GetCharNameButton()
+    {
+        return LoadCharacter;
     }
 
 }

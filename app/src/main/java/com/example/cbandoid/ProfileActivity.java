@@ -1,26 +1,30 @@
 package com.example.cbandoid;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.ContentView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
     Map<String, List<String>> characters;
     ImageView Back;
     ImageView pmenu;
+    Button CharName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +50,37 @@ public class ProfileActivity extends AppCompatActivity {
         Submenutitle.setText("Profile");
         pmenu = findViewById(R.id.popupbutton);
 
-
         expand = (ExpandableListView) findViewById(R.id.expandedlist);
         ListData();
 
         expandAdapt = new ProfileAdapter(this, ruleSet, characters);
         expand.setAdapter(expandAdapt);
 
+        expand.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+
+                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+                return true;
+            }
+        });
+
+        expand.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                if (ExpandableListView.getPackedPositionType(id) == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
+                    int groupPosition = ExpandableListView.getPackedPositionGroup(id);
+                    int childPosition = ExpandableListView.getPackedPositionChild(id);
+                    // You now have everything that you would as if this was an OnChildClickListener()
+                    // ToDo: Add delete logic here.
+
+                    // Return true as we are handling the event.
+                    return true;
+                }
+
+                return false;
+            }
+        });
 
         Back = findViewById(R.id.exitbutton);
         pmenu.setOnClickListener(this::showPopMenu);
@@ -123,4 +152,6 @@ public class ProfileActivity extends AppCompatActivity {
         }
         return champForge;
     }
+
 }
+
