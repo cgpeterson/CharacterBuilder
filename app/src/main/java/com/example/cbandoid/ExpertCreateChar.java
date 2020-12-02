@@ -22,11 +22,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Objects;
 
 public class ExpertCreateChar extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -76,9 +74,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     TextView grappleMiscTitle;
     TextView grappleTotalTitle;
     TextView grappleTotal;
-    TextView grappleBaseAttackBonus;
     TextView grappleStrength;
-    TextView grappleSize;
     TextView grappleMisc;
     TextView weaponsAttacksTitle;
     TextView dmgTitle;
@@ -150,7 +146,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character_sheet);
         Submenutitle=findViewById(R.id.submenutitle);
-        Submenutitle.setText("Character Sheet");
+        Submenutitle.setText(R.string.default_char_name);
         Back=findViewById(R.id.exitbutton);
         pmenu=findViewById(R.id.popupbutton);
 
@@ -207,9 +203,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         grappleSizeTitle=findViewById(R.id.GrappleSizeTitle);
         grappleMiscTitle=findViewById(R.id.GrappleMiscTitle);
         grappleTotal=findViewById(R.id.GrappleTotal);
-        grappleBaseAttackBonus=findViewById(R.id.GrappleBaseAttackBonus);
         grappleStrength=findViewById(R.id.GrappleStrength);
-        grappleSize=findViewById(R.id.GrappleSize);
         grappleMisc=findViewById(R.id.GrappleMisc);
         weaponsAttacksTitle=findViewById(R.id.WeaponsAttacksTitle);
         dmgTitle=findViewById(R.id.DMGTitle);
@@ -355,7 +349,6 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         //Resize code
         DisplayMetrics display = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(display);
-        int height = display.heightPixels;
         int width = display.widthPixels;
         double widthInch = Math.pow(display.widthPixels/display.xdpi,2);
         double heightInch = Math.pow(display.heightPixels/display.ydpi,2);
@@ -445,9 +438,9 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         grappleSizeTitle.setTextSize(text20);
         grappleMiscTitle.setTextSize(text20);
         grappleTotal.setTextSize(text30);
-        grappleBaseAttackBonus.setTextSize(text30);
+        gattackMod.setTextSize(text30);
         grappleStrength.setTextSize(text30);
-        grappleSize.setTextSize(text30);
+        gsizeMod.setTextSize(text30);
         grappleMisc.setTextSize(text30);
         weaponsAttacksTitle.setTextSize(text35);
         dmgTitle.setTextSize(text35);
@@ -464,54 +457,42 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         dmg0.setTextSize(text30);
         dmg1.setTextSize(text30);
         dmg2.setTextSize(text30);
-        for (int i = 0; i < strDerived.length; i++)
-        {
-            strDerived[i].setTextSize(text30);
+        for (TextView textView : strDerived) {
+            textView.setTextSize(text30);
         }
-        for (int i = 0; i < dexDerived.length; i++)
-        {
-            dexDerived[i].setTextSize(text30);
+        for (TextView textView : dexDerived) {
+            textView.setTextSize(text30);
         }
-        for (int i = 0; i < conDerived.length; i++)
-        {
-            conDerived[i].setTextSize(text30);
+        for (TextView textView : conDerived) {
+            textView.setTextSize(text30);
         }
-        for (int i = 0; i < conDerived.length; i++)
-        {
-            conDerived[i].setTextSize(text30);
+        for (TextView textView : conDerived) {
+            textView.setTextSize(text30);
         }
-        for (int i = 0; i < intDerived.length; i++)
-        {
-            intDerived[i].setTextSize(text30);
+        for (TextView textView : intDerived) {
+            textView.setTextSize(text30);
         }
-        for (int i = 0; i < wisDerived.length; i++)
-        {
-            wisDerived[i].setTextSize(text30);
+        for (TextView textView : wisDerived) {
+            textView.setTextSize(text30);
         }
-        for (int i = 0; i < chaDerived.length; i++)
-        {
-            chaDerived[i].setTextSize(text30);
+        for (TextView textView : chaDerived) {
+            textView.setTextSize(text30);
         }
-        for (int i = 0; i < SkillRanks.length; i++)
-        {
-            SkillRanks[i].setTextSize(text30);
-            SkillRanks[i].setText("0");
+        for (EditText skillRank : SkillRanks) {
+            skillRank.setTextSize(text30);
+            skillRank.setText("0");
         }
-        for (int i = 0; i < SkillAbilities.length; i++)
-        {
-            SkillAbilities[i].setTextSize(text30);
+        for (TextView skillAbility : SkillAbilities) {
+            skillAbility.setTextSize(text30);
         }
-        for (int i = 0; i < SkillTotals.length; i++)
-        {
-            SkillTotals[i].setTextSize(text30);
+        for (TextView skillTotal : SkillTotals) {
+            skillTotal.setTextSize(text30);
         }
-        for (int i = 0; i < SkillTitles.length; i++)
-        {
-            SkillTitles[i].setTextSize(text30);
+        for (TextView skillTitle : SkillTitles) {
+            skillTitle.setTextSize(text30);
         }
-        for (int i = 0; i < weaponAttackInput.length; i++)
-        {
-            weaponAttackInput[i].setTextSize(text25);
+        for (EditText editText : weaponAttackInput) {
+            editText.setTextSize(text25);
         }
         acTempBox.setText("0");
         AttackBase.setText("0");
@@ -545,20 +526,17 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         for (int i = 0; i < abilities.length; i++)
         {
             int finalI = i;
-            abilities[i].setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus) {
-                    if (!hasFocus)
+            abilities[i].setOnFocusChangeListener((v, hasFocus) -> {
+                if (!hasFocus)
+                {
+                    try {
+                        abilities[finalI].setText(String.valueOf(Integer.parseInt(abilities[finalI].getText().toString())));
+                    } catch (Exception e) {
+                        abilities[finalI].setText("0");
+                    }
+                    if (abilityCheck())
                     {
-                        try {
-                            abilities[finalI].setText(String.valueOf(Integer.parseInt(abilities[finalI].getText().toString())));
-                        } catch (Exception e) {
-                            abilities[finalI].setText("0");
-                        }
-                        if (abilityCheck())
-                        {
-                            Derive();
-                        }
+                        Derive();
                     }
                 }
             });
@@ -566,49 +544,38 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         for (int i = 0; i < SkillRanks.length; i++)
         {
             int finalI = i;
-            SkillRanks[i].setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus) {
-                    if (!hasFocus) {
-                        try {
-                            SkillRanks[finalI].setText(String.valueOf(Integer.parseInt(SkillRanks[finalI].getText().toString())));
-                        } catch (Exception e) {
-                            SkillRanks[finalI].setText("0");
-                        }
-                        Totals();
+            SkillRanks[i].setOnFocusChangeListener((v, hasFocus) -> {
+                if (!hasFocus) {
+                    try {
+                        SkillRanks[finalI].setText(String.valueOf(Integer.parseInt(SkillRanks[finalI].getText().toString())));
+                    } catch (Exception e) {
+                        SkillRanks[finalI].setText("0");
                     }
+                    Totals();
                 }
             });
         }
-        Level.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus)
+        Level.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus)
+            {
+                try {
+                    Integer.parseInt(Level.getText().toString());
+                } catch (Exception e)
                 {
-                    try {
-                        Integer.parseInt(Level.getText().toString());
-                    } catch (Exception e)
-                    {
-                        Level.setText("1");
-                    }
+                    Level.setText("1");
+                }
 
-                    if (Class.getSelectedItemPosition() != 0)
-                        SetSaves();
-                }
+                if (Class.getSelectedItemPosition() != 0)
+                    SetSaves();
             }
         });
-        CharName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus)
-                {
-                    Submenutitle.setText(CharName.getText().toString());
-                }
+        CharName.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus)
+            {
+                Submenutitle.setText(CharName.getText().toString());
             }
         });
-        Back.setOnClickListener(v -> {
-            SaveAlert(new Intent(ExpertCreateChar.this, MainActivity.class));
-        });
+        Back.setOnClickListener(v -> SaveAlert(new Intent(ExpertCreateChar.this, MainActivity.class)));
         pmenu.setOnClickListener(this::showPopMenu);
     }
 
@@ -1021,21 +988,18 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     private void showPopMenu(View v) {
         PopupMenu popMenu = new PopupMenu(ExpertCreateChar.this, v);
         popMenu.getMenuInflater().inflate(R.menu.popup_menu,popMenu.getMenu());
-        popMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                if(item.getItemId() == R.id.popup_profile) {
-                    SaveAlert(new Intent(ExpertCreateChar.this, ProfileActivity.class));
-                }
-                if(item.getItemId() == R.id.popup_help) {
-                    SaveAlert(new Intent(ExpertCreateChar.this, HelpActivity.class));
-                }
-                if(item.getItemId() == R.id.popup_settings) {
-                    //Placeholder code
-                    Toast.makeText(ExpertCreateChar.this, "You clicked Settings", Toast.LENGTH_SHORT).show();
-                }
-                return true;
+        popMenu.setOnMenuItemClickListener(item -> {
+            if(item.getItemId() == R.id.popup_profile) {
+                SaveAlert(new Intent(ExpertCreateChar.this, ProfileActivity.class));
             }
+            if(item.getItemId() == R.id.popup_help) {
+                SaveAlert(new Intent(ExpertCreateChar.this, HelpActivity.class));
+            }
+            if(item.getItemId() == R.id.popup_settings) {
+                //Placeholder code
+                Toast.makeText(ExpertCreateChar.this, "You clicked Settings", Toast.LENGTH_SHORT).show();
+            }
+            return true;
         });
 
         popMenu.show();
@@ -1047,23 +1011,12 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         builder.setTitle("Save Character?");
         builder.setMessage("The page is exiting would you like to save before exiting?");
         builder.setBackground(getResources().getDrawable(R.drawable.save_dialog_bg));
-        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Save();
-                startActivity(exitDirection);
-            }
+        builder.setPositiveButton("YES", (dialog, which) -> {
+            Save();
+            startActivity(exitDirection);
         });
-        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                startActivity(exitDirection);
-            }
-        });
-        builder.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {}
-        });
+        builder.setNegativeButton("NO", (dialog, which) -> startActivity(exitDirection));
+        builder.setNeutralButton("CANCEL", (dialog, which) -> {});
         builder.show();
     }
 
@@ -1083,61 +1036,60 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 }
                 fos = openFileOutput(CharName.getText().toString(), MODE_PRIVATE);
 
-                String data = Level.getText().toString();
-                data += ";";
-                data += String.valueOf(Class.getSelectedItemPosition());
-                data += ";";
-                data += String.valueOf(Race.getSelectedItemPosition());
-                data += ";";
-                data += String.valueOf(Size.getSelectedItemPosition());
-                data += ";";
-                for (int i = 0; i < abilities.length; i++) {
-                    data += abilities[i].getText().toString();
-                    data += ";";
+                StringBuilder data = new StringBuilder(Level.getText().toString());
+                data.append("\0");
+                data.append(Class.getSelectedItemPosition());
+                data.append("\0");
+                data.append(Race.getSelectedItemPosition());
+                data.append("\0");
+                data.append(Size.getSelectedItemPosition());
+                data.append("\0");
+                for (EditText ability : abilities) {
+                    data.append(ability.getText().toString());
+                    data.append("\0");
                 }
-                for (int i = 0; i < SkillRanks.length; i++) {
-                    data += SkillRanks[i].getText().toString();
-                    data += ";";
+                for (EditText skillRank : SkillRanks) {
+                    data.append(skillRank.getText().toString());
+                    data.append("\0");
                 }
                 EditText W0 = findViewById(R.id.WeaponAttackInput);
                 EditText W1 = findViewById(R.id.WeaponAttackInput2);
                 EditText W2 = findViewById(R.id.WeaponAttackInput3);
                 if (W0.getText().toString().length() > 0) {
-                    data += W0.getText().toString();
-                    data += ";";
-                    data += dmg0.getText().toString();
-                    data += ";";
-                    data += String.valueOf(WType0.getSelectedItemPosition());
+                    data.append(W0.getText().toString());
+                    data.append("\0");
+                    data.append(dmg0.getText().toString());
+                    data.append("\0");
+                    data.append(WType0.getSelectedItemPosition());
                 }
                 if (W1.getText().toString().length() > 0) {
-                    data += W1.getText().toString();
-                    data += ";";
-                    data += dmg1.getText().toString();
-                    data += ";";
-                    data += String.valueOf(WType1.getSelectedItemPosition());
+                    data.append(W1.getText().toString());
+                    data.append("\0");
+                    data.append(dmg1.getText().toString());
+                    data.append("\0");
+                    data.append(WType1.getSelectedItemPosition());
                 }
                 if (W2.getText().toString().length() > 0) {
-                    data += W2.getText().toString();
-                    data += ";";
-                    data += dmg2.getText().toString();
-                    data += ";";
-                    data += String.valueOf(WType2.getSelectedItemPosition());
+                    data.append(W2.getText().toString());
+                    data.append("\0");
+                    data.append(dmg2.getText().toString());
+                    data.append("\0");
+                    data.append(WType2.getSelectedItemPosition());
                 }
-                data += ";";
+                data.append("\0");
                 EditText SP = findViewById(R.id.SPAmount);
                 EditText GP = findViewById(R.id.GPAmount);
                 EditText Inv = findViewById(R.id.CharacterInventoryInput);
                 EditText Bio = findViewById(R.id.CharacterBioInput);
-                data += SP.getText().toString();
-                data += ";";
-                data += GP.getText().toString();
-                data += ";";
-                data += Inv.getText().toString();
-                data += ";";
-                data += Bio.getText().toString();
-                data += "end";
+                data.append(SP.getText().toString());
+                data.append("\0");
+                data.append(GP.getText().toString());
+                data.append("\0");
+                data.append(Inv.getText().toString());
+                data.append("\0");
+                data.append(Bio.getText().toString());
 
-                fos.write(data.getBytes());
+                fos.write(data.toString().getBytes());
 
                 fos.close();
 
