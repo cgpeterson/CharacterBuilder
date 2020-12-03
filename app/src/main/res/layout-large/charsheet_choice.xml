@@ -27,8 +27,8 @@
 
         <Button
             android:id="@+id/ExpertViewButton"
-            android:layout_width="0sp"
-            android:layout_height="100dp"
+            android:layout_width="450sp"
+            android:layout_height="130dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginEnd="20dp"
@@ -36,7 +36,7 @@
             android:background="@drawable/goldbuttonfinal"
             android:text="Expert View"
             android:textColor="#000000"
-            android:textSize="30sp"
+            android:textSize="35sp"
             app:backgroundTint="@android:color/transparent"
             app:backgroundTintMode="screen"
             app:layout_constraintBottom_toTopOf="@+id/GuidedCharButton"
@@ -47,8 +47,8 @@
 
         <Button
             android:id="@+id/GuidedCharButton"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_width="450dp"
+            android:layout_height="130dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginEnd="20dp"
@@ -56,7 +56,7 @@
             android:background="@drawable/goldbuttonfinal"
             android:text="Guided Character Creation"
             android:textColor="#000000"
-            android:textSize="30sp"
+            android:textSize="35sp"
             app:backgroundTint="@android:color/transparent"
             app:backgroundTintMode="screen"
             app:layout_constraintBottom_toTopOf="@+id/GuidedDescript"

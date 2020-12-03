@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         CharacterCreate.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, ExpertCreateChar.class));
+            startActivity(new Intent(MainActivity.this, CharSheetChoice.class));
         });
 
         pmenu.setOnClickListener(this::showPopMenu);
