@@ -50,6 +50,8 @@ public class ProfileActivity extends AppCompatActivity {
         Submenutitle.setText("Profile");
         pmenu = findViewById(R.id.popupbutton);
 
+
+
         expand = (ExpandableListView) findViewById(R.id.expandedlist);
         ListData();
 
@@ -63,6 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this, MainActivity.class));
                 return true;
             }
+
         });
 
         expand.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -88,6 +91,14 @@ public class ProfileActivity extends AppCompatActivity {
         Back.setOnClickListener(v -> {
             startActivity(new Intent(ProfileActivity.this, MainActivity.class));
         });
+
+        //TEST:
+        Intent myIntent = new Intent(ProfileActivity.this, MainActivity.class);
+        myIntent.putExtra("Key", "I WANT BUTTONS" );
+        startActivity(myIntent);
+
+
+        //END TEST CODE: Referenced https://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-in-android-application
 
     }
 

@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
 
@@ -37,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         pmenu.setOnClickListener(this::showPopMenu);
+
+        //TEST CODE:
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null)
+        {
+            String buttonName = extras.getString("Key");
+            LoadCharacter.setText(buttonName);
+        }
+        //End Test Code, referenced: https://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-in-android-application
     }
 
     private void showPopMenu(View v) {
