@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D3A00">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/topbarsub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/Scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/CharNameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Character Name"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#C1C1C1"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CharNameQuest" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/PlayerNameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Player Name"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#C1C1C1"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/PlayerNameQuest" />
+
+            <Button
+                android:id="@+id/BasicNextButton"
+                android:layout_width="120sp"
+                android:layout_height="50sp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/goldbuttonfinal"
+                android:text="Next"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:backgroundTint="@android:color/transparent"
+                app:backgroundTintMode="screen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CharSizeHint" />
+
+            <TextView
+                android:id="@+id/CharNameQuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="What is your characters name?"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/CharSexQuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Your characters gender is"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/SexEdit"
+                app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
+                app:layout_constraintTop_toBottomOf="@+id/CharAgeQuest1" />
+
+            <TextView
+                android:id="@+id/CharLevelQuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Your characters level is"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/LevelEditbox"
+                app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
+                app:layout_constraintTop_toBottomOf="@+id/CharSexQuest" />
+
+            <TextView
+                android:id="@+id/CharClassQuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Your characters class is"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/LevelEditbox"
+                app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
+                app:layout_constraintTop_toBottomOf="@+id/CharLevelHint" />
+
+            <TextView
+                android:id="@+id/CharRaceQuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Your characters race is"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/LevelEditbox"
+                app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
+                app:layout_constraintTop_toBottomOf="@+id/CharClassHint" />
+
+            <TextView
+                android:id="@+id/CharSizeQuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Your characters size is"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/LevelEditbox"
+                app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
+                app:layout_constraintTop_toBottomOf="@+id/CharRaceHint" />
+
+            <TextView
+                android:id="@+id/CharLevelHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Character Level effects all of your stats. The higher the number, the better your stats are."
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LevelEditbox" />
+
+            <TextView
+                android:id="@+id/CharClassHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ClassSpin" />
+
+            <TextView
+                android:id="@+id/CharRaceHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Race effects strength, dexterity,constitution, intelligence, wisdom, and charisma. Humans gain a boost in charisma and dexterity, but lose consitution. Elves gain a boost in intelligence and dexterity, but lose strength. Dwarves gain a boost in wisdom and constitution, but lose in charisma. Finally, Orcs gain a boost in strength and constitution, but lose inteligence"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RaceSpin" />
+
+            <TextView
+                android:id="@+id/CharSizeHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SizeSpin" />
+
+            <TextView
+                android:id="@+id/CharAgeQuest1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Your character is"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/AgeEditbox"
+                app:layout_constraintHorizontal_bias="0.54"
+                app:layout_constraintStart_toStartOf="@+id/PlayerNameEdit"
+                app:layout_constraintTop_toBottomOf="@+id/PlayerNameEdit" />
+
+            <TextView
+                android:id="@+id/CharAgeQuest2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="years old."
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/PlayerNameEdit"
+                app:layout_constraintStart_toEndOf="@+id/AgeEditbox"
+                app:layout_constraintTop_toTopOf="@+id/CharAgeQuest1" />
+
+            <TextView
+                android:id="@+id/PlayerNameQuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="What is your name?"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CharNameEdit" />
+
+            <EditText
+                android:id="@+id/AgeEditbox"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="Age"
+                android:inputType="numberSigned"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#CCCCCC"
+                android:textSize="25sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/CharAgeQuest1"
+                app:layout_constraintEnd_toStartOf="@+id/CharAgeQuest2"
+                app:layout_constraintStart_toEndOf="@+id/CharAgeQuest1" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/SexEdit"
+                android:layout_width="91dp"
+                android:layout_height="wrap_content"
+                android:hint="Gender"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#CCCCCC"
+                android:textSize="25sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/CharSexQuest"
+                app:layout_constraintEnd_toEndOf="@+id/CharAgeQuest2"
+                app:layout_constraintHorizontal_bias="0.705"
+                app:layout_constraintStart_toEndOf="@+id/CharSexQuest" />
+
+            <EditText
+                android:id="@+id/LevelEditbox"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Level"
+                android:inputType="numberSigned"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#CCCCCC"
+                android:textSize="25sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/CharLevelQuest"
+                app:layout_constraintEnd_toEndOf="@+id/SexEdit"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/CharLevelQuest" />
+
+            <Spinner
+                android:id="@+id/ClassSpin"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:background="#80979797"
+                android:entries="@array/Class_array"
+                android:gravity="center_horizontal"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/LevelEditbox"
+                app:layout_constraintStart_toEndOf="@+id/CharClassQuest"
+                app:layout_constraintTop_toTopOf="@+id/CharClassQuest"
+                tools:visibility="visible" />
+
+            <Spinner
+                android:id="@+id/RaceSpin"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:background="#80979797"
+                android:entries="@array/Race_array"
+                android:gravity="center_horizontal"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/ClassSpin"
+                app:layout_constraintStart_toEndOf="@+id/CharRaceQuest"
+                app:layout_constraintTop_toTopOf="@+id/CharRaceQuest"
+                tools:visibility="visible" />
+
+            <Spinner
+                android:id="@+id/SizeSpin"
+                android:layout_width="90dp"
+                android:layout_height="33dp"
+                android:background="#80979797"
+                android:entries="@array/Size_array"
+                android:gravity="center_horizontal"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/RaceSpin"
+                app:layout_constraintStart_toEndOf="@+id/CharSizeQuest"
+                app:layout_constraintTop_toTopOf="@+id/CharSizeQuest"
+                tools:visibility="visible" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
