@@ -40,14 +40,22 @@ public class MainActivity extends AppCompatActivity {
 
         pmenu.setOnClickListener(this::showPopMenu);
 
-        //TEST CODE:
         Bundle extras = getIntent().getExtras();
         if(extras!=null)
         {
-            String buttonName = extras.getString("Key");
+            String buttonName = "Load ";
+            buttonName += extras.getString("LoadName");
             LoadCharacter.setText(buttonName);
+            LoadCharacter.setOnClickListener(v -> {
+                Intent LoadIntent = new Intent(MainActivity.this, ExpertCreateChar.class);
+                LoadIntent.putExtra("LoadName", extras.getString("LoadName"));
+                startActivity(LoadIntent);
+            });
         }
-        //End Test Code, referenced: https://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-in-android-application
+        //Thanks to Eliot for all the help
+        //referenced: https://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-in-android-application
+
+        //ToDo:Load settings to show last edited character in the LoadCharacter Button
     }
 
     private void showPopMenu(View v) {
@@ -71,10 +79,4 @@ public class MainActivity extends AppCompatActivity {
         });
         popMenu.show();
     }
-
-    public Button GetCharNameButton()
-    {
-        return LoadCharacter;
-    }
-
 }

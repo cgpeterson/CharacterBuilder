@@ -61,8 +61,9 @@ public class ProfileActivity extends AppCompatActivity {
         expand.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-
-                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+                Intent myIntent = new Intent(ProfileActivity.this, MainActivity.class);
+                myIntent.putExtra("LoadName", parent.getExpandableListAdapter().getChild(groupPosition, childPosition).toString());
+                startActivity(myIntent);
                 return true;
             }
 
@@ -92,13 +93,11 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(new Intent(ProfileActivity.this, MainActivity.class));
         });
 
-        //TEST:
-        Intent myIntent = new Intent(ProfileActivity.this, MainActivity.class);
-        myIntent.putExtra("Key", "I WANT BUTTONS" );
-        startActivity(myIntent);
 
 
-        //END TEST CODE: Referenced https://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-in-android-application
+
+
+        //Referenced https://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-in-android-application
 
     }
 

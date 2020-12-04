@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -135,7 +137,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     TextView[] intDerived = new TextView[5];
     TextView[] wisDerived = new TextView[6];
     TextView[] chaDerived = new TextView[4];
-    TextView[][] abilitiesDerived = {strDerived,dexDerived,conDerived,intDerived,wisDerived,chaDerived};
+    TextView[][] abilitiesDerived = {strDerived, dexDerived, conDerived, intDerived, wisDerived, chaDerived};
     EditText[] weaponAttackInput = new EditText[3];
 
 
@@ -143,202 +145,202 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character_sheet);
-        Submenutitle=findViewById(R.id.submenutitle);
+        Submenutitle = findViewById(R.id.submenutitle);
         Submenutitle.setText(R.string.default_char_name);
-        Back=findViewById(R.id.exitbutton);
-        pmenu=findViewById(R.id.popupbutton);
+        Back = findViewById(R.id.exitbutton);
+        pmenu = findViewById(R.id.popupbutton);
 
         //Define Variables
-        CharName=findViewById(R.id.CharNameEdit);
-        PlayName=findViewById(R.id.PlayerNameEdit);
-        Age=findViewById(R.id.AgeEditbox);
-        Sex=findViewById(R.id.SexEdit);
-        TMTitle=findViewById(R.id.TempModTitle);
-        strTitle=findViewById(R.id.STRTitle);
-        dexTitle=findViewById(R.id.DEXTitle);
-        conTitle=findViewById(R.id.CONTitle);
-        intTitle=findViewById(R.id.INTTitle);
-        wisTitle=findViewById(R.id.WISTitle);
-        chaTitle=findViewById(R.id.CHATitle);
-        strSub=findViewById(R.id.STRSub);
-        dexSub=findViewById(R.id.DEXSub);
-        conSub=findViewById(R.id.CONSub);
-        intSub=findViewById(R.id.INTSub);
-        wisSub=findViewById(R.id.WISSub);
-        chaSub=findViewById(R.id.CHASub);
-        hpTitle=findViewById(R.id.HPTitle);
-        currHPTitle=findViewById(R.id.CurrHPTitle);
-        currHPBox=findViewById(R.id.CurrHPBox);
-        acTitle=findViewById(R.id.ACTitle);
-        acTotalTitle=findViewById(R.id.ACTotalTitle);
-        acTempTitle=findViewById(R.id.ACTempTitle);
-        acTempBox=findViewById(R.id.ACTempBox);
-        savingThrowsTitle=findViewById(R.id.SavingThrowsTitle);
-        fortTitle=findViewById(R.id.FortTitle);
-        reflexTitle=findViewById(R.id.ReflexTitle);
-        willTitle=findViewById(R.id.WillTitle);
-        skillsTitle=findViewById(R.id.SkillsTitle);
-        skillsTotalTitle=findViewById(R.id.SkillsTotalTitle);
-        skillsAbilityTitle=findViewById(R.id.SkillsAbilityTitle);
-        skillsRankTitle=findViewById(R.id.SkillsRankTitle);
-        totalSaveTitle=findViewById(R.id.TotalSaveTitle);
-        baseSaveTitle=findViewById(R.id.BaseSaveTitle);
-        abilitySaveTitle=findViewById(R.id.AbilitySaveTitle);
-        AModTitle=findViewById(R.id.AbilityModTitle);
-        FortBase=findViewById(R.id.FortBase);
-        RefBase=findViewById(R.id.ReflexBase);
-        WillBase=findViewById(R.id.WillBase);
-        attacksTitle=findViewById(R.id.AttacksTitle);
-        baseAttackTitle=findViewById(R.id.BaseAttackTitle);
-        extraAttacksTitle=findViewById(R.id.ExtraAttacksTitle);
-        extraAttackBox=findViewById(R.id.ExtraAttackBox);
-        AttackBase=findViewById(R.id.BaseAttackBox);
-        grappleTitle=findViewById(R.id.GrappleTitle);
-        grappleTotalTitle=findViewById(R.id.GrappleTotalTitle);
-        grappleModifierTitle=findViewById(R.id.GrappleModifierTitle);
-        grappleBaseAttackBonusTitle=findViewById(R.id.GrappleAttackBonusTitle);
-        grappleStrengthTitle=findViewById(R.id.GrappleStrengthTitle);
-        grappleSizeTitle=findViewById(R.id.GrappleSizeTitle);
-        grappleMiscTitle=findViewById(R.id.GrappleMiscTitle);
-        grappleTotal=findViewById(R.id.GrappleTotal);
-        grappleStrength=findViewById(R.id.GrappleStrength);
-        grappleMisc=findViewById(R.id.GrappleMisc);
-        weaponsAttacksTitle=findViewById(R.id.WeaponsAttacksTitle);
-        dmgTitle=findViewById(R.id.DMGTitle);
-        typeTitle=findViewById(R.id.TypeTitle);
-        characterInventoryTitle=findViewById(R.id.CharacterInventoryTitle);
-        characterBioTitle=findViewById(R.id.CharacterBioTitle);
-        characterInventoryInput=findViewById(R.id.CharacterInventoryInput);
-        characterBioInput=findViewById(R.id.CharacterBioInput);
-        weaponAttackInput[0]=findViewById(R.id.WeaponAttackInput);
-        weaponAttackInput[1]=findViewById(R.id.WeaponAttackInput2);
-        weaponAttackInput[2]=findViewById(R.id.WeaponAttackInput3);
-        STR=findViewById(R.id.STRABox);
-        DEX=findViewById(R.id.DEXABox);
-        CON=findViewById(R.id.CONABox);
-        INT=findViewById(R.id.INTABox);
-        WIS=findViewById(R.id.WISABox);
-        CHA=findViewById(R.id.CHAABox);
-        STRT=findViewById(R.id.STRTBox);
-        DEXT=findViewById(R.id.DEXTBox);
-        CONT=findViewById(R.id.CONTBox);
-        INTT=findViewById(R.id.INTTBox);
-        WIST=findViewById(R.id.WISTBox);
-        CHAT=findViewById(R.id.CHATBox);
-        currencyTitle=findViewById(R.id.CurrencyTitle);
-        spTitle=findViewById(R.id.SPTitle);
-        gpTitle=findViewById(R.id.GPTitle);
-        spAmount=findViewById(R.id.SPAmount);
-        gpAmount=findViewById(R.id.GPAmount);
-        abilities = new EditText[] {STR,DEX,CON,INT,WIS,CHA,STRT,DEXT,CONT,INTT,WIST,CHAT};
-        SkillTotals[0]=findViewById(R.id.AcrobaticsTotal);
-        SkillTotals[1]=findViewById(R.id.AnimalHandTotal);
-        SkillTotals[2]=findViewById(R.id.ArcanaTotal);
-        SkillTotals[3]=findViewById(R.id.AthleticsTotal);
-        SkillTotals[4]=findViewById(R.id.DeceptionTotal);
-        SkillTotals[5]=findViewById(R.id.HistoryTotal);
-        SkillTotals[6]=findViewById(R.id.InsightTotal);
-        SkillTotals[7]=findViewById(R.id.IntimidationTotal);
-        SkillTotals[8]=findViewById(R.id.InvestigationTotal);
-        SkillTotals[9]=findViewById(R.id.MedicineTotal);
-        SkillTotals[10]=findViewById(R.id.NatureTotal);
-        SkillTotals[11]=findViewById(R.id.PerceptionTotal);
-        SkillTotals[12]=findViewById(R.id.PerformanceTotal);
-        SkillTotals[13]=findViewById(R.id.PersuasionTotal);
-        SkillTotals[14]=findViewById(R.id.ReligionTotal);
-        SkillTotals[15]=findViewById(R.id.SleightHandTotal);
-        SkillTotals[16]=findViewById(R.id.StealthTotal);
-        SkillTotals[17]=findViewById(R.id.SurvivalTotal);
-        SkillAbilities[0]=findViewById(R.id.AcrobaticsAbility);
-        SkillAbilities[1]=findViewById(R.id.AnimalHandAbility);
-        SkillAbilities[2]=findViewById(R.id.ArcanaAbility);
-        SkillAbilities[3]=findViewById(R.id.AthleticsAbility);
-        SkillAbilities[4]=findViewById(R.id.DeceptionAbility);
-        SkillAbilities[5]=findViewById(R.id.HistoryAbility);
-        SkillAbilities[6]=findViewById(R.id.InsightAbility);
-        SkillAbilities[7]=findViewById(R.id.IntimidationAbility);
-        SkillAbilities[8]=findViewById(R.id.InvestigationAbility);
-        SkillAbilities[9]=findViewById(R.id.MedicineAbility);
-        SkillAbilities[10]=findViewById(R.id.NatureAbility);
-        SkillAbilities[11]=findViewById(R.id.PerceptionAbility);
-        SkillAbilities[12]=findViewById(R.id.PerformanceAbility);
-        SkillAbilities[13]=findViewById(R.id.PersuasionAbility);
-        SkillAbilities[14]=findViewById(R.id.ReligionAbiltiy);
-        SkillAbilities[15]=findViewById(R.id.SleightHandAbility);
-        SkillAbilities[16]=findViewById(R.id.StealthAbility);
-        SkillAbilities[17]=findViewById(R.id.SurvivalAbility);
-        SkillRanks[0]=findViewById(R.id.AcrobaticsRank);
-        SkillRanks[1]=findViewById(R.id.AnimalHandRank);
-        SkillRanks[2]=findViewById(R.id.ArcanaRank);
-        SkillRanks[3]=findViewById(R.id.AthleticsRank);
-        SkillRanks[4]=findViewById(R.id.DeceptionRank);
-        SkillRanks[5]=findViewById(R.id.HistoryRank);
-        SkillRanks[6]=findViewById(R.id.InsightRank);
-        SkillRanks[7]=findViewById(R.id.IntimidationRank);
-        SkillRanks[8]=findViewById(R.id.InvestigationRank);
-        SkillRanks[9]=findViewById(R.id.MedicineRank);
-        SkillRanks[10]=findViewById(R.id.NatureRank);
-        SkillRanks[11]=findViewById(R.id.PerceptionRank);
-        SkillRanks[12]=findViewById(R.id.PerformanceRank);
-        SkillRanks[13]=findViewById(R.id.PersuasionRank);
-        SkillRanks[14]=findViewById(R.id.ReligionRank);
-        SkillRanks[15]=findViewById(R.id.SleightHandRank);
-        SkillRanks[16]=findViewById(R.id.StealthRank);
-        SkillRanks[17]=findViewById(R.id.SurvivalRank);
-        SkillTitles[0]=findViewById(R.id.AcrobaticsTitle);
-        SkillTitles[1]=findViewById(R.id.AnimalHandTitle);
-        SkillTitles[2]=findViewById(R.id.ArcanaTitle);
-        SkillTitles[3]=findViewById(R.id.AthleticsTitle);
-        SkillTitles[4]=findViewById(R.id.DeceptionTitle);
-        SkillTitles[5]=findViewById(R.id.HistoryTitle);
-        SkillTitles[6]=findViewById(R.id.InsightTitle);
-        SkillTitles[7]=findViewById(R.id.IntimidationTitle);
-        SkillTitles[8]=findViewById(R.id.InvestigationTitle);
-        SkillTitles[9]=findViewById(R.id.MedicineTitle);
-        SkillTitles[10]=findViewById(R.id.NatureTitle);
-        SkillTitles[11]=findViewById(R.id.PerceptionTitle);
-        SkillTitles[12]=findViewById(R.id.PerformanceTitle);
-        SkillTitles[13]=findViewById(R.id.PersuasionTitle);
-        SkillTitles[14]=findViewById(R.id.ReligionTitle);
-        SkillTitles[15]=findViewById(R.id.SleightHandTitle);
-        SkillTitles[16]=findViewById(R.id.StealthTitle);
-        SkillTitles[17]=findViewById(R.id.SurvivalTitle);
-        Class=findViewById(R.id.ClassSpin);
-        Level=findViewById(R.id.LevelEditbox);
-        Race=findViewById(R.id.RaceSpin);
-        Size=findViewById(R.id.SizeSpin);
-        WType0=findViewById(R.id.WeaponsAttackType);
-        WType1=findViewById(R.id.WeaponsAttackType2);
-        WType2=findViewById(R.id.WeaponsAttackType3);
-        HP=findViewById(R.id.HPOutput);
-        AC=findViewById(R.id.ACTotalOutput);
-        gsizeMod=findViewById(R.id.GrappleSize);
-        gattackMod=findViewById(R.id.GrappleBaseAttackBonus);
-        dmg0=findViewById(R.id.DMGOutput);
-        dmg1=findViewById(R.id.DMGOutput2);
-        dmg2=findViewById(R.id.DMGOutput3);
-        strDerived[0]=findViewById(R.id.AthleticsAbility);
-        strDerived[1]=findViewById(R.id.GrappleStrength);
-        dexDerived[0]=findViewById(R.id.ReflexAbility);
-        dexDerived[1]=findViewById(R.id.AcrobaticsAbility);
-        dexDerived[2]=findViewById(R.id.SleightHandAbility);
-        dexDerived[3]=findViewById(R.id.StealthAbility);
-        conDerived[0]=findViewById(R.id.FortAbility);
-        intDerived[0]=findViewById(R.id.ArcanaAbility);
-        intDerived[1]=findViewById(R.id.HistoryAbility);
-        intDerived[2]=findViewById(R.id.InvestigationAbility);
-        intDerived[3]=findViewById(R.id.NatureAbility);
-        intDerived[4]=findViewById(R.id.ReligionAbiltiy);
-        wisDerived[0]=findViewById(R.id.WillAbility);
-        wisDerived[1]=findViewById(R.id.AnimalHandAbility);
-        wisDerived[2]=findViewById(R.id.InsightAbility);
-        wisDerived[3]=findViewById(R.id.MedicineAbility);
-        wisDerived[4]=findViewById(R.id.PerceptionAbility);
-        wisDerived[5]=findViewById(R.id.SurvivalAbility);
-        chaDerived[0]=findViewById(R.id.DeceptionAbility);
-        chaDerived[1]=findViewById(R.id.IntimidationAbility);
-        chaDerived[2]=findViewById(R.id.PerformanceAbility);
-        chaDerived[3]=findViewById(R.id.PersuasionAbility);
+        CharName = findViewById(R.id.CharNameEdit);
+        PlayName = findViewById(R.id.PlayerNameEdit);
+        Age = findViewById(R.id.AgeEditbox);
+        Sex = findViewById(R.id.SexEdit);
+        TMTitle = findViewById(R.id.TempModTitle);
+        strTitle = findViewById(R.id.STRTitle);
+        dexTitle = findViewById(R.id.DEXTitle);
+        conTitle = findViewById(R.id.CONTitle);
+        intTitle = findViewById(R.id.INTTitle);
+        wisTitle = findViewById(R.id.WISTitle);
+        chaTitle = findViewById(R.id.CHATitle);
+        strSub = findViewById(R.id.STRSub);
+        dexSub = findViewById(R.id.DEXSub);
+        conSub = findViewById(R.id.CONSub);
+        intSub = findViewById(R.id.INTSub);
+        wisSub = findViewById(R.id.WISSub);
+        chaSub = findViewById(R.id.CHASub);
+        hpTitle = findViewById(R.id.HPTitle);
+        currHPTitle = findViewById(R.id.CurrHPTitle);
+        currHPBox = findViewById(R.id.CurrHPBox);
+        acTitle = findViewById(R.id.ACTitle);
+        acTotalTitle = findViewById(R.id.ACTotalTitle);
+        acTempTitle = findViewById(R.id.ACTempTitle);
+        acTempBox = findViewById(R.id.ACTempBox);
+        savingThrowsTitle = findViewById(R.id.SavingThrowsTitle);
+        fortTitle = findViewById(R.id.FortTitle);
+        reflexTitle = findViewById(R.id.ReflexTitle);
+        willTitle = findViewById(R.id.WillTitle);
+        skillsTitle = findViewById(R.id.SkillsTitle);
+        skillsTotalTitle = findViewById(R.id.SkillsTotalTitle);
+        skillsAbilityTitle = findViewById(R.id.SkillsAbilityTitle);
+        skillsRankTitle = findViewById(R.id.SkillsRankTitle);
+        totalSaveTitle = findViewById(R.id.TotalSaveTitle);
+        baseSaveTitle = findViewById(R.id.BaseSaveTitle);
+        abilitySaveTitle = findViewById(R.id.AbilitySaveTitle);
+        AModTitle = findViewById(R.id.AbilityModTitle);
+        FortBase = findViewById(R.id.FortBase);
+        RefBase = findViewById(R.id.ReflexBase);
+        WillBase = findViewById(R.id.WillBase);
+        attacksTitle = findViewById(R.id.AttacksTitle);
+        baseAttackTitle = findViewById(R.id.BaseAttackTitle);
+        extraAttacksTitle = findViewById(R.id.ExtraAttacksTitle);
+        extraAttackBox = findViewById(R.id.ExtraAttackBox);
+        AttackBase = findViewById(R.id.BaseAttackBox);
+        grappleTitle = findViewById(R.id.GrappleTitle);
+        grappleTotalTitle = findViewById(R.id.GrappleTotalTitle);
+        grappleModifierTitle = findViewById(R.id.GrappleModifierTitle);
+        grappleBaseAttackBonusTitle = findViewById(R.id.GrappleAttackBonusTitle);
+        grappleStrengthTitle = findViewById(R.id.GrappleStrengthTitle);
+        grappleSizeTitle = findViewById(R.id.GrappleSizeTitle);
+        grappleMiscTitle = findViewById(R.id.GrappleMiscTitle);
+        grappleTotal = findViewById(R.id.GrappleTotal);
+        grappleStrength = findViewById(R.id.GrappleStrength);
+        grappleMisc = findViewById(R.id.GrappleMisc);
+        weaponsAttacksTitle = findViewById(R.id.WeaponsAttacksTitle);
+        dmgTitle = findViewById(R.id.DMGTitle);
+        typeTitle = findViewById(R.id.TypeTitle);
+        characterInventoryTitle = findViewById(R.id.CharacterInventoryTitle);
+        characterBioTitle = findViewById(R.id.CharacterBioTitle);
+        characterInventoryInput = findViewById(R.id.CharacterInventoryInput);
+        characterBioInput = findViewById(R.id.CharacterBioInput);
+        weaponAttackInput[0] = findViewById(R.id.WeaponAttackInput);
+        weaponAttackInput[1] = findViewById(R.id.WeaponAttackInput2);
+        weaponAttackInput[2] = findViewById(R.id.WeaponAttackInput3);
+        STR = findViewById(R.id.STRABox);
+        DEX = findViewById(R.id.DEXABox);
+        CON = findViewById(R.id.CONABox);
+        INT = findViewById(R.id.INTABox);
+        WIS = findViewById(R.id.WISABox);
+        CHA = findViewById(R.id.CHAABox);
+        STRT = findViewById(R.id.STRTBox);
+        DEXT = findViewById(R.id.DEXTBox);
+        CONT = findViewById(R.id.CONTBox);
+        INTT = findViewById(R.id.INTTBox);
+        WIST = findViewById(R.id.WISTBox);
+        CHAT = findViewById(R.id.CHATBox);
+        currencyTitle = findViewById(R.id.CurrencyTitle);
+        spTitle = findViewById(R.id.SPTitle);
+        gpTitle = findViewById(R.id.GPTitle);
+        spAmount = findViewById(R.id.SPAmount);
+        gpAmount = findViewById(R.id.GPAmount);
+        abilities = new EditText[]{STR, DEX, CON, INT, WIS, CHA, STRT, DEXT, CONT, INTT, WIST, CHAT};
+        SkillTotals[0] = findViewById(R.id.AcrobaticsTotal);
+        SkillTotals[1] = findViewById(R.id.AnimalHandTotal);
+        SkillTotals[2] = findViewById(R.id.ArcanaTotal);
+        SkillTotals[3] = findViewById(R.id.AthleticsTotal);
+        SkillTotals[4] = findViewById(R.id.DeceptionTotal);
+        SkillTotals[5] = findViewById(R.id.HistoryTotal);
+        SkillTotals[6] = findViewById(R.id.InsightTotal);
+        SkillTotals[7] = findViewById(R.id.IntimidationTotal);
+        SkillTotals[8] = findViewById(R.id.InvestigationTotal);
+        SkillTotals[9] = findViewById(R.id.MedicineTotal);
+        SkillTotals[10] = findViewById(R.id.NatureTotal);
+        SkillTotals[11] = findViewById(R.id.PerceptionTotal);
+        SkillTotals[12] = findViewById(R.id.PerformanceTotal);
+        SkillTotals[13] = findViewById(R.id.PersuasionTotal);
+        SkillTotals[14] = findViewById(R.id.ReligionTotal);
+        SkillTotals[15] = findViewById(R.id.SleightHandTotal);
+        SkillTotals[16] = findViewById(R.id.StealthTotal);
+        SkillTotals[17] = findViewById(R.id.SurvivalTotal);
+        SkillAbilities[0] = findViewById(R.id.AcrobaticsAbility);
+        SkillAbilities[1] = findViewById(R.id.AnimalHandAbility);
+        SkillAbilities[2] = findViewById(R.id.ArcanaAbility);
+        SkillAbilities[3] = findViewById(R.id.AthleticsAbility);
+        SkillAbilities[4] = findViewById(R.id.DeceptionAbility);
+        SkillAbilities[5] = findViewById(R.id.HistoryAbility);
+        SkillAbilities[6] = findViewById(R.id.InsightAbility);
+        SkillAbilities[7] = findViewById(R.id.IntimidationAbility);
+        SkillAbilities[8] = findViewById(R.id.InvestigationAbility);
+        SkillAbilities[9] = findViewById(R.id.MedicineAbility);
+        SkillAbilities[10] = findViewById(R.id.NatureAbility);
+        SkillAbilities[11] = findViewById(R.id.PerceptionAbility);
+        SkillAbilities[12] = findViewById(R.id.PerformanceAbility);
+        SkillAbilities[13] = findViewById(R.id.PersuasionAbility);
+        SkillAbilities[14] = findViewById(R.id.ReligionAbiltiy);
+        SkillAbilities[15] = findViewById(R.id.SleightHandAbility);
+        SkillAbilities[16] = findViewById(R.id.StealthAbility);
+        SkillAbilities[17] = findViewById(R.id.SurvivalAbility);
+        SkillRanks[0] = findViewById(R.id.AcrobaticsRank);
+        SkillRanks[1] = findViewById(R.id.AnimalHandRank);
+        SkillRanks[2] = findViewById(R.id.ArcanaRank);
+        SkillRanks[3] = findViewById(R.id.AthleticsRank);
+        SkillRanks[4] = findViewById(R.id.DeceptionRank);
+        SkillRanks[5] = findViewById(R.id.HistoryRank);
+        SkillRanks[6] = findViewById(R.id.InsightRank);
+        SkillRanks[7] = findViewById(R.id.IntimidationRank);
+        SkillRanks[8] = findViewById(R.id.InvestigationRank);
+        SkillRanks[9] = findViewById(R.id.MedicineRank);
+        SkillRanks[10] = findViewById(R.id.NatureRank);
+        SkillRanks[11] = findViewById(R.id.PerceptionRank);
+        SkillRanks[12] = findViewById(R.id.PerformanceRank);
+        SkillRanks[13] = findViewById(R.id.PersuasionRank);
+        SkillRanks[14] = findViewById(R.id.ReligionRank);
+        SkillRanks[15] = findViewById(R.id.SleightHandRank);
+        SkillRanks[16] = findViewById(R.id.StealthRank);
+        SkillRanks[17] = findViewById(R.id.SurvivalRank);
+        SkillTitles[0] = findViewById(R.id.AcrobaticsTitle);
+        SkillTitles[1] = findViewById(R.id.AnimalHandTitle);
+        SkillTitles[2] = findViewById(R.id.ArcanaTitle);
+        SkillTitles[3] = findViewById(R.id.AthleticsTitle);
+        SkillTitles[4] = findViewById(R.id.DeceptionTitle);
+        SkillTitles[5] = findViewById(R.id.HistoryTitle);
+        SkillTitles[6] = findViewById(R.id.InsightTitle);
+        SkillTitles[7] = findViewById(R.id.IntimidationTitle);
+        SkillTitles[8] = findViewById(R.id.InvestigationTitle);
+        SkillTitles[9] = findViewById(R.id.MedicineTitle);
+        SkillTitles[10] = findViewById(R.id.NatureTitle);
+        SkillTitles[11] = findViewById(R.id.PerceptionTitle);
+        SkillTitles[12] = findViewById(R.id.PerformanceTitle);
+        SkillTitles[13] = findViewById(R.id.PersuasionTitle);
+        SkillTitles[14] = findViewById(R.id.ReligionTitle);
+        SkillTitles[15] = findViewById(R.id.SleightHandTitle);
+        SkillTitles[16] = findViewById(R.id.StealthTitle);
+        SkillTitles[17] = findViewById(R.id.SurvivalTitle);
+        Class = findViewById(R.id.ClassSpin);
+        Level = findViewById(R.id.LevelEditbox);
+        Race = findViewById(R.id.RaceSpin);
+        Size = findViewById(R.id.SizeSpin);
+        WType0 = findViewById(R.id.WeaponsAttackType);
+        WType1 = findViewById(R.id.WeaponsAttackType2);
+        WType2 = findViewById(R.id.WeaponsAttackType3);
+        HP = findViewById(R.id.HPOutput);
+        AC = findViewById(R.id.ACTotalOutput);
+        gsizeMod = findViewById(R.id.GrappleSize);
+        gattackMod = findViewById(R.id.GrappleBaseAttackBonus);
+        dmg0 = findViewById(R.id.DMGOutput);
+        dmg1 = findViewById(R.id.DMGOutput2);
+        dmg2 = findViewById(R.id.DMGOutput3);
+        strDerived[0] = findViewById(R.id.AthleticsAbility);
+        strDerived[1] = findViewById(R.id.GrappleStrength);
+        dexDerived[0] = findViewById(R.id.ReflexAbility);
+        dexDerived[1] = findViewById(R.id.AcrobaticsAbility);
+        dexDerived[2] = findViewById(R.id.SleightHandAbility);
+        dexDerived[3] = findViewById(R.id.StealthAbility);
+        conDerived[0] = findViewById(R.id.FortAbility);
+        intDerived[0] = findViewById(R.id.ArcanaAbility);
+        intDerived[1] = findViewById(R.id.HistoryAbility);
+        intDerived[2] = findViewById(R.id.InvestigationAbility);
+        intDerived[3] = findViewById(R.id.NatureAbility);
+        intDerived[4] = findViewById(R.id.ReligionAbiltiy);
+        wisDerived[0] = findViewById(R.id.WillAbility);
+        wisDerived[1] = findViewById(R.id.AnimalHandAbility);
+        wisDerived[2] = findViewById(R.id.InsightAbility);
+        wisDerived[3] = findViewById(R.id.MedicineAbility);
+        wisDerived[4] = findViewById(R.id.PerceptionAbility);
+        wisDerived[5] = findViewById(R.id.SurvivalAbility);
+        chaDerived[0] = findViewById(R.id.DeceptionAbility);
+        chaDerived[1] = findViewById(R.id.IntimidationAbility);
+        chaDerived[2] = findViewById(R.id.PerformanceAbility);
+        chaDerived[3] = findViewById(R.id.PersuasionAbility);
         ArrayAdapter<CharSequence> classAdapter = ArrayAdapter.createFromResource(this, R.array.Class_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> raceAdapter = ArrayAdapter.createFromResource(this, R.array.Race_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> sizeAdapter = ArrayAdapter.createFromResource(this, R.array.Size_array, android.R.layout.simple_spinner_item);
@@ -348,38 +350,33 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         DisplayMetrics display = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(display);
         int width = display.widthPixels;
-        double widthInch = Math.pow(display.widthPixels/display.xdpi,2);
-        double heightInch = Math.pow(display.heightPixels/display.ydpi,2);
-        double screenInch = Math.sqrt(widthInch+heightInch);
-        screenInch =  (double)Math.round(screenInch * 10) / 10;
+        double widthInch = Math.pow(display.widthPixels / display.xdpi, 2);
+        double heightInch = Math.pow(display.heightPixels / display.ydpi, 2);
+        double screenInch = Math.sqrt(widthInch + heightInch);
+        screenInch = (double) Math.round(screenInch * 10) / 10;
 
         int text35;
         int text30;
         int text25;
         int text20;
-        int nameBox = (width/2) - 50;
-        if (screenInch >= 6.8)
-        {
-            text35 = width/35;
-            text30 = width/40;
-            text25 = width/50;
-            text20 = width/60;
+        int nameBox = (width / 2) - 50;
+        if (screenInch >= 6.8) {
+            text35 = width / 35;
+            text30 = width / 40;
+            text25 = width / 50;
+            text20 = width / 60;
 
-        }
-        else if (screenInch < 6.8 && screenInch >= 5)
-        {
-            text35 = width/60;
-            text30 = width/65;
-            text25 = width/80;
-            text20 = width/85;
+        } else if (screenInch < 6.8 && screenInch >= 5) {
+            text35 = width / 60;
+            text30 = width / 65;
+            text25 = width / 80;
+            text20 = width / 85;
 
-        }
-        else
-        {
-            text35 = width/55;
-            text30 = width/60;
-            text25 = width/70;
-            text20 = width/80;
+        } else {
+            text35 = width / 55;
+            text30 = width / 60;
+            text25 = width / 70;
+            text20 = width / 80;
 
         }
         CharName.setTextSize(text30);
@@ -512,6 +509,13 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         WType1.setAdapter(typeAdapter);
         WType2.setAdapter(typeAdapter);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String loadName = extras.getString("LoadName");
+            if (!Load(loadName)) {
+                CharName.setText(loadName);
+            }
+        }
 
         //Actions
         Class.setOnItemSelectedListener(this);
@@ -521,26 +525,22 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         WType1.setOnItemSelectedListener(this);
         WType2.setOnItemSelectedListener(this);
 
-        for (int i = 0; i < abilities.length; i++)
-        {
+        for (int i = 0; i < abilities.length; i++) {
             int finalI = i;
             abilities[i].setOnFocusChangeListener((v, hasFocus) -> {
-                if (!hasFocus)
-                {
+                if (!hasFocus) {
                     try {
                         abilities[finalI].setText(String.valueOf(Integer.parseInt(abilities[finalI].getText().toString())));
                     } catch (Exception e) {
                         abilities[finalI].setText("0");
                     }
-                    if (abilityCheck())
-                    {
+                    if (abilityCheck()) {
                         Derive();
                     }
                 }
             });
         }
-        for (int i = 0; i < SkillRanks.length; i++)
-        {
+        for (int i = 0; i < SkillRanks.length; i++) {
             int finalI = i;
             SkillRanks[i].setOnFocusChangeListener((v, hasFocus) -> {
                 if (!hasFocus) {
@@ -554,12 +554,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             });
         }
         Level.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus)
-            {
+            if (!hasFocus) {
                 try {
                     Integer.parseInt(Level.getText().toString());
-                } catch (Exception e)
-                {
+                } catch (Exception e) {
                     Level.setText("1");
                 }
 
@@ -568,46 +566,44 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             }
         });
         CharName.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus)
-            {
+            if (!hasFocus) {
                 Submenutitle.setText(CharName.getText().toString());
             }
         });
         Back.setOnClickListener(v -> SaveAlert(new Intent(ExpertCreateChar.this, MainActivity.class)));
-        pmenu.setOnClickListener(this::showPopMenu);
+        pmenu.setOnClickListener(v -> showPopMenu(v));
     }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        switch (parent.getId())
-        {
+        switch (parent.getId()) {
             case R.id.ClassSpin:
-                switch (position)
-                {
+                switch (position) {
                     case 1:
                         //placeholder
-                        Toast toast1 = Toast.makeText(getApplicationContext(), "Cleric",Toast.LENGTH_LONG);
+                        Toast toast1 = Toast.makeText(getApplicationContext(), "Cleric", Toast.LENGTH_LONG);
                         if (Level.getText().length() > 0)
                             SetSaves();
                         toast1.show();
                         break;
                     case 2:
                         //placeholder
-                        Toast toast2 = Toast.makeText(getApplicationContext(),"Fighter",Toast.LENGTH_LONG);
+                        Toast toast2 = Toast.makeText(getApplicationContext(), "Fighter", Toast.LENGTH_LONG);
                         if (Level.getText().length() > 0)
                             SetSaves();
                         toast2.show();
                         break;
                     case 3:
                         //placeholder
-                        Toast toast3 = Toast.makeText(getApplicationContext(),"Wizard",Toast.LENGTH_LONG);
+                        Toast toast3 = Toast.makeText(getApplicationContext(), "Wizard", Toast.LENGTH_LONG);
                         if (Level.getText().length() > 0)
                             SetSaves();
                         toast3.show();
                         break;
                     case 4:
                         //placeholder
-                        Toast toast4 = Toast.makeText(getApplicationContext(),"Rogue",Toast.LENGTH_LONG);
+                        Toast toast4 = Toast.makeText(getApplicationContext(), "Rogue", Toast.LENGTH_LONG);
                         if (Level.getText().length() > 0)
                             SetSaves();
                         toast4.show();
@@ -615,52 +611,50 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 }
                 break;
             case R.id.RaceSpin:
-                switch (position)
-                {
+                switch (position) {
                     case 1:
                         //placeholder
-                        Toast toast1 = Toast.makeText(getApplicationContext(),"Human; Cha+, Dex+, Con-",Toast.LENGTH_LONG);
+                        Toast toast1 = Toast.makeText(getApplicationContext(), "Human; Cha+, Dex+, Con-", Toast.LENGTH_LONG);
                         toast1.show();
                         abilityCheck();
                         break;
                     case 2:
                         //placeholder
-                        Toast toast2 = Toast.makeText(getApplicationContext(),"Elf; Int+, Dex+, Str-",Toast.LENGTH_LONG);
+                        Toast toast2 = Toast.makeText(getApplicationContext(), "Elf; Int+, Dex+, Str-", Toast.LENGTH_LONG);
                         toast2.show();
                         abilityCheck();
                         break;
                     case 3:
                         //placeholder
-                        Toast toast3 = Toast.makeText(getApplicationContext(),"Dwarf; Wis+, Con+, Cha-",Toast.LENGTH_LONG);
+                        Toast toast3 = Toast.makeText(getApplicationContext(), "Dwarf; Wis+, Con+, Cha-", Toast.LENGTH_LONG);
                         toast3.show();
                         abilityCheck();
                         break;
                     case 4:
                         //placeholder
-                        Toast toast4 = Toast.makeText(getApplicationContext(),"Orc; Str+, Con+, Int-",Toast.LENGTH_LONG);
+                        Toast toast4 = Toast.makeText(getApplicationContext(), "Orc; Str+, Con+, Int-", Toast.LENGTH_LONG);
                         toast4.show();
                         abilityCheck();
                         break;
                 }
                 break;
             case R.id.SizeSpin:
-                switch (position)
-                {
+                switch (position) {
                     case 1:
                         //placeholder
-                        Toast toast1 = Toast.makeText(getApplicationContext(),"Large",Toast.LENGTH_LONG);
+                        Toast toast1 = Toast.makeText(getApplicationContext(), "Large", Toast.LENGTH_LONG);
                         gsizeMod.setText("1");
                         toast1.show();
                         break;
                     case 2:
                         //placeholder
-                        Toast toast2 = Toast.makeText(getApplicationContext(),"Medium",Toast.LENGTH_LONG);
+                        Toast toast2 = Toast.makeText(getApplicationContext(), "Medium", Toast.LENGTH_LONG);
                         gsizeMod.setText("0");
                         toast2.show();
                         break;
                     case 3:
                         //placeholder
-                        Toast toast3 = Toast.makeText(getApplicationContext(),"Small",Toast.LENGTH_LONG);
+                        Toast toast3 = Toast.makeText(getApplicationContext(), "Small", Toast.LENGTH_LONG);
                         gsizeMod.setText("-1");
                         toast3.show();
                         break;
@@ -713,8 +707,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
 
     }
 
-    private boolean abilityCheck()
-    {
+    private boolean abilityCheck() {
         int strMax = 4;
         int strMin = -2;
         int dexMax = 4;
@@ -729,8 +722,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         int chaMin = -2;
 
         int pointMax = 7;
-        switch (Race.getSelectedItemPosition())
-        {
+        switch (Race.getSelectedItemPosition()) {
             case 1:
                 //Racial Bonus
                 chaMax++;
@@ -801,12 +793,11 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
 
         int sumPoints = Integer.parseInt(STR.getText().toString()) + Integer.parseInt(DEX.getText().toString()) + Integer.parseInt(CON.getText().toString()) + Integer.parseInt(INT.getText().toString()) + Integer.parseInt(WIS.getText().toString()) + Integer.parseInt(CHA.getText().toString());
 
-        if (sumPoints > pointMax)
-        {
-            Toast toast = Toast.makeText(getApplicationContext(),"Over Spent",Toast.LENGTH_LONG);
+        if (sumPoints > pointMax) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Over Spent", Toast.LENGTH_LONG);
             toast.show();
             AModTitle.setTextColor(Color.parseColor("#FF0000"));
-        } else if (sumPoints == pointMax){
+        } else if (sumPoints == pointMax) {
             AModTitle.setTextColor(Color.parseColor("#FFFFFF"));
             return true;
         } else {
@@ -816,23 +807,18 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         return false;
     }
 
-    private void Derive()
-    {
-        for (int i = 0; i < abilitiesDerived.length; i++)
-        {
-            for (int j = 0; j < abilitiesDerived[i].length; j++)
-            {
-                abilitiesDerived[i][j].setText(String.valueOf(Integer.parseInt(abilities[i].getText().toString()) + Integer.parseInt(abilities[i+6].getText().toString())));
+    private void Derive() {
+        for (int i = 0; i < abilitiesDerived.length; i++) {
+            for (int j = 0; j < abilitiesDerived[i].length; j++) {
+                abilitiesDerived[i][j].setText(String.valueOf(Integer.parseInt(abilities[i].getText().toString()) + Integer.parseInt(abilities[i + 6].getText().toString())));
             }
         }
     }
 
-    private String SetDmg(int position)
-    {
+    private String SetDmg(int position) {
         String dmg = "";
 
-        switch (Size.getSelectedItemPosition())
-        {
+        switch (Size.getSelectedItemPosition()) {
             case 1:
                 dmg = "3";
                 break;
@@ -844,8 +830,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 break;
         }
 
-        switch (position)
-        {
+        switch (position) {
             case 1:
                 dmg += "d4";
                 if (Integer.parseInt(STR.getText().toString()) >= 0)
@@ -862,7 +847,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 dmg += "d8";
                 if (Integer.parseInt(STR.getText().toString()) >= 0)
                     dmg += "+";
-                dmg += String.valueOf((int)(Integer.parseInt(STR.getText().toString())* 1.5));
+                dmg += String.valueOf((int) (Integer.parseInt(STR.getText().toString()) * 1.5));
                 break;
         }
 
@@ -906,10 +891,8 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         gattackMod.setText(AttackBase.getText().toString());
     }
 
-    private void Totals()
-    {
-        for (int i = 0; i < SkillTotals.length; i++)
-        {
+    private void Totals() {
+        for (int i = 0; i < SkillTotals.length; i++) {
             int sability;
             try {
                 sability = Integer.parseInt(SkillAbilities[i].getText().toString());
@@ -928,32 +911,30 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         }
 
         Roller roll;
-        try{
+        try {
             Integer.parseInt(Level.getText().toString());
         } catch (Exception e) {
             Level.setText("1");
         }
-        switch (Class.getSelectedItemPosition())
-        {
+        switch (Class.getSelectedItemPosition()) {
             case 1:
-                roll = new Roller(Integer.parseInt(Level.getText().toString()),8);
+                roll = new Roller(Integer.parseInt(Level.getText().toString()), 8);
                 roll.Rolling();
                 break;
             case 2:
-                roll = new Roller(Integer.parseInt(Level.getText().toString()),10);
+                roll = new Roller(Integer.parseInt(Level.getText().toString()), 10);
                 roll.Rolling();
                 break;
             case 3:
-                roll = new Roller(Integer.parseInt(Level.getText().toString()),4);
+                roll = new Roller(Integer.parseInt(Level.getText().toString()), 4);
                 roll.Rolling();
                 break;
             default:
-                roll = new Roller(Integer.parseInt(Level.getText().toString()),6);
+                roll = new Roller(Integer.parseInt(Level.getText().toString()), 6);
                 roll.Rolling();
         }
         int RollTot = 0;
-        for (int i = 0; i < Integer.parseInt(Level.getText().toString()); i++)
-        {
+        for (int i = 0; i < Integer.parseInt(Level.getText().toString()); i++) {
             RollTot += roll.GetRolls(i);
         }
         try {
@@ -965,8 +946,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         try {
             Integer.parseInt(ACTemp.getText().toString());
             AC.setText(String.valueOf(Integer.parseInt(DEX.getText().toString()) + 10 + Integer.parseInt(ACTemp.getText().toString())));
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             AC.setText("0");
         }
 
@@ -985,15 +965,15 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
 
     private void showPopMenu(View v) {
         PopupMenu popMenu = new PopupMenu(ExpertCreateChar.this, v);
-        popMenu.getMenuInflater().inflate(R.menu.popup_menu,popMenu.getMenu());
+        popMenu.getMenuInflater().inflate(R.menu.popup_menu, popMenu.getMenu());
         popMenu.setOnMenuItemClickListener(item -> {
-            if(item.getItemId() == R.id.popup_profile) {
+            if (item.getItemId() == R.id.popup_profile) {
                 SaveAlert(new Intent(ExpertCreateChar.this, ProfileActivity.class));
             }
-            if(item.getItemId() == R.id.popup_help) {
+            if (item.getItemId() == R.id.popup_help) {
                 SaveAlert(new Intent(ExpertCreateChar.this, HelpActivity.class));
             }
-            if(item.getItemId() == R.id.popup_settings) {
+            if (item.getItemId() == R.id.popup_settings) {
                 //Placeholder code
                 Toast.makeText(ExpertCreateChar.this, "You clicked Settings", Toast.LENGTH_SHORT).show();
             }
@@ -1003,8 +983,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         popMenu.show();
     }
 
-    private void SaveAlert(Intent exitDirection)
-    {
+    private void SaveAlert(Intent exitDirection) {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ExpertCreateChar.this, R.style.CharacterSheetTheme);
         builder.setTitle("Save Character?");
         builder.setMessage("The page is exiting would you like to save before exiting?");
@@ -1014,113 +993,131 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             startActivity(exitDirection);
         });
         builder.setNegativeButton("NO", (dialog, which) -> startActivity(exitDirection));
-        builder.setNeutralButton("CANCEL", (dialog, which) -> {});
+        builder.setNeutralButton("CANCEL", (dialog, which) -> {
+        });
         builder.show();
     }
 
     private void Save() {
-            FileOutputStream fos;
-            try {
-                File charfile = new File(getApplicationContext().getFilesDir(), CharName.getText().toString());
+        FileOutputStream fos;
+        try {
+            File charFile = new File(getApplicationContext().getFilesDir(), CharName.getText().toString());
 
-                if (!charfile.exists())
-                {
-                    try
-                    {
-                        charfile.createNewFile();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+            if (!charFile.exists()) {
+                try {
+                    charFile.createNewFile();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                fos = openFileOutput(CharName.getText().toString(), MODE_PRIVATE);
-
-                StringBuilder data = new StringBuilder(Level.getText().toString());
-                data.append("\0");
-                data.append(Class.getSelectedItemPosition());
-                data.append("\0");
-                data.append(Race.getSelectedItemPosition());
-                data.append("\0");
-                data.append(Size.getSelectedItemPosition());
-                data.append("\0");
-                for (EditText ability : abilities) {
-                    data.append(ability.getText().toString());
-                    data.append("\0");
-                }
-                for (EditText skillRank : SkillRanks) {
-                    data.append(skillRank.getText().toString());
-                    data.append("\0");
-                }
-                EditText W0 = findViewById(R.id.WeaponAttackInput);
-                EditText W1 = findViewById(R.id.WeaponAttackInput2);
-                EditText W2 = findViewById(R.id.WeaponAttackInput3);
-                if (W0.getText().toString().length() > 0) {
-                    data.append(W0.getText().toString());
-                    data.append("\0");
-                    data.append(dmg0.getText().toString());
-                    data.append("\0");
-                    data.append(WType0.getSelectedItemPosition());
-                }
-                if (W1.getText().toString().length() > 0) {
-                    data.append(W1.getText().toString());
-                    data.append("\0");
-                    data.append(dmg1.getText().toString());
-                    data.append("\0");
-                    data.append(WType1.getSelectedItemPosition());
-                }
-                if (W2.getText().toString().length() > 0) {
-                    data.append(W2.getText().toString());
-                    data.append("\0");
-                    data.append(dmg2.getText().toString());
-                    data.append("\0");
-                    data.append(WType2.getSelectedItemPosition());
-                }
-                data.append("\0");
-                EditText SP = findViewById(R.id.SPAmount);
-                EditText GP = findViewById(R.id.GPAmount);
-                EditText Inv = findViewById(R.id.CharacterInventoryInput);
-                EditText Bio = findViewById(R.id.CharacterBioInput);
-                data.append(SP.getText().toString());
-                data.append("\0");
-                data.append(GP.getText().toString());
-                data.append("\0");
-                data.append(Inv.getText().toString());
-                data.append("\0");
-                data.append(Bio.getText().toString());
-
-                fos.write(data.toString().getBytes());
-
-                fos.close();
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
             }
-            //update settings to remember saved name
-            try {
-                File settings = new File(getApplicationContext().getFilesDir(), "settings.txt");
+            fos = openFileOutput(CharName.getText().toString(), MODE_PRIVATE);
 
-                if (!settings.exists())
-                {
-                    try
-                    {
-                        settings.createNewFile();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                fos = openFileOutput("settings.txt", Context.MODE_APPEND);
-                String saveName = CharName.getText().toString() + "\0";
-                fos.write(saveName.getBytes());
-                fos.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+            StringBuilder data = new StringBuilder(Level.getText().toString());
+            data.append("\0");
+            data.append(Class.getSelectedItemPosition());
+            data.append("\0");
+            data.append(Race.getSelectedItemPosition());
+            data.append("\0");
+            data.append(Size.getSelectedItemPosition());
+            data.append("\0");
+            for (EditText ability : abilities) {
+                data.append(ability.getText().toString());
+                data.append("\0");
             }
+            for (EditText skillRank : SkillRanks) {
+                data.append(skillRank.getText().toString());
+                data.append("\0");
+            }
+            EditText W0 = findViewById(R.id.WeaponAttackInput);
+            EditText W1 = findViewById(R.id.WeaponAttackInput2);
+            EditText W2 = findViewById(R.id.WeaponAttackInput3);
+            if (W0.getText().toString().length() > 0) {
+                data.append(W0.getText().toString());
+                data.append("\0");
+                data.append(dmg0.getText().toString());
+                data.append("\0");
+                data.append(WType0.getSelectedItemPosition());
+            }
+            if (W1.getText().toString().length() > 0) {
+                data.append(W1.getText().toString());
+                data.append("\0");
+                data.append(dmg1.getText().toString());
+                data.append("\0");
+                data.append(WType1.getSelectedItemPosition());
+            }
+            if (W2.getText().toString().length() > 0) {
+                data.append(W2.getText().toString());
+                data.append("\0");
+                data.append(dmg2.getText().toString());
+                data.append("\0");
+                data.append(WType2.getSelectedItemPosition());
+            }
+            data.append("\0");
+            EditText SP = findViewById(R.id.SPAmount);
+            EditText GP = findViewById(R.id.GPAmount);
+            EditText Inv = findViewById(R.id.CharacterInventoryInput);
+            EditText Bio = findViewById(R.id.CharacterBioInput);
+            data.append(SP.getText().toString());
+            data.append("\0");
+            data.append(GP.getText().toString());
+            data.append("\0");
+            data.append(Inv.getText().toString());
+            data.append("\0");
+            data.append(Bio.getText().toString());
+
+            fos.write(data.toString().getBytes());
+
+            fos.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //update settings to remember saved name
+        try {
+            File settings = new File(getApplicationContext().getFilesDir(), "settings.txt");
+
+            if (!settings.exists()) {
+                try {
+                    settings.createNewFile();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            fos = openFileOutput("settings.txt", Context.MODE_APPEND);
+            String saveName = CharName.getText().toString() + "\0";
+            fos.write(saveName.getBytes());
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
+    private boolean Load(String loadName) {
+        try
+        {
+            FileInputStream input = openFileInput(loadName);
+            StringBuilder name = new StringBuilder();
 
+            int i = input.read();
 
+            while (i != -1)
+            {
+                //ToDo: add Load Logic
+                i = input.read();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
 }
+
+
