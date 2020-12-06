@@ -54,7 +54,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AttacksHint" />
+                app:layout_constraintTop_toBottomOf="@+id/CurrencyHint" />
 
             <EditText
                 android:id="@+id/BaseAttackBox"
@@ -442,7 +442,7 @@
                 app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput3" />
 
             <TextView
-                android:id="@+id/AttacksHint"
+                android:id="@+id/CurrencyHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
