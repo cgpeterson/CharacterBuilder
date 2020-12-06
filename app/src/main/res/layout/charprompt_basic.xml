@@ -7,21 +7,13 @@
     android:layout_height="match_parent"
     android:background="#0D3A00">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/topbarsub"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ScrollView
         android:id="@+id/Scroll"
         android:layout_width="match_parent"
         android:layout_height="0sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -58,21 +50,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PlayerNameQuest" />
-
-            <Button
-                android:id="@+id/BasicNextButton"
-                android:layout_width="120sp"
-                android:layout_height="50sp"
-                android:layout_marginTop="45dp"
-                android:background="@drawable/goldbuttonfinal"
-                android:text="Next"
-                android:textColor="#000000"
-                android:textSize="25sp"
-                app:backgroundTint="@android:color/transparent"
-                app:backgroundTintMode="screen"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CharSizeHint" />
 
             <TextView
                 android:id="@+id/CharNameQuest"
@@ -165,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:text="Fill\nLater"
+                android:text="Class effects saving throws.\nA Cleric has a strong Will, but is weaker in Fortitude and Attack Base.\nA Fighter has a strong Fortitude and Attack, but is weak in Will.\nA Wizard has a strong Will, but is weak in Fortitude and has the weakest Attack.\nA Rogue has the best Reflexes, but is weak in Will. Class also effects health."
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -191,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:text="Fill\nLater"
+                android:text="Size effects attack power. The bigger you are, the more damage you can cause."
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"

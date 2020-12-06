@@ -47,6 +47,10 @@ public class CharSheetChoice extends AppCompatActivity
             startActivity(new Intent(CharSheetChoice.this, ExpertCreateChar.class));
         });
 
+        guidedView.setOnClickListener(v -> {
+            startActivity(new Intent (CharSheetChoice.this, PromptCharTabActivity.class));
+        });
+
 
         //Resize code
         DisplayMetrics display = new DisplayMetrics();

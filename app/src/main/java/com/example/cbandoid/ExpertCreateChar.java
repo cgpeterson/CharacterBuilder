@@ -187,6 +187,9 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         baseSaveTitle = findViewById(R.id.BaseSaveTitle);
         abilitySaveTitle = findViewById(R.id.AbilitySaveTitle);
         AModTitle = findViewById(R.id.AbilityModTitle);
+        fortTotal=findViewById(R.id.FortTotal);
+        reflexTotal=findViewById(R.id.ReflexTotal);
+        willTotal=findViewById(R.id.WillTotal);
         FortBase = findViewById(R.id.FortBase);
         RefBase = findViewById(R.id.ReflexBase);
         WillBase = findViewById(R.id.WillBase);
@@ -413,6 +416,12 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         fortTitle.setTextSize(text35);
         reflexTitle.setTextSize(text35);
         willTitle.setTextSize(text35);
+        FortBase.setTextSize(text30);
+        RefBase.setTextSize(text30);
+        WillBase.setTextSize(text30);
+        fortTotal.setTextSize(text30);
+        reflexTotal.setTextSize(text30);
+        willTotal.setTextSize(text30);
         totalSaveTitle.setTextSize(text30);
         baseSaveTitle.setTextSize(text30);
         abilitySaveTitle.setTextSize(text30);

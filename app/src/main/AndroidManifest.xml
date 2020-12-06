@@ -15,9 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CBAndoid">
         <activity
+            android:name=".PromptCharTabActivity"
+            android:label="@string/title_activity_prompt_char_tab"
+            android:theme="@style/Theme.CBAndoid.NoActionBar"></activity>
+        <activity
             android:name=".CharSheetChoice"
             android:label="@string/title_activity_char_sheet_choice"
-            android:theme="@style/Theme.CBAndoid.NoActionBar"></activity>
+            android:theme="@style/Theme.CBAndoid.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
