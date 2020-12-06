@@ -2616,7 +2616,7 @@
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="@+id/GrappleSize"
                     app:layout_constraintStart_toStartOf="@+id/GrappleSize"
-                    app:layout_constraintTop_toBottomOf="@+id/GrapplePlus2" />
+                    app:layout_constraintTop_toBottomOf="@+id/GrappleSize" />
 
                 <TextView
                     android:id="@+id/GrappleMiscTitle"
@@ -2629,7 +2629,7 @@
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="@+id/GrappleMisc"
                     app:layout_constraintStart_toStartOf="@+id/GrappleMisc"
-                    app:layout_constraintTop_toBottomOf="@+id/GrapplePlus3" />
+                    app:layout_constraintTop_toBottomOf="@+id/GrappleMisc" />
 
                 <TextView
                     android:id="@+id/GrappleStrengthTitle"
