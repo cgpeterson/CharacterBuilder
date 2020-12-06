@@ -9,7 +9,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.cbandoid.AbilityModActivity;
+import com.example.cbandoid.AttacksActivity;
 import com.example.cbandoid.BasicInfoActivity;
+import com.example.cbandoid.InventoryActivity;
 import com.example.cbandoid.R;
 import com.example.cbandoid.SavingThrowsActivity;
 import com.example.cbandoid.SkillsActivity;
@@ -21,7 +23,7 @@ import com.example.cbandoid.SkillsActivity;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3, R.string.tab_text_4};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3, R.string.tab_text_4, R.string.tab_text_5,R.string.tab_text_6};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -47,6 +49,12 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 3:
                 frag = new SkillsActivity();
                 break;
+            case 4:
+                frag = new AttacksActivity();
+                break;
+            case 5:
+                frag = new InventoryActivity();
+                break;
         }
         return frag;
     }
@@ -60,6 +68,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show total number of pages.
-        return 4;
+        return 6;
     }
 }
