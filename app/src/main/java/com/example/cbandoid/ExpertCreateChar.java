@@ -470,9 +470,6 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         for (TextView textView : conDerived) {
             textView.setTextSize(text30);
         }
-        for (TextView textView : conDerived) {
-            textView.setTextSize(text30);
-        }
         for (TextView textView : intDerived) {
             textView.setTextSize(text30);
         }

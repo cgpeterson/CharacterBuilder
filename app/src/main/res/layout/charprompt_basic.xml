@@ -20,6 +20,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/BasicInfoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basic Info"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/CharNameEdit"
                 android:layout_width="match_parent"
@@ -56,13 +67,12 @@
                 android:id="@+id/CharNameQuest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="What is your characters name?"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/BasicInfoTitle" />
 
             <TextView
                 android:id="@+id/CharSexQuest"
@@ -98,7 +108,7 @@
                 android:textSize="25sp"
                 app:layout_constraintEnd_toStartOf="@+id/LevelEditbox"
                 app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
-                app:layout_constraintTop_toBottomOf="@+id/CharLevelHint" />
+                app:layout_constraintTop_toBottomOf="@+id/STRHint" />
 
             <TextView
                 android:id="@+id/CharRaceQuest"
@@ -125,7 +135,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/CharRaceHint" />
 
             <TextView
-                android:id="@+id/CharLevelHint"
+                android:id="@+id/STRHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"

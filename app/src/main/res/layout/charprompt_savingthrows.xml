@@ -1,6 +1,454 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D3A00">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/HPTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Your characters Hit Points:"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/HPOutput"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/HPTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/HPTitle"
+                app:layout_constraintTop_toTopOf="@+id/HPTitle" />
+
+            <TextView
+                android:id="@+id/HPHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="This is your characters health which is based on their Constitution, Class, and Level."
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/HPTitle" />
+
+            <TextView
+                android:id="@+id/CurrHPHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="This is your characters current HP, you can use this when you are playing a game to better keep track of your characters health"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CurrHPTitle" />
+
+            <TextView
+                android:id="@+id/ACHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ACTempBox" />
+
+            <TextView
+                android:id="@+id/SavingThrowsHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/WillTitle" />
+
+            <TextView
+                android:id="@+id/CurrHPTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Your characters current HP:"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/HPHint" />
+
+            <EditText
+                android:id="@+id/CurrHPBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="HP"
+                android:inputType="numberSigned"
+                android:numeric="integer"
+                android:selectAllOnFocus="false"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#CDCDCD"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/CurrHPTitle"
+                app:layout_constraintEnd_toEndOf="@+id/HPOutput"
+                app:layout_constraintStart_toStartOf="@+id/HPOutput"
+                app:layout_constraintTop_toTopOf="@+id/CurrHPTitle" />
+
+            <TextView
+                android:id="@+id/ACTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Your characters AC"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CurrHPHint" />
+
+            <TextView
+                android:id="@+id/ACTotalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/ACTempBox"
+                app:layout_constraintStart_toStartOf="@+id/ACTitle"
+                app:layout_constraintTop_toBottomOf="@+id/ACTitle" />
+
+            <TextView
+                android:id="@+id/ACTempTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:text="Temp"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/ACTitle"
+                app:layout_constraintStart_toEndOf="@+id/ACTotalTitle"
+                app:layout_constraintTop_toBottomOf="@+id/ACTitle" />
+
+            <TextView
+                android:id="@+id/ACTotalOutput"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-1dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/ACTotalTitle"
+                app:layout_constraintStart_toStartOf="@+id/ACTotalTitle"
+                app:layout_constraintTop_toBottomOf="@+id/ACTotalTitle" />
+
+            <EditText
+                android:id="@+id/ACTempBox"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="numberSigned"
+                android:numeric="integer"
+                android:selectAllOnFocus="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/ACTotalOutput"
+                app:layout_constraintEnd_toEndOf="@+id/ACTempTitle"
+                app:layout_constraintStart_toStartOf="@+id/ACTempTitle" />
+
+            <TextView
+                android:id="@+id/SavingThrowsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Saving Throws"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ACHint" />
+
+            <TextView
+                android:id="@+id/TotalSaveTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Total"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/BaseSaveTitle"
+                app:layout_constraintStart_toStartOf="@+id/SavingThrowsTitle"
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
+
+            <TextView
+                android:id="@+id/BaseSaveTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Base"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/AbilitySaveTitle"
+                app:layout_constraintStart_toEndOf="@+id/TotalSaveTitle"
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
+
+            <TextView
+                android:id="@+id/AbilitySaveTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Ability"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/BaseSaveTitle"
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
+
+            <TextView
+                android:id="@+id/FortTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Fortitude"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/FortTotal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TotalSaveTitle" />
+
+            <TextView
+                android:id="@+id/ReflexTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Reflex"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/ReflexTotal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FortTitle" />
+
+            <TextView
+                android:id="@+id/WillTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Will"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/WillTotal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ReflexTitle" />
+
+            <TextView
+                android:id="@+id/FortTotal"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/TotalSaveTitle"
+                app:layout_constraintStart_toStartOf="@+id/TotalSaveTitle"
+                app:layout_constraintTop_toTopOf="@+id/FortTitle" />
+
+            <TextView
+                android:id="@+id/FortBase"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/BaseSaveTitle"
+                app:layout_constraintStart_toStartOf="@+id/BaseSaveTitle"
+                app:layout_constraintTop_toBottomOf="@+id/TotalSaveTitle" />
+
+            <TextView
+                android:id="@+id/FortAbility"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/AbilitySaveTitle"
+                app:layout_constraintStart_toStartOf="@+id/AbilitySaveTitle"
+                app:layout_constraintTop_toTopOf="@+id/FortTitle" />
+
+            <TextView
+                android:id="@+id/ReflexAbility"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/AbilitySaveTitle"
+                app:layout_constraintStart_toStartOf="@+id/AbilitySaveTitle"
+                app:layout_constraintTop_toTopOf="@+id/ReflexTitle" />
+
+            <TextView
+                android:id="@+id/WillAbility"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/AbilitySaveTitle"
+                app:layout_constraintStart_toStartOf="@+id/AbilitySaveTitle"
+                app:layout_constraintTop_toTopOf="@+id/WillTitle" />
+
+            <TextView
+                android:id="@+id/ReflexBase"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/BaseSaveTitle"
+                app:layout_constraintStart_toStartOf="@+id/BaseSaveTitle"
+                app:layout_constraintTop_toTopOf="@+id/ReflexTitle" />
+
+            <TextView
+                android:id="@+id/WillBase"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/BaseSaveTitle"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="@+id/BaseSaveTitle"
+                app:layout_constraintTop_toTopOf="@+id/WillTitle" />
+
+            <TextView
+                android:id="@+id/ReflexTotal"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/FortTotal"
+                app:layout_constraintStart_toStartOf="@+id/FortTotal"
+                app:layout_constraintTop_toTopOf="@+id/ReflexTitle" />
+
+            <TextView
+                android:id="@+id/WillTotal"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/ReflexTotal"
+                app:layout_constraintStart_toStartOf="@+id/ReflexTotal"
+                app:layout_constraintTop_toTopOf="@+id/WillTitle" />
+
+            <TextView
+                android:id="@+id/FortPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/FortAbility"
+                app:layout_constraintEnd_toStartOf="@+id/FortAbility"
+                app:layout_constraintStart_toEndOf="@+id/FortBase" />
+
+            <TextView
+                android:id="@+id/FortEqual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/FortBase"
+                app:layout_constraintEnd_toStartOf="@+id/FortBase"
+                app:layout_constraintStart_toEndOf="@+id/FortTotal" />
+
+            <TextView
+                android:id="@+id/ReflexEqual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ReflexBase"
+                app:layout_constraintEnd_toStartOf="@+id/FortBase"
+                app:layout_constraintStart_toEndOf="@+id/FortTotal" />
+
+            <TextView
+                android:id="@+id/WillEqual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/WillBase"
+                app:layout_constraintEnd_toStartOf="@+id/FortBase"
+                app:layout_constraintStart_toEndOf="@+id/FortTotal" />
+
+            <TextView
+                android:id="@+id/ReflexPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ReflexAbility"
+                app:layout_constraintEnd_toStartOf="@+id/FortAbility"
+                app:layout_constraintStart_toEndOf="@+id/FortBase" />
+
+            <TextView
+                android:id="@+id/WillPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/WillAbility"
+                app:layout_constraintEnd_toStartOf="@+id/FortAbility"
+                app:layout_constraintStart_toEndOf="@+id/FortBase" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
