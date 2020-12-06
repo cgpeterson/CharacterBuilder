@@ -38,8 +38,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 break;
             case 1:
                 frag = new AbilityModActivity();
+                break;
             case 2:
                 frag = new SavingThrowsActivity();
+                break;
         }
         return frag;
     }
