@@ -32,10 +32,10 @@
                 android:id="@+id/HPOutput"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
                 android:textColor="#000000"
@@ -44,20 +44,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/HPTitle"
                 app:layout_constraintTop_toTopOf="@+id/HPTitle" />
-
-            <TextView
-                android:id="@+id/HPHint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF"
-                android:gravity="center_horizontal"
-                android:text="This is your characters health which is based on their Constitution, Class, and Level."
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/HPTitle" />
 
             <TextView
                 android:id="@+id/CurrHPHint"
@@ -87,7 +73,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/ACTempBox" />
 
             <TextView
-                android:id="@+id/CurrencyHint"
+                android:id="@+id/HPHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="This is your characters health which is based on their Constitution, Class, and Level."
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/HPTitle" />
+
+            <TextView
+                android:id="@+id/SavingThrowsHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

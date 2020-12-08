@@ -37,7 +37,7 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@+id/TempModTitle"
                 app:layout_constraintStart_toEndOf="@+id/STRTitle"
-                app:layout_constraintTop_toBottomOf="@+id/STRHint3" />
+                app:layout_constraintTop_toBottomOf="@+id/AbilitiesHint" />
 
             <TextView
                 android:id="@+id/TempModTitle"
@@ -283,7 +283,7 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/AbilityModTitle"
                 app:layout_constraintStart_toStartOf="@+id/AbilityModTitle"
-                app:layout_constraintTop_toBottomOf="@+id/HPHint" />
+                app:layout_constraintTop_toBottomOf="@+id/WISHint" />
 
             <EditText
                 android:id="@+id/STRTBox"
@@ -376,6 +376,33 @@
                 app:layout_constraintTop_toTopOf="@+id/CHAABox" />
 
             <TextView
+                android:id="@+id/AbilitiesHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Abilities effect skiils your character can have, they also effect certain other attributes.\nTo see what ability affects what skill, switch over to the Skills tab"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AbilitiesTitle" />
+
+            <TextView
+                android:id="@+id/DEXHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Dexterity effects AC\nAC stands for Armor Class"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/DEXSub" />
+
+            <TextView
                 android:id="@+id/STRHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -390,40 +417,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/STRSub" />
 
             <TextView
-                android:id="@+id/STRHint3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:gravity="center_horizontal"
-                android:text="Abilities effect skiils your character can have, they also effect certain other attributes.\nTo see what ability affects what skill, switch over to the Skills tab"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/BasicInfoTitle" />
-
-            <TextView
-                android:id="@+id/DEXHint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="#FFFFFF"
-                android:gravity="center_horizontal"
-                android:text="Dexterity effects AC\nElaborate once more of AC is known"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/DEXSub" />
-
-            <TextView
                 android:id="@+id/CONHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:text="Constitution effects Hit Points."
+                android:text="Constitution effects Hit Points.\nDoes not effect Skills."
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -445,7 +445,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/INTSub" />
 
             <TextView
-                android:id="@+id/HPHint"
+                android:id="@+id/WISHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -473,7 +473,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/CHASub" />
 
             <TextView
-                android:id="@+id/BasicInfoTitle"
+                android:id="@+id/AbilitiesTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Abilities"

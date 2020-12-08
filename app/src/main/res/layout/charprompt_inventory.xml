@@ -42,7 +42,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CurrencyHint" />
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
 
             <TextView
                 android:id="@+id/CurrencyTitle"
@@ -56,7 +56,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/CurrencyHint"
+                android:id="@+id/SavingThrowsHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"

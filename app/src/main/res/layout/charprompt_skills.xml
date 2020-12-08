@@ -38,7 +38,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CurrencyHint" />
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
 
             <TextView
                 android:id="@+id/AnimalHandTitle"
@@ -272,7 +272,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/AcrobaticsTitle"
                 app:layout_constraintEnd_toStartOf="@+id/SkillsAbilityTitle"
                 app:layout_constraintStart_toEndOf="@+id/AnimalHandTitle"
-                app:layout_constraintTop_toBottomOf="@+id/CurrencyHint" />
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
 
             <TextView
                 android:id="@+id/SkillsAbilityTitle"
@@ -285,7 +285,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/AcrobaticsTitle"
                 app:layout_constraintEnd_toStartOf="@+id/SkillsRankTitle"
                 app:layout_constraintStart_toEndOf="@+id/SkillsTotalTitle"
-                app:layout_constraintTop_toBottomOf="@+id/CurrencyHint" />
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
 
             <TextView
                 android:id="@+id/SkillsRankTitle"
@@ -298,7 +298,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/AcrobaticsTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/SkillsAbilityTitle"
-                app:layout_constraintTop_toBottomOf="@+id/CurrencyHint" />
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
 
             <TextView
                 android:id="@+id/AnimalHandTotal"
@@ -1471,7 +1471,7 @@
                 app:layout_constraintTop_toTopOf="@+id/SurvivalTotal" />
 
             <TextView
-                android:id="@+id/CurrencyHint"
+                android:id="@+id/SavingThrowsHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

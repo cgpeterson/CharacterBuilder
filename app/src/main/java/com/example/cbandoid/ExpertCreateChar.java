@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,7 +31,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     EditText PlayName;
     EditText Age;
     EditText Sex;
-    TextView TMTitle;
+    TextView tempModTitle;
     TextView strTitle;
     TextView dexTitle;
     TextView conTitle;
@@ -79,7 +78,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     TextView weaponsAttacksTitle;
     TextView dmgTitle;
     TextView typeTitle;
-    TextView AModTitle;
+    TextView abilityModTitle;
     TextView FortBase;
     TextView RefBase;
     TextView WillBase;
@@ -155,7 +154,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         PlayName = findViewById(R.id.PlayerNameEdit);
         Age = findViewById(R.id.AgeEditbox);
         Sex = findViewById(R.id.SexEdit);
-        TMTitle = findViewById(R.id.TempModTitle);
+        tempModTitle = findViewById(R.id.TempModTitle);
         strTitle = findViewById(R.id.STRTitle);
         dexTitle = findViewById(R.id.DEXTitle);
         conTitle = findViewById(R.id.CONTitle);
@@ -186,7 +185,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         totalSaveTitle = findViewById(R.id.TotalSaveTitle);
         baseSaveTitle = findViewById(R.id.BaseSaveTitle);
         abilitySaveTitle = findViewById(R.id.AbilitySaveTitle);
-        AModTitle = findViewById(R.id.AbilityModTitle);
+        abilityModTitle = findViewById(R.id.AbilityModTitle);
         fortTotal=findViewById(R.id.FortTotal);
         reflexTotal=findViewById(R.id.ReflexTotal);
         willTotal=findViewById(R.id.WillTotal);
@@ -363,24 +362,26 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         int text25;
         int text20;
         int nameBox = (width / 2) - 50;
-        if (screenInch >= 6.8) {
+        if (screenInch >= 6.8)
+        {
             text35 = width / 35;
             text30 = width / 40;
             text25 = width / 50;
             text20 = width / 60;
-
-        } else if (screenInch < 6.8 && screenInch >= 5) {
+        }
+        else if (screenInch < 6.8 && screenInch >= 5)
+        {
             text35 = width / 60;
             text30 = width / 65;
             text25 = width / 80;
             text20 = width / 85;
-
-        } else {
+        }
+        else
+        {
             text35 = width / 55;
             text30 = width / 60;
             text25 = width / 70;
             text20 = width / 80;
-
         }
         CharName.setTextSize(text30);
         CharName.getLayoutParams().width = nameBox;
@@ -389,8 +390,8 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         Level.setTextSize(text30);
         Age.setTextSize(text30);
         Sex.setTextSize(text30);
-        AModTitle.setTextSize(text30);
-        TMTitle.setTextSize(text30);
+        abilityModTitle.setTextSize(text30);
+        tempModTitle.setTextSize(text30);
         strTitle.setTextSize(text35);
         dexTitle.setTextSize(text35);
         conTitle.setTextSize(text35);
@@ -403,8 +404,8 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         intSub.setTextSize(text20);
         wisSub.setTextSize(text20);
         chaSub.setTextSize(text20);
-        hpTitle.setTextSize(text35);
-        currHPTitle.setTextSize(text35);
+        hpTitle.setTextSize(text30);
+        currHPTitle.setTextSize(text30);
         HP.setTextSize(text30);
         currHPBox.setTextSize(text30);
         acTitle.setTextSize(text35);
@@ -461,38 +462,49 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         dmg0.setTextSize(text30);
         dmg1.setTextSize(text30);
         dmg2.setTextSize(text30);
-        for (TextView textView : strDerived) {
+        for (TextView textView : strDerived)
+        {
             textView.setTextSize(text30);
         }
-        for (TextView textView : dexDerived) {
+        for (TextView textView : dexDerived)
+        {
             textView.setTextSize(text30);
         }
-        for (TextView textView : conDerived) {
+        for (TextView textView : conDerived)
+        {
             textView.setTextSize(text30);
         }
-        for (TextView textView : intDerived) {
+        for (TextView textView : intDerived)
+        {
             textView.setTextSize(text30);
         }
-        for (TextView textView : wisDerived) {
+        for (TextView textView : wisDerived)
+        {
             textView.setTextSize(text30);
         }
-        for (TextView textView : chaDerived) {
+        for (TextView textView : chaDerived)
+        {
             textView.setTextSize(text30);
         }
-        for (EditText skillRank : SkillRanks) {
+        for (EditText skillRank : SkillRanks)
+        {
             skillRank.setTextSize(text30);
             skillRank.setText("0");
         }
-        for (TextView skillAbility : SkillAbilities) {
+        for (TextView skillAbility : SkillAbilities)
+        {
             skillAbility.setTextSize(text30);
         }
-        for (TextView skillTotal : SkillTotals) {
+        for (TextView skillTotal : SkillTotals)
+        {
             skillTotal.setTextSize(text30);
         }
-        for (TextView skillTitle : SkillTitles) {
+        for (TextView skillTitle : SkillTitles)
+        {
             skillTitle.setTextSize(text30);
         }
-        for (EditText editText : weaponAttackInput) {
+        for (EditText editText : weaponAttackInput)
+        {
             editText.setTextSize(text25);
         }
         acTempBox.setText("0");
@@ -802,12 +814,12 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         if (sumPoints > pointMax) {
             Toast toast = Toast.makeText(getApplicationContext(), "Over Spent", Toast.LENGTH_LONG);
             toast.show();
-            AModTitle.setTextColor(Color.parseColor("#FF0000"));
+            abilityModTitle.setTextColor(Color.parseColor("#FF0000"));
         } else if (sumPoints == pointMax) {
-            AModTitle.setTextColor(Color.parseColor("#FFFFFF"));
+            abilityModTitle.setTextColor(Color.parseColor("#FFFFFF"));
             return true;
         } else {
-            AModTitle.setTextColor(Color.parseColor("#FFFFFF"));
+            abilityModTitle.setTextColor(Color.parseColor("#FFFFFF"));
         }
 
         return false;

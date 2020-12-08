@@ -108,7 +108,7 @@
                 android:textSize="25sp"
                 app:layout_constraintEnd_toStartOf="@+id/LevelEditbox"
                 app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
-                app:layout_constraintTop_toBottomOf="@+id/STRHint" />
+                app:layout_constraintTop_toBottomOf="@+id/LevelHint" />
 
             <TextView
                 android:id="@+id/CharRaceQuest"
@@ -120,7 +120,7 @@
                 android:textSize="25sp"
                 app:layout_constraintEnd_toStartOf="@+id/LevelEditbox"
                 app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
-                app:layout_constraintTop_toBottomOf="@+id/CharClassHint" />
+                app:layout_constraintTop_toBottomOf="@+id/ClassHint" />
 
             <TextView
                 android:id="@+id/CharSizeQuest"
@@ -132,10 +132,10 @@
                 android:textSize="25sp"
                 app:layout_constraintEnd_toStartOf="@+id/LevelEditbox"
                 app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
-                app:layout_constraintTop_toBottomOf="@+id/CharRaceHint" />
+                app:layout_constraintTop_toBottomOf="@+id/RaceHint" />
 
             <TextView
-                android:id="@+id/STRHint"
+                android:id="@+id/LevelHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
@@ -148,7 +148,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/LevelEditbox" />
 
             <TextView
-                android:id="@+id/CharClassHint"
+                android:id="@+id/ClassHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
@@ -161,7 +161,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/ClassSpin" />
 
             <TextView
-                android:id="@+id/CharRaceHint"
+                android:id="@+id/RaceHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
@@ -174,7 +174,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/RaceSpin" />
 
             <TextView
-                android:id="@+id/CharSizeHint"
+                android:id="@+id/SizeHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
@@ -239,7 +239,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/SexEdit"
-                android:layout_width="91dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Gender"
                 android:textColor="#FFFFFF"
@@ -252,7 +252,7 @@
 
             <EditText
                 android:id="@+id/LevelEditbox"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Level"
