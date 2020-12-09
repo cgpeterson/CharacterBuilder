@@ -23,6 +23,7 @@ public class SkillsActivity extends Fragment
     TextView[] SkillTotals = new TextView[18];
     TextView[] SkillAbilities = new TextView[18];
     TextView[] SkillTitles = new TextView[18];
+    TextView[] skillHints = new TextView[19];
 
     @Nullable
     @Override
@@ -30,6 +31,10 @@ public class SkillsActivity extends Fragment
     {
         View view = inflater.inflate(R.layout.charprompt_skills, container, false);
 
+        skillsTitle = (TextView)view.findViewById(R.id.SkillsTitle);
+        skillsTotalTitle = (TextView)view.findViewById(R.id.SkillsTotalTitle);
+        skillsAbilityTitle = (TextView)view.findViewById(R.id.SkillsAbilityTitle);
+        skillsRankTitle = (TextView)view.findViewById(R.id.SkillsRankTitle);
         SkillTotals[0] = (TextView)view.findViewById(R.id.AcrobaticsTotal);
         SkillTotals[1] = (TextView)view.findViewById(R.id.AnimalHandTotal);
         SkillTotals[2] = (TextView)view.findViewById(R.id.ArcanaTotal);
@@ -102,6 +107,25 @@ public class SkillsActivity extends Fragment
         SkillTitles[15] = (TextView)view.findViewById(R.id.SleightHandTitle);
         SkillTitles[16] = (TextView)view.findViewById(R.id.StealthTitle);
         SkillTitles[17] = (TextView)view.findViewById(R.id.SurvivalTitle);
+        skillHints[0] = (TextView)view.findViewById(R.id.SkillsHint);
+        skillHints[1] = (TextView)view.findViewById(R.id.AcrobaticsHint);
+        skillHints[2] = (TextView)view.findViewById(R.id.AnimalHandHint);
+        skillHints[3] = (TextView)view.findViewById(R.id.ArcanaHint);
+        skillHints[4] = (TextView)view.findViewById(R.id.AthleticsHint);
+        skillHints[5] = (TextView)view.findViewById(R.id.DeceptionHint);
+        skillHints[6] = (TextView)view.findViewById(R.id.HistoryHint);
+        skillHints[7] = (TextView)view.findViewById(R.id.InsightHint);
+        skillHints[8] = (TextView)view.findViewById(R.id.IntimidationHint);
+        skillHints[9] = (TextView)view.findViewById(R.id.InvestigationHint);
+        skillHints[10] = (TextView)view.findViewById(R.id.MedicineHint);
+        skillHints[11] = (TextView)view.findViewById(R.id.NatureHint);
+        skillHints[12] = (TextView)view.findViewById(R.id.PerceptionHint);
+        skillHints[13] = (TextView)view.findViewById(R.id.PerformanceHint);
+        skillHints[14] = (TextView)view.findViewById(R.id.PersuasionHint);
+        skillHints[15] = (TextView)view.findViewById(R.id.ReligionHint);
+        skillHints[16] = (TextView)view.findViewById(R.id.SleightHandHint);
+        skillHints[17] = (TextView)view.findViewById(R.id.StealthHint);
+        skillHints[18] = (TextView)view.findViewById(R.id.SurvivalHint);
 
         DisplayMetrics display = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(display);
@@ -121,20 +145,19 @@ public class SkillsActivity extends Fragment
             text30 = width / 40;
             text25 = width / 50;
             text20 = width / 60;
-
         }
         else if (screenInch < 6.8 && screenInch >= 5)
         {
-            text35 = width / 50;
-            text30 = width / 55;
-            text25 = width / 70;
+            text35 = width / 60;
+            text30 = width / 65;
+            text25 = width / 80;
             text20 = width / 85;
         }
         else
         {
-            text35 = width / 45;
-            text30 = width / 50;
-            text25 = width / 60;
+            text35 = width / 50;
+            text30 = width / 60;
+            text25 = width / 70;
             text20 = width / 80;
         }
 
@@ -158,6 +181,10 @@ public class SkillsActivity extends Fragment
         for (TextView skillTitle : SkillTitles)
         {
             skillTitle.setTextSize(text30);
+        }
+        for (TextView SkillHints : skillHints)
+        {
+            SkillHints.setTextSize(text25);
         }
 
         return view;

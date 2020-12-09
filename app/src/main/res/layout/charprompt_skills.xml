@@ -33,12 +33,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:text="Acrobatics (DEX)"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
+                app:layout_constraintTop_toBottomOf="@+id/SkillsHint" />
 
             <TextView
                 android:id="@+id/AnimalHandTitle"
@@ -271,8 +271,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/AcrobaticsTitle"
                 app:layout_constraintEnd_toStartOf="@+id/SkillsAbilityTitle"
-                app:layout_constraintStart_toEndOf="@+id/AnimalHandTitle"
-                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
+                app:layout_constraintStart_toEndOf="@+id/AnimalHandTitle" />
 
             <TextView
                 android:id="@+id/SkillsAbilityTitle"
@@ -284,8 +283,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/AcrobaticsTitle"
                 app:layout_constraintEnd_toStartOf="@+id/SkillsRankTitle"
-                app:layout_constraintStart_toEndOf="@+id/SkillsTotalTitle"
-                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
+                app:layout_constraintStart_toEndOf="@+id/SkillsTotalTitle" />
 
             <TextView
                 android:id="@+id/SkillsRankTitle"
@@ -297,8 +295,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/AcrobaticsTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/SkillsAbilityTitle"
-                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
+                app:layout_constraintStart_toEndOf="@id/SkillsAbilityTitle" />
 
             <TextView
                 android:id="@+id/AnimalHandTotal"
@@ -1471,20 +1468,6 @@
                 app:layout_constraintTop_toTopOf="@+id/SurvivalTotal" />
 
             <TextView
-                android:id="@+id/SavingThrowsHint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF"
-                android:gravity="center_horizontal"
-                android:text="Fill\nLater"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/SkillsTitle" />
-
-            <TextView
                 android:id="@+id/AcrobaticsHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1496,6 +1479,19 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/AcrobaticsRank" />
+
+            <TextView
+                android:id="@+id/SkillsHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SkillsTitle" />
 
             <TextView
                 android:id="@+id/AnimalHandHint"
