@@ -24,6 +24,9 @@ public class SavingThrowsActivity extends Fragment
     TextView AC;
     EditText acTempBox;
     TextView savingThrowsTitle;
+    TextView totalSaveTitle;
+    TextView baseSaveTitle;
+    TextView abilitySaveTitle;
     TextView fortTitle;
     TextView reflexTitle;
     TextView willTitle;
@@ -54,6 +57,9 @@ public class SavingThrowsActivity extends Fragment
         acTempTitle = (TextView)view.findViewById(R.id.ACTempTitle);
         acTempBox = (EditText)view.findViewById(R.id.ACTempBox);
         savingThrowsTitle = (TextView)view.findViewById(R.id.SavingThrowsTitle);
+        totalSaveTitle = (TextView)view.findViewById(R.id.TotalSaveTitle);
+        baseSaveTitle = (TextView)view.findViewById(R.id.BaseSaveTitle);
+        abilitySaveTitle = (TextView)view.findViewById(R.id.AbilitySaveTitle);
         fortTitle = (TextView)view.findViewById(R.id.FortTitle);
         reflexTitle = (TextView)view.findViewById(R.id.ReflexTitle);
         willTitle = (TextView)view.findViewById(R.id.WillTitle);
@@ -116,6 +122,9 @@ public class SavingThrowsActivity extends Fragment
         AC.setTextSize(text30);
         acTempBox.setTextSize(text30);
         savingThrowsTitle.setTextSize(text35);
+        totalSaveTitle.setTextSize(text30);
+        baseSaveTitle.setTextSize(text30);
+        abilitySaveTitle.setTextSize(text30);
         fortTitle.setTextSize(text35);
         reflexTitle.setTextSize(text35);
         willTitle.setTextSize(text35);

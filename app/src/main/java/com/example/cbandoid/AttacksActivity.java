@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,10 +36,14 @@ public class AttacksActivity extends Fragment
     TextView typeTitle;
     TextView gsizeMod;
     TextView gattackMod;
+    Spinner WType0;
+    Spinner WType1;
+    Spinner WType2;
     TextView dmg0;
     TextView dmg1;
     TextView dmg2;
     EditText[] weaponAttackInput = new EditText[3];
+    TextView[] attacksHints = new TextView[5];
 
     @Nullable
     @Override
@@ -59,10 +64,26 @@ public class AttacksActivity extends Fragment
         grappleMiscTitle = (TextView)view.findViewById(R.id.GrappleMiscTitle);
         grappleTotal = (TextView)view.findViewById(R.id.GrappleTotal);
         grappleStrength = (TextView)view.findViewById(R.id.GrappleStrength);
+        gsizeMod = (TextView)view.findViewById(R.id.GrappleSize);
+        gattackMod = (TextView)view.findViewById(R.id.GrappleBaseAttackBonus);
         grappleMisc = (TextView)view.findViewById(R.id.GrappleMisc);
         weaponsAttacksTitle = (TextView)view.findViewById(R.id.WeaponsAttacksTitle);
         dmgTitle = (TextView)view.findViewById(R.id.DMGTitle);
         typeTitle = (TextView)view.findViewById(R.id.TypeTitle);
+        WType0 = (Spinner)view.findViewById(R.id.WeaponsAttackType);
+        WType1 = (Spinner)view.findViewById(R.id.WeaponsAttackType2);
+        WType2 = (Spinner)view.findViewById(R.id.WeaponsAttackType3);
+        dmg0 = (TextView)view.findViewById(R.id.DMGOutput);
+        dmg1 = (TextView)view.findViewById(R.id.DMGOutput2);
+        dmg2 = (TextView)view.findViewById(R.id.DMGOutput3);
+        weaponAttackInput[0] = (EditText) view.findViewById(R.id.WeaponAttackInput);
+        weaponAttackInput[1] = (EditText) view.findViewById(R.id.WeaponAttackInput2);
+        weaponAttackInput[2] = (EditText) view.findViewById(R.id.WeaponAttackInput3);
+        attacksHints[0] = (TextView) view.findViewById(R.id.AttacksHint);
+        attacksHints[1] = (TextView) view.findViewById(R.id.BaseAttackHint);
+        attacksHints[2] = (TextView) view.findViewById(R.id.ExtraAttackBonusHint);
+        attacksHints[3] = (TextView) view.findViewById(R.id.GrappleHint);
+        attacksHints[4] = (TextView) view.findViewById(R.id.WeaponsDMGTypeHint);
 
         DisplayMetrics display = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(display);
@@ -98,7 +119,37 @@ public class AttacksActivity extends Fragment
             text20 = width / 80;
         }
 
-
+        attacksTitle.setTextSize(text35);
+        baseAttackTitle.setTextSize(text30);
+        AttackBase.setTextSize(text30);
+        extraAttacksTitle.setTextSize(text30);
+        extraAttackBox.setTextSize(text30);
+        grappleTitle.setTextSize(text30);
+        grappleModifierTitle.setTextSize(text20);
+        grappleTotalTitle.setTextSize(text20);
+        grappleBaseAttackBonusTitle.setTextSize(text20);
+        grappleStrengthTitle.setTextSize(text20);
+        grappleSizeTitle.setTextSize(text20);
+        grappleMiscTitle.setTextSize(text20);
+        grappleTotal.setTextSize(text30);
+        gattackMod.setTextSize(text30);
+        grappleStrength.setTextSize(text30);
+        gsizeMod.setTextSize(text30);
+        grappleMisc.setTextSize(text30);
+        weaponsAttacksTitle.setTextSize(text35);
+        dmgTitle.setTextSize(text35);
+        typeTitle.setTextSize(text35);
+        dmg0.setTextSize(text30);
+        dmg1.setTextSize(text30);
+        dmg2.setTextSize(text30);
+        for (EditText editText : weaponAttackInput)
+        {
+            editText.setTextSize(text25);
+        }
+        for (TextView AttackHints : attacksHints)
+        {
+            AttackHints.setTextSize(text25);
+        }
 
         return view;
     }

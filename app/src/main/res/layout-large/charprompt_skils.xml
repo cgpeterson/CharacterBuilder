@@ -299,7 +299,7 @@
 
             <TextView
                 android:id="@+id/AnimalHandTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -312,7 +312,7 @@
 
             <TextView
                 android:id="@+id/AnimalHandAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -325,7 +325,7 @@
 
             <TextView
                 android:id="@+id/ArcanaTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -338,7 +338,7 @@
 
             <TextView
                 android:id="@+id/ArcanaAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -351,7 +351,7 @@
 
             <TextView
                 android:id="@+id/AthleticsTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -364,7 +364,7 @@
 
             <TextView
                 android:id="@+id/AthleticsAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -377,7 +377,7 @@
 
             <TextView
                 android:id="@+id/DeceptionTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -390,7 +390,7 @@
 
             <TextView
                 android:id="@+id/DeceptionAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -403,7 +403,7 @@
 
             <TextView
                 android:id="@+id/HistoryTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -416,7 +416,7 @@
 
             <TextView
                 android:id="@+id/HistoryAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -429,7 +429,7 @@
 
             <TextView
                 android:id="@+id/InsightTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -442,7 +442,7 @@
 
             <TextView
                 android:id="@+id/InsightAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -455,7 +455,7 @@
 
             <TextView
                 android:id="@+id/IntimidationTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -468,7 +468,7 @@
 
             <TextView
                 android:id="@+id/IntimidationAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -481,7 +481,7 @@
 
             <TextView
                 android:id="@+id/InvestigationTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -494,7 +494,7 @@
 
             <TextView
                 android:id="@+id/InvestigationAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -507,7 +507,7 @@
 
             <TextView
                 android:id="@+id/MedicineTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -520,7 +520,7 @@
 
             <TextView
                 android:id="@+id/MedicineAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -533,7 +533,7 @@
 
             <TextView
                 android:id="@+id/NatureTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -546,7 +546,7 @@
 
             <TextView
                 android:id="@+id/NatureAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -559,7 +559,7 @@
 
             <TextView
                 android:id="@+id/PerceptionTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -572,7 +572,7 @@
 
             <TextView
                 android:id="@+id/PerceptionAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -585,7 +585,7 @@
 
             <TextView
                 android:id="@+id/PerformanceTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -598,7 +598,7 @@
 
             <TextView
                 android:id="@+id/PerformanceAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -611,7 +611,7 @@
 
             <TextView
                 android:id="@+id/PersuasionTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -624,7 +624,7 @@
 
             <TextView
                 android:id="@+id/PersuasionAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -637,7 +637,7 @@
 
             <TextView
                 android:id="@+id/ReligionTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -650,7 +650,7 @@
 
             <TextView
                 android:id="@+id/ReligionAbiltiy"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -663,7 +663,7 @@
 
             <TextView
                 android:id="@+id/SleightHandTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -676,7 +676,7 @@
 
             <TextView
                 android:id="@+id/SleightHandAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -689,7 +689,7 @@
 
             <TextView
                 android:id="@+id/StealthTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -702,7 +702,7 @@
 
             <TextView
                 android:id="@+id/StealthAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -715,7 +715,7 @@
 
             <TextView
                 android:id="@+id/SurvivalTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -728,7 +728,7 @@
 
             <TextView
                 android:id="@+id/SurvivalAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -741,7 +741,7 @@
 
             <TextView
                 android:id="@+id/AcrobaticsTotal"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -754,7 +754,7 @@
 
             <TextView
                 android:id="@+id/AcrobaticsAbility"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
@@ -767,7 +767,7 @@
 
             <EditText
                 android:id="@+id/AcrobaticsRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -782,7 +782,7 @@
 
             <EditText
                 android:id="@+id/AnimalHandRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -797,7 +797,7 @@
 
             <EditText
                 android:id="@+id/ArcanaRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -812,7 +812,7 @@
 
             <EditText
                 android:id="@+id/AthleticsRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -827,7 +827,7 @@
 
             <EditText
                 android:id="@+id/DeceptionRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -842,7 +842,7 @@
 
             <EditText
                 android:id="@+id/HistoryRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -857,7 +857,7 @@
 
             <EditText
                 android:id="@+id/InsightRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -872,7 +872,7 @@
 
             <EditText
                 android:id="@+id/IntimidationRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -887,7 +887,7 @@
 
             <EditText
                 android:id="@+id/InvestigationRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -902,7 +902,7 @@
 
             <EditText
                 android:id="@+id/MedicineRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -917,7 +917,7 @@
 
             <EditText
                 android:id="@+id/NatureRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -932,7 +932,7 @@
 
             <EditText
                 android:id="@+id/PerceptionRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -947,7 +947,7 @@
 
             <EditText
                 android:id="@+id/PerformanceRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -962,7 +962,7 @@
 
             <EditText
                 android:id="@+id/PersuasionRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -977,7 +977,7 @@
 
             <EditText
                 android:id="@+id/ReligionRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -992,7 +992,7 @@
 
             <EditText
                 android:id="@+id/SleightHandRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -1007,7 +1007,7 @@
 
             <EditText
                 android:id="@+id/StealthRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -1022,7 +1022,7 @@
 
             <EditText
                 android:id="@+id/SurvivalRank"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center_horizontal"

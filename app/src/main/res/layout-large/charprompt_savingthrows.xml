@@ -24,7 +24,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Your characters Hit Points:"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="30sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,10 +32,10 @@
                 android:id="@+id/HPOutput"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
                 android:textColor="#000000"
@@ -201,7 +201,7 @@
                 android:layout_marginTop="30dp"
                 android:text="Saving Throws"
                 android:textColor="#FFFFFF"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ACHint" />
@@ -249,7 +249,7 @@
                 android:layout_marginTop="5dp"
                 android:text="Fortitude"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/FortTotal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TotalSaveTitle" />
@@ -261,7 +261,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Reflex"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/ReflexTotal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/FortTitle" />
@@ -273,7 +273,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Will"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/WillTotal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ReflexTitle" />
@@ -386,7 +386,7 @@
                 android:layout_height="wrap_content"
                 android:text="+"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="@+id/FortAbility"
                 app:layout_constraintEnd_toStartOf="@+id/FortAbility"
                 app:layout_constraintStart_toEndOf="@+id/FortBase" />
@@ -397,7 +397,7 @@
                 android:layout_height="wrap_content"
                 android:text="="
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="@+id/FortBase"
                 app:layout_constraintEnd_toStartOf="@+id/FortBase"
                 app:layout_constraintStart_toEndOf="@+id/FortTotal" />
@@ -408,7 +408,7 @@
                 android:layout_height="wrap_content"
                 android:text="="
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="@+id/ReflexBase"
                 app:layout_constraintEnd_toStartOf="@+id/FortBase"
                 app:layout_constraintStart_toEndOf="@+id/FortTotal" />
@@ -419,7 +419,7 @@
                 android:layout_height="wrap_content"
                 android:text="="
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="@+id/WillBase"
                 app:layout_constraintEnd_toStartOf="@+id/FortBase"
                 app:layout_constraintStart_toEndOf="@+id/FortTotal" />
@@ -430,7 +430,7 @@
                 android:layout_height="wrap_content"
                 android:text="+"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="@+id/ReflexAbility"
                 app:layout_constraintEnd_toStartOf="@+id/FortAbility"
                 app:layout_constraintStart_toEndOf="@+id/FortBase" />
@@ -441,7 +441,7 @@
                 android:layout_height="wrap_content"
                 android:text="+"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="@+id/WillAbility"
                 app:layout_constraintEnd_toStartOf="@+id/FortAbility"
                 app:layout_constraintStart_toEndOf="@+id/FortBase" />
