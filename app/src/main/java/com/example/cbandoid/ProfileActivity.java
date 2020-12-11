@@ -132,7 +132,6 @@ public class ProfileActivity extends AppCompatActivity {
         characters.put(ruleSet.get(0), champForge);
     }
 
-    //ToDo: Load for specific characters
     private List<String> Load() {
         List<String> champForge = new ArrayList<>();
         try {

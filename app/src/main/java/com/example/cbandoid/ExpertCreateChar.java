@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -511,9 +513,17 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String loadName = extras.getString("LoadName");
-            if (!Load(loadName)) {
-                CharName.setText(loadName);
+            StringBuilder loadName = new StringBuilder(extras.getString("LoadName"));
+            loadName.append(".txt");
+            for (int i = 0; i < loadName.length(); i ++)
+            {
+                if (loadName.charAt(i) == ' ')
+                {
+                    loadName.setCharAt(i, '_');
+                }
+            }
+            if (!Load(loadName.toString())) {
+                Submenutitle.setText("Failed to Load");
             }
         }
 
@@ -571,7 +581,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             }
         });
         Back.setOnClickListener(v -> SaveAlert(new Intent(ExpertCreateChar.this, MainActivity.class)));
-        pmenu.setOnClickListener(v -> showPopMenu(v));
+        pmenu.setOnClickListener(this::showPopMenu);
     }
 
 
@@ -1001,7 +1011,16 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     private void Save() {
         FileOutputStream fos;
         try {
-            File charFile = new File(getApplicationContext().getFilesDir(), CharName.getText().toString());
+            StringBuilder saveName = new StringBuilder(CharName.getText().toString());
+            saveName.append(".txt");
+            for (int i = 0; i < saveName.length(); i ++)
+            {
+                if (saveName.charAt(i) == ' ')
+                {
+                    saveName.setCharAt(i, '_');
+                }
+            }
+            File charFile = new File(getApplicationContext().getFilesDir(), saveName.toString());
 
             if (!charFile.exists()) {
                 try {
@@ -1066,7 +1085,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             data.append(Bio.getText().toString());
 
             fos.write(data.toString().getBytes());
-
+            Log.d(saveName.toString(), "Saved");
             fos.close();
 
         } catch (FileNotFoundException e) {
@@ -1098,25 +1117,87 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     }
 
     private boolean Load(String loadName) {
+        boolean returnType = false;
+        Log.d(loadName, "Attempting Load");
         try
         {
+            File loadFile = new File(getApplicationContext().getFilesDir(), loadName);
             FileInputStream input = openFileInput(loadName);
-            StringBuilder name = new StringBuilder();
 
             int i = input.read();
+            int total = 0;
+            int current = 0;
+            int iter = 0;
 
+            if (loadFile.canRead()) {
+                Log.d(loadName, "can be read!" );
+            }
+            //How many fucks could a cody fucking give if cody's fucking program would not load
             while (i != -1)
             {
                 //ToDo: add Load Logic
+                if (i != 0)
+                {
+                    total = (char)i;
+                    i = input.read();
+                }
+
+                switch (current)
+                {
+                    case 0:
+                        Level.setText(total);
+                        current++;
+                        break;
+                    case 1:
+                        Class.setSelection(total);
+                        current++;
+                        break;
+                    case 2:
+                        Race.setSelection(total);
+                        current++;
+                        break;
+                    case 3:
+                        Size.setSelection(total);
+                        current++;
+                        break;
+                    case 4:
+                        abilities[iter].setText(total);
+                        iter++;
+                        if (iter > 5)
+                        {
+                            current++;
+                            iter = 0;
+                        }
+                        break;
+                    case 5:
+                        SkillRanks[iter].setText(total);
+                        iter++;
+                        if (iter > 17)
+                        {
+                            current++;
+                            iter = 0;
+                            returnType = true;
+                        }
+                        break;
+                    default:
+                        CharName.setText("WTF");
+                        break;
+                }
+
+
+
+                total = 0;
                 i = input.read();
             }
+
+            input.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return false;
+        return returnType;
     }
 }
 
