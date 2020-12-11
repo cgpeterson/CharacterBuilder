@@ -2502,8 +2502,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/BaseAttackBox"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/BaseAttackBox" />
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
                     android:id="@+id/BaseAttackTitle"
@@ -2616,7 +2615,7 @@
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="@+id/GrappleSize"
                     app:layout_constraintStart_toStartOf="@+id/GrappleSize"
-                    app:layout_constraintTop_toBottomOf="@+id/GrapplePlus2" />
+                    app:layout_constraintTop_toBottomOf="@+id/GrappleSize" />
 
                 <TextView
                     android:id="@+id/GrappleMiscTitle"
@@ -2629,7 +2628,7 @@
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="@+id/GrappleMisc"
                     app:layout_constraintStart_toStartOf="@+id/GrappleMisc"
-                    app:layout_constraintTop_toBottomOf="@+id/GrapplePlus3" />
+                    app:layout_constraintTop_toBottomOf="@+id/GrappleMisc" />
 
                 <TextView
                     android:id="@+id/GrappleStrengthTitle"
@@ -2645,16 +2644,17 @@
                     app:layout_constraintStart_toStartOf="@+id/GrappleStrength"
                     app:layout_constraintTop_toBottomOf="@+id/GrappleStrength" />
 
-                <EditText
+                <TextView
                     android:id="@+id/BaseAttackBox"
-                    android:layout_width="50dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:background="@color/white"
                     android:ems="10"
-                    android:inputType="numberSigned"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#DCDCDC"
-                    android:textSize="20sp"
                     android:gravity="center_horizontal"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/BaseAttackTitle"
                     app:layout_constraintEnd_toStartOf="@+id/ExtraAttackBox"
                     app:layout_constraintStart_toEndOf="@+id/BaseAttackTitle"

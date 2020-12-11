@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D3A00">
+
+    <ScrollView
+        android:id="@+id/Scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/AttacksTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attacks"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ExtraAttacksTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Your characters Extra Attack Bonus"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/BaseAttackHint" />
+
+            <TextView
+                android:id="@+id/BaseAttackTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Your characters Base Attack Bonus:"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AttacksHint" />
+
+            <TextView
+                android:id="@+id/BaseAttackBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/BaseAttackTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/BaseAttackTitle"
+                app:layout_constraintTop_toTopOf="@+id/BaseAttackTitle" />
+
+            <EditText
+                android:id="@+id/ExtraAttackBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="numberSigned"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DDDDDD"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/ExtraAttacksTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ExtraAttacksTitle" />
+
+            <TextView
+                android:id="@+id/GrappleTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Grapple"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ExtraAttackBonusHint" />
+
+            <TextView
+                android:id="@+id/GrappleTotal"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+                app:layout_constraintEnd_toStartOf="@id/GrappleBaseAttackBonus"
+                app:layout_constraintStart_toEndOf="@+id/GrappleTitle"
+                app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+            <TextView
+                android:id="@+id/GrappleBaseAttackBonus"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+                app:layout_constraintEnd_toStartOf="@id/GrappleStrength"
+                app:layout_constraintStart_toEndOf="@+id/GrappleTotal"
+                app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+            <TextView
+                android:id="@+id/GrappleStrength"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+                app:layout_constraintEnd_toStartOf="@id/GrappleSize"
+                app:layout_constraintStart_toEndOf="@+id/GrappleBaseAttackBonus"
+                app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+            <TextView
+                android:id="@+id/GrappleSize"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+                app:layout_constraintEnd_toStartOf="@id/GrappleMisc"
+                app:layout_constraintStart_toEndOf="@+id/GrappleStrength"
+                app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+            <TextView
+                android:id="@+id/GrappleMisc"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/GrappleSize"
+                app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
+
+            <TextView
+                android:id="@+id/GrappleModifierTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Modifier"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/GrappleTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GrappleTitle" />
+
+            <TextView
+                android:id="@+id/GrappleTotalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Total"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/GrappleTotal"
+                app:layout_constraintStart_toStartOf="@+id/GrappleTotal"
+                app:layout_constraintTop_toBottomOf="@+id/GrappleTotal" />
+
+            <TextView
+                android:id="@+id/GrappleAttackBonusTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Base\nAttack\nBonus"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/GrappleBaseAttackBonus"
+                app:layout_constraintStart_toStartOf="@+id/GrappleBaseAttackBonus"
+                app:layout_constraintTop_toBottomOf="@+id/GrappleBaseAttackBonus" />
+
+            <TextView
+                android:id="@+id/GrappleSizeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Size \nModifier"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/GrappleSize"
+                app:layout_constraintStart_toStartOf="@+id/GrappleSize"
+                app:layout_constraintTop_toBottomOf="@+id/GrappleSize" />
+
+            <TextView
+                android:id="@+id/GrappleMiscTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Misc. \nModifier"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/GrappleMisc"
+                app:layout_constraintStart_toStartOf="@+id/GrappleMisc"
+                app:layout_constraintTop_toBottomOf="@+id/GrappleMisc" />
+
+            <TextView
+                android:id="@+id/GrappleStrengthTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-1dp"
+                android:gravity="center_horizontal"
+                android:text="Strength \nModifier"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/GrappleStrength"
+                app:layout_constraintStart_toStartOf="@+id/GrappleStrength"
+                app:layout_constraintTop_toBottomOf="@+id/GrappleStrength" />
+
+            <TextView
+                android:id="@+id/GrappleEqual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
+                app:layout_constraintEnd_toStartOf="@+id/GrappleBaseAttackBonus"
+                app:layout_constraintStart_toEndOf="@+id/GrappleTotal"
+                app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
+
+            <TextView
+                android:id="@+id/GrapplePlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
+                app:layout_constraintEnd_toStartOf="@+id/GrappleStrength"
+                app:layout_constraintStart_toEndOf="@+id/GrappleBaseAttackBonus"
+                app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
+
+            <TextView
+                android:id="@+id/GrapplePlus2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
+                app:layout_constraintEnd_toStartOf="@+id/GrappleSize"
+                app:layout_constraintStart_toEndOf="@+id/GrappleStrength"
+                app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
+
+            <TextView
+                android:id="@+id/GrapplePlus3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
+                app:layout_constraintEnd_toStartOf="@+id/GrappleMisc"
+                app:layout_constraintStart_toEndOf="@+id/GrappleSize"
+                app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
+
+            <TextView
+                android:id="@+id/DMGTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DMG"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/WeaponsAttackType"
+                app:layout_constraintStart_toEndOf="@+id/WeaponsAttacksTitle"
+                app:layout_constraintTop_toTopOf="@+id/WeaponsAttacksTitle" />
+
+            <TextView
+                android:id="@+id/TypeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/DMGTitle"
+                app:layout_constraintTop_toTopOf="@+id/WeaponsAttacksTitle" />
+
+            <TextView
+                android:id="@+id/WeaponsAttacksTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Weapons &amp; Attacks"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GrappleHint" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/WeaponAttackInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Your Weapon/Attack"
+                android:textColorHint="#CDCDCD"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/WeaponsAttacksTitle"
+                app:layout_constraintStart_toStartOf="@+id/WeaponsAttacksTitle"
+                app:layout_constraintTop_toBottomOf="@+id/WeaponsAttacksTitle" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/WeaponAttackInput2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Your Weapon/Attack"
+                android:textColorHint="#CDCDCD"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/WeaponAttackInput"
+                app:layout_constraintStart_toStartOf="@+id/WeaponAttackInput"
+                app:layout_constraintTop_toBottomOf="@+id/WeaponAttackInput" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/WeaponAttackInput3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Your Weapon/Attack"
+                android:textColorHint="#CDCDCD"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/WeaponAttackInput2"
+                app:layout_constraintStart_toStartOf="@+id/WeaponAttackInput2"
+                app:layout_constraintTop_toBottomOf="@+id/WeaponAttackInput2" />
+
+            <TextView
+                android:id="@+id/DMGOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:minWidth="80sp"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput"
+                app:layout_constraintEnd_toEndOf="@+id/DMGTitle"
+                app:layout_constraintStart_toStartOf="@+id/DMGTitle"
+                app:layout_constraintTop_toBottomOf="@+id/WeaponsAttacksTitle" />
+
+            <TextView
+                android:id="@+id/DMGOutput2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:minWidth="80sp"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput2"
+                app:layout_constraintEnd_toEndOf="@+id/DMGTitle"
+                app:layout_constraintStart_toStartOf="@+id/DMGTitle"
+                app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput2" />
+
+            <TextView
+                android:id="@+id/DMGOutput3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:minWidth="80sp"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput3"
+                app:layout_constraintEnd_toEndOf="@+id/DMGTitle"
+                app:layout_constraintStart_toStartOf="@+id/DMGTitle"
+                app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput3" />
+
+            <Spinner
+                android:id="@+id/WeaponsAttackType"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:background="#80979797"
+                app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput"
+                app:layout_constraintEnd_toEndOf="@+id/TypeTitle"
+                app:layout_constraintStart_toStartOf="@+id/TypeTitle"
+                app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput" />
+
+            <Spinner
+                android:id="@+id/WeaponsAttackType2"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:background="#80979797"
+                app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput2"
+                app:layout_constraintEnd_toEndOf="@+id/WeaponsAttackType"
+                app:layout_constraintStart_toStartOf="@+id/WeaponsAttackType"
+                app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput2" />
+
+            <Spinner
+                android:id="@+id/WeaponsAttackType3"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:background="#80979797"
+                app:layout_constraintBottom_toBottomOf="@+id/WeaponAttackInput3"
+                app:layout_constraintEnd_toEndOf="@+id/WeaponsAttackType2"
+                app:layout_constraintStart_toStartOf="@+id/WeaponsAttackType2"
+                app:layout_constraintTop_toTopOf="@+id/WeaponAttackInput3" />
+
+            <TextView
+                android:id="@+id/AttacksHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AttacksTitle" />
+
+            <TextView
+                android:id="@+id/BaseAttackHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/BaseAttackBox" />
+
+            <TextView
+                android:id="@+id/ExtraAttackBonusHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ExtraAttackBox" />
+
+            <TextView
+                android:id="@+id/GrappleHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GrappleAttackBonusTitle" />
+
+            <TextView
+                android:id="@+id/WeaponsDMGTypeHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Fill\nLater"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/WeaponAttackInput3" />
+
+            <Button
+                android:id="@+id/FinishButton"
+                android:layout_width="120sp"
+                android:layout_height="60sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/goldbuttonfinal"
+                android:text="Next"
+                android:textSize="30sp"
+                app:backgroundTint="@color/transparent"
+                app:backgroundTintMode="screen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/WeaponsDMGTypeHint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

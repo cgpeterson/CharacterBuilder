@@ -2664,18 +2664,20 @@
                     app:layout_constraintStart_toStartOf="@+id/GrappleStrength"
                     app:layout_constraintTop_toBottomOf="@+id/GrappleStrength" />
 
-                <EditText
+                <TextView
                     android:id="@+id/BaseAttackBox"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
                     android:ems="10"
-                    android:inputType="numberSigned"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#DCDCDC"
-                    android:textSize="30sp"
                     android:gravity="center_horizontal"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:background="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/BaseAttackTitle"
-                    app:layout_constraintEnd_toStartOf="@+id/ExtraAttackBox"
                     app:layout_constraintStart_toEndOf="@+id/BaseAttackTitle"
                     app:layout_constraintTop_toTopOf="@+id/BaseAttackTitle" />
 

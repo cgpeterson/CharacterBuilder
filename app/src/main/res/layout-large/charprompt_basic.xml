@@ -83,7 +83,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toStartOf="@+id/SexEdit"
-                app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CharAgeQuest1" />
 
             <TextView
@@ -95,7 +95,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toStartOf="@+id/LevelEditbox"
-                app:layout_constraintStart_toStartOf="@+id/CharAgeQuest1"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CharSexQuest" />
 
             <TextView
@@ -167,6 +167,7 @@
                 android:id="@+id/ClassHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
                 android:text="Class effects saving throws.\nA Cleric has a strong Will, but is weaker in Fortitude and Attack Base.\nA Fighter has a strong Fortitude and Attack, but is weak in Will.\nA Wizard has a strong Will, but is weak in Fortitude and has the weakest Attack.\nA Rogue has the best Reflexes, but is weak in Will. Class also effects health."
@@ -180,6 +181,7 @@
                 android:id="@+id/RaceHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
                 android:text="Race effects strength, dexterity,constitution, intelligence, wisdom, and charisma. Humans gain a boost in charisma and dexterity, but lose consitution. Elves gain a boost in intelligence and dexterity, but lose strength. Dwarves gain a boost in wisdom and constitution, but lose in charisma. Finally, Orcs gain a boost in strength and constitution, but lose inteligence"
@@ -193,6 +195,7 @@
                 android:id="@+id/SizeHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
                 android:text="Size effects attack power. The bigger you are, the more damage you can cause."
@@ -262,7 +265,7 @@
                 android:textColorHint="#CCCCCC"
                 android:textSize="25sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/CharSexQuest"
-                app:layout_constraintEnd_toEndOf="@+id/CharAgeQuest2"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.705"
                 app:layout_constraintStart_toEndOf="@+id/CharSexQuest" />
 
@@ -289,6 +292,7 @@
                 android:entries="@array/Class_array"
                 android:gravity="center_horizontal"
                 android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/CharClassQuest"
                 app:layout_constraintEnd_toEndOf="@+id/LevelEditbox"
                 app:layout_constraintStart_toEndOf="@+id/CharClassQuest"
                 app:layout_constraintTop_toTopOf="@+id/CharClassQuest"
@@ -302,6 +306,7 @@
                 android:entries="@array/Race_array"
                 android:gravity="center_horizontal"
                 android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/CharRaceQuest"
                 app:layout_constraintEnd_toEndOf="@+id/ClassSpin"
                 app:layout_constraintStart_toEndOf="@+id/CharRaceQuest"
                 app:layout_constraintTop_toTopOf="@+id/CharRaceQuest"
@@ -315,6 +320,7 @@
                 android:entries="@array/Size_array"
                 android:gravity="center_horizontal"
                 android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/CharSizeQuest"
                 app:layout_constraintEnd_toEndOf="@+id/RaceSpin"
                 app:layout_constraintStart_toEndOf="@+id/CharSizeQuest"
                 app:layout_constraintTop_toTopOf="@+id/CharSizeQuest"
