@@ -20,13 +20,15 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
-            app:tabIndicatorColor="@color/white"
-            app:tabSelectedTextColor="@color/white"
-            app:tabTextColor="#A0A0A0"
-            app:tabMode="scrollable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#0D3A00" />
+            android:background="#0D3A00"
+            app:tabIndicatorColor="@color/white"
+            app:tabMaxWidth="115dp"
+            app:tabMode="scrollable"
+            app:tabGravity="fill"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="#A0A0A0" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
