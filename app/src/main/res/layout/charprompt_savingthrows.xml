@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:text="Fill\nLater"
+                android:text="AC stands for Armor Class, which is determined by your Dexterity\nTemp is used when you or someone else strengthens or weakens your armor. This is something you will input yourself."
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -89,10 +89,23 @@
                 android:id="@+id/SavingThrowsHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="Saving Throws protect you from harm whether that be physical, mental, or magical. Base is determined by Class and Level."
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
+
+            <TextView
+                android:id="@+id/SavingTypesHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:text="Fill\nLater"
+                android:text="Fortitude: Allows you to take physical punishment, Ability is determined by your Constitution\nReflex: Allows you to dodge out of the way of danger and react to suprise events, Ability is determined by Dexterity \nWill: Allows you resist mental infuence and magical effects, Ability is determined by Wisdom"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -210,37 +223,35 @@
                 android:id="@+id/TotalSaveTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:text="Total"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/BaseSaveTitle"
                 app:layout_constraintStart_toStartOf="@+id/SavingThrowsTitle"
-                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
 
             <TextView
                 android:id="@+id/BaseSaveTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:text="Base"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/AbilitySaveTitle"
                 app:layout_constraintStart_toEndOf="@+id/TotalSaveTitle"
-                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
+                app:layout_constraintTop_toTopOf="@+id/TotalSaveTitle" />
 
             <TextView
                 android:id="@+id/AbilitySaveTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:text="Ability"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/BaseSaveTitle"
-                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsTitle" />
+                app:layout_constraintTop_toTopOf="@+id/TotalSaveTitle" />
 
             <TextView
                 android:id="@+id/FortTitle"
@@ -447,12 +458,12 @@
                 app:layout_constraintStart_toEndOf="@+id/FortBase" />
 
             <Button
-                android:id="@+id/FinishButton"
+                android:id="@+id/NextButton"
                 android:layout_width="120sp"
                 android:layout_height="60sp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:background="@drawable/goldbuttonfinal"
                 android:text="Next"
                 android:textSize="30sp"
@@ -460,7 +471,7 @@
                 app:backgroundTintMode="screen"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/SavingThrowsHint" />
+                app:layout_constraintTop_toBottomOf="@+id/SavingTypesHint" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

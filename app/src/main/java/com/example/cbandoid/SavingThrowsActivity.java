@@ -39,7 +39,7 @@ public class SavingThrowsActivity extends Fragment
     TextView fortAbility;
     TextView reflexAbility;
     TextView willAbility;
-    TextView[] savingHints = new TextView[4];
+    TextView[] savingHints = new TextView[5];
 
     @Nullable
     @Override
@@ -67,6 +67,7 @@ public class SavingThrowsActivity extends Fragment
         savingHints[1] = (TextView)view.findViewById(R.id.CurrHPHint);
         savingHints[2] = (TextView)view.findViewById(R.id.ACHint);
         savingHints[3] = (TextView)view.findViewById(R.id.SavingThrowsHint);
+        savingHints[4] = (TextView)view.findViewById(R.id.SavingTypesHint);
         fortTotal= (TextView)view.findViewById(R.id.FortTotal);
         reflexTotal= (TextView)view.findViewById(R.id.ReflexTotal);
         willTotal= (TextView)view.findViewById(R.id.WillTotal);

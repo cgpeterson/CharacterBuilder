@@ -1715,7 +1715,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/SurvivalRank" />
 
             <Button
-                android:id="@+id/FinishButton"
+                android:id="@+id/NextButton"
                 android:layout_width="120sp"
                 android:layout_height="60sp"
                 android:layout_marginTop="10dp"
