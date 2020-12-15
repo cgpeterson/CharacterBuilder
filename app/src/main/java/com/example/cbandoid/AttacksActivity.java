@@ -26,11 +26,9 @@ public class AttacksActivity extends Fragment
     TextView grappleModifierTitle;
     TextView grappleStrengthTitle;
     TextView grappleSizeTitle;
-    TextView grappleMiscTitle;
     TextView grappleTotalTitle;
     TextView grappleTotal;
     TextView grappleStrength;
-    TextView grappleMisc;
     TextView weaponsAttacksTitle;
     TextView dmgTitle;
     TextView typeTitle;
@@ -61,12 +59,10 @@ public class AttacksActivity extends Fragment
         grappleBaseAttackBonusTitle = (TextView)view.findViewById(R.id.GrappleAttackBonusTitle);
         grappleStrengthTitle = (TextView)view.findViewById(R.id.GrappleStrengthTitle);
         grappleSizeTitle = (TextView)view.findViewById(R.id.GrappleSizeTitle);
-        grappleMiscTitle = (TextView)view.findViewById(R.id.GrappleMiscTitle);
         grappleTotal = (TextView)view.findViewById(R.id.GrappleTotal);
         grappleStrength = (TextView)view.findViewById(R.id.GrappleStrength);
         gsizeMod = (TextView)view.findViewById(R.id.GrappleSize);
         gattackMod = (TextView)view.findViewById(R.id.GrappleBaseAttackBonus);
-        grappleMisc = (TextView)view.findViewById(R.id.GrappleMisc);
         weaponsAttacksTitle = (TextView)view.findViewById(R.id.WeaponsAttacksTitle);
         dmgTitle = (TextView)view.findViewById(R.id.DMGTitle);
         typeTitle = (TextView)view.findViewById(R.id.TypeTitle);
@@ -130,12 +126,10 @@ public class AttacksActivity extends Fragment
         grappleBaseAttackBonusTitle.setTextSize(text20);
         grappleStrengthTitle.setTextSize(text20);
         grappleSizeTitle.setTextSize(text20);
-        grappleMiscTitle.setTextSize(text20);
         grappleTotal.setTextSize(text30);
         gattackMod.setTextSize(text30);
         grappleStrength.setTextSize(text30);
         gsizeMod.setTextSize(text30);
-        grappleMisc.setTextSize(text30);
         weaponsAttacksTitle.setTextSize(text35);
         dmgTitle.setTextSize(text35);
         typeTitle.setTextSize(text35);

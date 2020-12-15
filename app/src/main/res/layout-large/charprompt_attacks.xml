@@ -101,6 +101,7 @@
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/GrappleTotal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ExtraAttackBonusHint" />
 
@@ -152,35 +153,20 @@
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
-                app:layout_constraintEnd_toStartOf="@id/GrappleMisc"
-                app:layout_constraintStart_toEndOf="@+id/GrappleStrength"
-                app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
-
-            <TextView
-                android:id="@+id/GrappleMisc"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:gravity="center_horizontal"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/GrappleTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/GrappleSize"
+                app:layout_constraintStart_toEndOf="@+id/GrappleStrength"
                 app:layout_constraintTop_toTopOf="@+id/GrappleTitle" />
 
             <TextView
                 android:id="@+id/GrappleModifierTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
                 android:text="Modifier"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="@+id/GrappleTitle"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/GrappleTitle"
                 app:layout_constraintTop_toBottomOf="@+id/GrappleTitle" />
 
             <TextView
@@ -223,19 +209,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/GrappleSize" />
 
             <TextView
-                android:id="@+id/GrappleMiscTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Misc. \nModifier"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/GrappleMisc"
-                app:layout_constraintStart_toStartOf="@+id/GrappleMisc"
-                app:layout_constraintTop_toBottomOf="@+id/GrappleMisc" />
-
-            <TextView
                 android:id="@+id/GrappleStrengthTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -255,7 +228,7 @@
                 android:layout_height="wrap_content"
                 android:text="="
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="35sp"
                 app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
                 app:layout_constraintEnd_toStartOf="@+id/GrappleBaseAttackBonus"
                 app:layout_constraintStart_toEndOf="@+id/GrappleTotal"
@@ -267,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:text="+"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="35sp"
                 app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
                 app:layout_constraintEnd_toStartOf="@+id/GrappleStrength"
                 app:layout_constraintStart_toEndOf="@+id/GrappleBaseAttackBonus"
@@ -279,22 +252,10 @@
                 android:layout_height="wrap_content"
                 android:text="+"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="35sp"
                 app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
                 app:layout_constraintEnd_toStartOf="@+id/GrappleSize"
                 app:layout_constraintStart_toEndOf="@+id/GrappleStrength"
-                app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
-
-            <TextView
-                android:id="@+id/GrapplePlus3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="@+id/GrappleTotal"
-                app:layout_constraintEnd_toStartOf="@+id/GrappleMisc"
-                app:layout_constraintStart_toEndOf="@+id/GrappleSize"
                 app:layout_constraintTop_toTopOf="@+id/GrappleTotal" />
 
             <TextView

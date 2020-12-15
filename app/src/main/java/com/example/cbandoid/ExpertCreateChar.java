@@ -72,11 +72,9 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     TextView grappleModifierTitle;
     TextView grappleStrengthTitle;
     TextView grappleSizeTitle;
-    TextView grappleMiscTitle;
     TextView grappleTotalTitle;
     TextView grappleTotal;
     TextView grappleStrength;
-    TextView grappleMisc;
     TextView weaponsAttacksTitle;
     TextView dmgTitle;
     TextView typeTitle;
@@ -205,10 +203,9 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         grappleBaseAttackBonusTitle = findViewById(R.id.GrappleAttackBonusTitle);
         grappleStrengthTitle = findViewById(R.id.GrappleStrengthTitle);
         grappleSizeTitle = findViewById(R.id.GrappleSizeTitle);
-        grappleMiscTitle = findViewById(R.id.GrappleMiscTitle);
         grappleTotal = findViewById(R.id.GrappleTotal);
         grappleStrength = findViewById(R.id.GrappleStrength);
-        grappleMisc = findViewById(R.id.GrappleMisc);
+
         weaponsAttacksTitle = findViewById(R.id.WeaponsAttacksTitle);
         dmgTitle = findViewById(R.id.DMGTitle);
         typeTitle = findViewById(R.id.TypeTitle);
@@ -443,12 +440,10 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         grappleBaseAttackBonusTitle.setTextSize(text20);
         grappleStrengthTitle.setTextSize(text20);
         grappleSizeTitle.setTextSize(text20);
-        grappleMiscTitle.setTextSize(text20);
         grappleTotal.setTextSize(text30);
         gattackMod.setTextSize(text30);
         grappleStrength.setTextSize(text30);
         gsizeMod.setTextSize(text30);
-        grappleMisc.setTextSize(text30);
         weaponsAttacksTitle.setTextSize(text35);
         dmgTitle.setTextSize(text35);
         typeTitle.setTextSize(text35);
