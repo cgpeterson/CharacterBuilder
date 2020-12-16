@@ -84,8 +84,6 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     TextView WillBase;
     TextView attacksTitle;
     TextView baseAttackTitle;
-    TextView extraAttacksTitle;
-    EditText extraAttackBox;
     TextView AttackBase;
     TextView currencyTitle;
     TextView spTitle;
@@ -194,8 +192,6 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         WillBase = findViewById(R.id.WillBase);
         attacksTitle = findViewById(R.id.AttacksTitle);
         baseAttackTitle = findViewById(R.id.BaseAttackTitle);
-        extraAttacksTitle = findViewById(R.id.ExtraAttacksTitle);
-        extraAttackBox = findViewById(R.id.ExtraAttackBox);
         AttackBase = findViewById(R.id.BaseAttackBox);
         grappleTitle = findViewById(R.id.GrappleTitle);
         grappleTotalTitle = findViewById(R.id.GrappleTotalTitle);
@@ -205,7 +201,6 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         grappleSizeTitle = findViewById(R.id.GrappleSizeTitle);
         grappleTotal = findViewById(R.id.GrappleTotal);
         grappleStrength = findViewById(R.id.GrappleStrength);
-
         weaponsAttacksTitle = findViewById(R.id.WeaponsAttacksTitle);
         dmgTitle = findViewById(R.id.DMGTitle);
         typeTitle = findViewById(R.id.TypeTitle);
@@ -432,8 +427,6 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         attacksTitle.setTextSize(text35);
         baseAttackTitle.setTextSize(text30);
         AttackBase.setTextSize(text30);
-        extraAttacksTitle.setTextSize(text25);
-        extraAttackBox.setTextSize(text30);
         grappleTitle.setTextSize(text30);
         grappleModifierTitle.setTextSize(text20);
         grappleTotalTitle.setTextSize(text20);
@@ -506,7 +499,6 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         }
         acTempBox.setText("0");
         AttackBase.setText("0");
-        extraAttackBox.setText("0");
 
 
         //Adapted from: https://stackoverflow.com/questions/4743116/get-screen-width-and-height-in-android#:~:text=Display%20display%20%3D%20getWindowManager().,size)%3B%20int%20width%20%3D%20size.

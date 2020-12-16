@@ -33,18 +33,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/ExtraAttacksTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Your characters Extra Attack Bonus"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/BaseAttackHint" />
-
-            <TextView
                 android:id="@+id/BaseAttackTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,24 +62,6 @@
                 app:layout_constraintStart_toEndOf="@+id/BaseAttackTitle"
                 app:layout_constraintTop_toTopOf="@+id/BaseAttackTitle" />
 
-            <EditText
-                android:id="@+id/ExtraAttackBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:ems="10"
-                android:gravity="center_horizontal"
-                android:inputType="numberSigned"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#DDDDDD"
-                android:textSize="20sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/ExtraAttacksTitle"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ExtraAttacksTitle" />
-
             <TextView
                 android:id="@+id/GrappleTitle"
                 android:layout_width="wrap_content"
@@ -103,7 +73,7 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@+id/GrappleTotal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ExtraAttackBonusHint" />
+                app:layout_constraintTop_toBottomOf="@+id/BaseAttackHint" />
 
             <TextView
                 android:id="@+id/GrappleTotal"
@@ -407,7 +377,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:text="Fill\nLater"
+                android:text="Attacks are how you deal damage to your opponents. Most of these are determined by your Abilities, Class, Level, and a few other things that are explained below."
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -421,26 +391,12 @@
                 android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:text="Fill\nLater"
+                android:text="This is a constant number determined by your Class and Level. You add this in when you are attacking someone."
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/BaseAttackBox" />
-
-            <TextView
-                android:id="@+id/ExtraAttackBonusHint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF"
-                android:gravity="center_horizontal"
-                android:text="Fill\nLater"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ExtraAttackBox" />
 
             <TextView
                 android:id="@+id/GrappleHint"
@@ -449,7 +405,7 @@
                 android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:text="Fill\nLater"
+                android:text="Determines how well you can grab someone or something and hold onto it. This is determined by your Base Attack Bonus, your Strength, and your Size."
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -463,7 +419,7 @@
                 android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:text="Fill\nLater"
+                android:text="Weapons &amp; Attacks: This is where you name your weapons and attacks.\nDMG: Your Damage is displayed here, Damage differs based on Type and your Strength\nType: There are 3 different Attack Types to choose from. There's Light, which is the weakest attack but also the easiest to land. There's the One Handed which is medium damage and medium hit chance. Finally, there's Two Handed which do the most damage but are difficult to land."
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -18,8 +18,6 @@ public class AttacksActivity extends Fragment
 
     TextView attacksTitle;
     TextView baseAttackTitle;
-    TextView extraAttacksTitle;
-    EditText extraAttackBox;
     TextView AttackBase;
     TextView grappleTitle;
     TextView grappleBaseAttackBonusTitle;
@@ -41,7 +39,7 @@ public class AttacksActivity extends Fragment
     TextView dmg1;
     TextView dmg2;
     EditText[] weaponAttackInput = new EditText[3];
-    TextView[] attacksHints = new TextView[5];
+    TextView[] attacksHints = new TextView[4];
 
     @Nullable
     @Override
@@ -50,8 +48,6 @@ public class AttacksActivity extends Fragment
 
         attacksTitle = (TextView)view.findViewById(R.id.AttacksTitle);
         baseAttackTitle = (TextView)view.findViewById(R.id.BaseAttackTitle);
-        extraAttacksTitle = (TextView)view.findViewById(R.id.ExtraAttacksTitle);
-        extraAttackBox = (EditText) view.findViewById(R.id.ExtraAttackBox);
         AttackBase = (TextView)view.findViewById(R.id.BaseAttackBox);
         grappleTitle = (TextView)view.findViewById(R.id.GrappleTitle);
         grappleTotalTitle = (TextView)view.findViewById(R.id.GrappleTotalTitle);
@@ -77,9 +73,8 @@ public class AttacksActivity extends Fragment
         weaponAttackInput[2] = (EditText) view.findViewById(R.id.WeaponAttackInput3);
         attacksHints[0] = (TextView) view.findViewById(R.id.AttacksHint);
         attacksHints[1] = (TextView) view.findViewById(R.id.BaseAttackHint);
-        attacksHints[2] = (TextView) view.findViewById(R.id.ExtraAttackBonusHint);
-        attacksHints[3] = (TextView) view.findViewById(R.id.GrappleHint);
-        attacksHints[4] = (TextView) view.findViewById(R.id.WeaponsDMGTypeHint);
+        attacksHints[2] = (TextView) view.findViewById(R.id.GrappleHint);
+        attacksHints[3] = (TextView) view.findViewById(R.id.WeaponsDMGTypeHint);
 
         DisplayMetrics display = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(display);
@@ -118,8 +113,6 @@ public class AttacksActivity extends Fragment
         attacksTitle.setTextSize(text35);
         baseAttackTitle.setTextSize(text30);
         AttackBase.setTextSize(text30);
-        extraAttacksTitle.setTextSize(text30);
-        extraAttackBox.setTextSize(text30);
         grappleTitle.setTextSize(text30);
         grappleModifierTitle.setTextSize(text20);
         grappleTotalTitle.setTextSize(text20);
