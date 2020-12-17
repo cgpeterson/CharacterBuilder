@@ -36,7 +36,7 @@ public class SkillsActivity extends Fragment
         skillsAbilityTitle = (TextView)view.findViewById(R.id.SkillsAbilityTitle);
         skillsRankTitle = (TextView)view.findViewById(R.id.SkillsRankTitle);
         SkillTotals[0] = (TextView)view.findViewById(R.id.AcrobaticsTotal);
-        SkillTotals[1] = (TextView)view.findViewById(R.id.AnimalHandTotal);
+        SkillTotals[1] = (TextView)view.findViewById(R.id.ArcanaTotal);
         SkillTotals[2] = (TextView)view.findViewById(R.id.ArcanaTotal);
         SkillTotals[3] = (TextView)view.findViewById(R.id.AthleticsTotal);
         SkillTotals[4] = (TextView)view.findViewById(R.id.DeceptionTotal);

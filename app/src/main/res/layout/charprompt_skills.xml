@@ -298,7 +298,7 @@
                 app:layout_constraintStart_toEndOf="@id/SkillsAbilityTitle" />
 
             <TextView
-                android:id="@+id/AnimalHandTotal"
+                android:id="@+id/ArcanaTotal"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
@@ -1066,10 +1066,10 @@
                 android:text="="
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="@+id/AnimalHandTotal"
+                app:layout_constraintBottom_toBottomOf="@+id/ArcanaTotal"
                 app:layout_constraintEnd_toStartOf="@+id/AcrobaticsAbility"
                 app:layout_constraintStart_toEndOf="@+id/AcrobaticsTotal"
-                app:layout_constraintTop_toTopOf="@+id/AnimalHandTotal" />
+                app:layout_constraintTop_toTopOf="@+id/ArcanaTotal" />
 
             <TextView
                 android:id="@+id/AnimalHandPlus"
@@ -1078,10 +1078,10 @@
                 android:text="+"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="@+id/AnimalHandTotal"
+                app:layout_constraintBottom_toBottomOf="@+id/ArcanaTotal"
                 app:layout_constraintEnd_toStartOf="@+id/AnimalHandRank"
                 app:layout_constraintStart_toEndOf="@+id/AnimalHandAbility"
-                app:layout_constraintTop_toTopOf="@+id/AnimalHandTotal" />
+                app:layout_constraintTop_toTopOf="@+id/ArcanaTotal" />
 
             <TextView
                 android:id="@+id/ArcanaEqual"

@@ -20,7 +20,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -230,7 +229,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         gpAmount = findViewById(R.id.GPAmount);
         abilities = new EditText[]{STR, DEX, CON, INT, WIS, CHA, STRT, DEXT, CONT, INTT, WIST, CHAT};
         SkillTotals[0] = findViewById(R.id.AcrobaticsTotal);
-        SkillTotals[1] = findViewById(R.id.AnimalHandTotal);
+        SkillTotals[1] = findViewById(R.id.ArcanaTotal);
         SkillTotals[2] = findViewById(R.id.ArcanaTotal);
         SkillTotals[3] = findViewById(R.id.AthleticsTotal);
         SkillTotals[4] = findViewById(R.id.DeceptionTotal);
