@@ -109,16 +109,12 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     EditText Level;
     Spinner Race;
     Spinner Size;
-    Spinner WType0;
-    Spinner WType1;
-    Spinner WType2;
+    Spinner[] WType = new Spinner[3];
     TextView HP;
     TextView AC;
     TextView gsizeMod;
     TextView gattackMod;
-    TextView dmg0;
-    TextView dmg1;
-    TextView dmg2;
+    TextView[] dmg = new TextView[3];
     TextView Submenutitle;
     ImageView Back;
     ImageView pmenu;
@@ -304,16 +300,16 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         Level = findViewById(R.id.LevelEditbox);
         Race = findViewById(R.id.RaceSpin);
         Size = findViewById(R.id.SizeSpin);
-        WType0 = findViewById(R.id.WeaponsAttackType);
-        WType1 = findViewById(R.id.WeaponsAttackType2);
-        WType2 = findViewById(R.id.WeaponsAttackType3);
+        WType[0] = findViewById(R.id.WeaponsAttackType);
+        WType[1] = findViewById(R.id.WeaponsAttackType2);
+        WType[2] = findViewById(R.id.WeaponsAttackType3);
         HP = findViewById(R.id.HPOutput);
         AC = findViewById(R.id.ACTotalOutput);
         gsizeMod = findViewById(R.id.GrappleSize);
         gattackMod = findViewById(R.id.GrappleBaseAttackBonus);
-        dmg0 = findViewById(R.id.DMGOutput);
-        dmg1 = findViewById(R.id.DMGOutput2);
-        dmg2 = findViewById(R.id.DMGOutput3);
+        dmg[0] = findViewById(R.id.DMGOutput);
+        dmg[1] = findViewById(R.id.DMGOutput2);
+        dmg[2] = findViewById(R.id.DMGOutput3);
         strDerived[0] = findViewById(R.id.AthleticsAbility);
         strDerived[1] = findViewById(R.id.GrappleStrength);
         dexDerived[0] = findViewById(R.id.ReflexAbility);
@@ -448,9 +444,9 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         characterBioTitle.setTextSize(text30);
         characterInventoryInput.setTextSize(text20);
         characterBioInput.setTextSize(text20);
-        dmg0.setTextSize(text30);
-        dmg1.setTextSize(text30);
-        dmg2.setTextSize(text30);
+        dmg[0].setTextSize(text30);
+        dmg[1].setTextSize(text30);
+        dmg[2].setTextSize(text30);
         for (TextView textView : strDerived)
         {
             textView.setTextSize(text30);
@@ -511,14 +507,14 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         sizeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Size.setAdapter(sizeAdapter);
         typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        WType0.setAdapter(typeAdapter);
-        WType1.setAdapter(typeAdapter);
-        WType2.setAdapter(typeAdapter);
+        WType[0].setAdapter(typeAdapter);
+        WType[1].setAdapter(typeAdapter);
+        WType[2].setAdapter(typeAdapter);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            StringBuilder loadName = new StringBuilder(extras.getString("LoadName"));
-            loadName.append(".txt");
+            StringBuilder loadName = new StringBuilder(extras.getString("LoadName") + ".txt");
+
             for (int i = 0; i < loadName.length(); i ++)
             {
                 if (loadName.charAt(i) == ' ')
@@ -529,15 +525,20 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             if (!Load(loadName.toString())) {
                 Submenutitle.setText("Failed to Load");
             }
+            else
+            {
+                CharName.setText(extras.getString("LoadName"));
+                Submenutitle.setText(extras.getString("LoadName"));
+            }
         }
 
         //Actions
         Class.setOnItemSelectedListener(this);
         Race.setOnItemSelectedListener(this);
         Size.setOnItemSelectedListener(this);
-        WType0.setOnItemSelectedListener(this);
-        WType1.setOnItemSelectedListener(this);
-        WType2.setOnItemSelectedListener(this);
+        WType[0].setOnItemSelectedListener(this);
+        WType[1].setOnItemSelectedListener(this);
+        WType[2].setOnItemSelectedListener(this);
 
         for (int i = 0; i < abilities.length; i++) {
             int finalI = i;
@@ -677,39 +678,39 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             case R.id.WeaponsAttackType:
                 switch (position) {
                     case 1:
-                        dmg0.setText(SetDmg(1));
+                        dmg[0].setText(SetDmg(1));
                         break;
                     case 2:
-                        dmg0.setText(SetDmg(2));
+                        dmg[0].setText(SetDmg(2));
                         break;
                     case 3:
-                        dmg0.setText(SetDmg(3));
+                        dmg[0].setText(SetDmg(3));
                         break;
                 }
                 break;
             case R.id.WeaponsAttackType2:
                 switch (position) {
                     case 1:
-                        dmg1.setText(SetDmg(1));
+                        dmg[1].setText(SetDmg(1));
                         break;
                     case 2:
-                        dmg1.setText(SetDmg(2));
+                        dmg[1].setText(SetDmg(2));
                         break;
                     case 3:
-                        dmg1.setText(SetDmg(3));
+                        dmg[1].setText(SetDmg(3));
                         break;
                 }
                 break;
             case R.id.WeaponsAttackType3:
                 switch (position) {
                     case 1:
-                        dmg2.setText(SetDmg(1));
+                        dmg[2].setText(SetDmg(1));
                         break;
                     case 2:
-                        dmg1.setText(SetDmg(2));
+                        dmg[2].setText(SetDmg(2));
                         break;
                     case 3:
-                        dmg1.setText(SetDmg(3));
+                        dmg[2].setText(SetDmg(3));
                         break;
                 }
                 break;
@@ -975,6 +976,14 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         } catch (Exception e) {
             e.getStackTrace();
         }
+
+        for (int i = 0; i < SkillRanks.length; i++)
+        {
+            if (SkillRanks[i].getText().length() < 1)
+            {
+                SkillRanks[i].setText("0");
+            }
+        }
     }
 
     private void showPopMenu(View v) {
@@ -1015,8 +1024,8 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
     private void Save() {
         FileOutputStream fos;
         try {
-            StringBuilder saveName = new StringBuilder(CharName.getText().toString());
-            saveName.append(".txt");
+            StringBuilder saveName = new StringBuilder(CharName.getText().toString() + ".txt");
+
             for (int i = 0; i < saveName.length(); i ++)
             {
                 if (saveName.charAt(i) == ' ')
@@ -1033,7 +1042,7 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                     e.printStackTrace();
                 }
             }
-            fos = openFileOutput(CharName.getText().toString(), MODE_PRIVATE);
+            fos = openFileOutput(saveName.toString(), MODE_PRIVATE);
 
             StringBuilder data = new StringBuilder(Level.getText().toString());
             data.append("\0");
@@ -1051,42 +1060,49 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 data.append(skillRank.getText().toString());
                 data.append("\0");
             }
-            EditText W0 = findViewById(R.id.WeaponAttackInput);
-            EditText W1 = findViewById(R.id.WeaponAttackInput2);
-            EditText W2 = findViewById(R.id.WeaponAttackInput3);
-            if (W0.getText().toString().length() > 0) {
-                data.append(W0.getText().toString());
+
+            if (weaponAttackInput[0].getText().toString().length() > 0) {
+                data.append("\1");
                 data.append("\0");
-                data.append(dmg0.getText().toString());
+                data.append(weaponAttackInput[0].getText().toString());
                 data.append("\0");
-                data.append(WType0.getSelectedItemPosition());
+                data.append(dmg[0].getText().toString());
+                data.append("\0");
+                data.append(WType[0].getSelectedItemPosition());
+                data.append("\0");
             }
-            if (W1.getText().toString().length() > 0) {
-                data.append(W1.getText().toString());
+            if (weaponAttackInput[1].getText().toString().length() > 0) {
+                data.append("\1");
                 data.append("\0");
-                data.append(dmg1.getText().toString());
+                data.append(weaponAttackInput[1].getText().toString());
                 data.append("\0");
-                data.append(WType1.getSelectedItemPosition());
+                data.append(dmg[1].getText().toString());
+                data.append("\0");
+                data.append(WType[1].getSelectedItemPosition());
+                data.append("\0");
             }
-            if (W2.getText().toString().length() > 0) {
-                data.append(W2.getText().toString());
+            if (weaponAttackInput[2].getText().toString().length() > 0) {
+                data.append("\1");
                 data.append("\0");
-                data.append(dmg2.getText().toString());
+                data.append(weaponAttackInput[2].getText().toString());
                 data.append("\0");
-                data.append(WType2.getSelectedItemPosition());
+                data.append(dmg[2].getText().toString());
+                data.append("\0");
+                data.append(WType[2].getSelectedItemPosition());
+                data.append("\0");
             }
+            data.append(spAmount.getText().toString());
             data.append("\0");
-            EditText SP = findViewById(R.id.SPAmount);
-            EditText GP = findViewById(R.id.GPAmount);
-            EditText Inv = findViewById(R.id.CharacterInventoryInput);
-            EditText Bio = findViewById(R.id.CharacterBioInput);
-            data.append(SP.getText().toString());
+            data.append(gpAmount.getText().toString());
             data.append("\0");
-            data.append(GP.getText().toString());
+            data.append(characterInventoryInput.getText().toString());
             data.append("\0");
-            data.append(Inv.getText().toString());
+            data.append(characterBioInput.getText().toString());
             data.append("\0");
-            data.append(Bio.getText().toString());
+            data.append(Age.getText());
+            data.append("\0");
+            data.append(Sex.getText());
+            data.append("\0");
 
             fos.write(data.toString().getBytes());
             Log.d(saveName.toString(), "Saved");
@@ -1125,7 +1141,6 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
         Log.d(loadName, "Attempting Load");
         try
         {
-            File loadFile = new File(getApplicationContext().getFilesDir(), loadName);
             FileInputStream input = openFileInput(loadName);
 
             int i = input.read();
@@ -1133,10 +1148,12 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
             int current = 0;
             int iter = 0;
 
-            if (loadFile.canRead()) {
-                Log.d(loadName, "can be read!" );
-            }
-            //How many fucks could a cody fucking give if cody's fucking program would not load
+            //Debugging
+            System.out.println(current);
+            System.out.println(i);
+            System.out.println(iter);
+
+
             while (i != -1)
             {
                 //ToDo: add Load Logic
@@ -1144,60 +1161,117 @@ public class ExpertCreateChar extends AppCompatActivity implements AdapterView.O
                 {
                     total = (char)i;
                     i = input.read();
-                }
-
-                switch (current)
-                {
-                    case 0:
-                        Level.setText(total);
-                        current++;
-                        break;
-                    case 1:
-                        Class.setSelection(total);
-                        current++;
-                        break;
-                    case 2:
-                        Race.setSelection(total);
-                        current++;
-                        break;
-                    case 3:
-                        Size.setSelection(total);
-                        current++;
-                        break;
-                    case 4:
-                        abilities[iter].setText(total);
-                        iter++;
-                        if (iter > 5)
-                        {
-                            current++;
-                            iter = 0;
-                        }
-                        break;
-                    case 5:
-                        SkillRanks[iter].setText(total);
-                        iter++;
-                        if (iter > 17)
-                        {
-                            current++;
-                            iter = 0;
+                } else {
+                    switch (current) {
+                        case 0:
                             returnType = true;
-                        }
-                        break;
-                    default:
-                        CharName.setText("WTF");
-                        break;
+                            Level.setText(String.valueOf((char) total));
+                            current++;
+                            break;
+                        case 1:
+                            Class.setSelection(Character.getNumericValue(total));
+                            current++;
+                            break;
+                        case 2:
+                            Race.setSelection(Character.getNumericValue(total));
+                            current++;
+                            break;
+                        case 3:
+                            Size.setSelection(Character.getNumericValue(total));
+                            current++;
+                            break;
+                        case 4:
+                            abilities[iter].setText(String.valueOf(Character.getNumericValue((char) total)));
+                            iter++;
+                            if (iter > 5) {
+                                current++;
+                                iter = 0;
+                            }
+                            break;
+                        case 5:
+                            SkillRanks[iter].setText(String.valueOf(Character.getNumericValue((char) total)));
+                            iter++;
+                            if (iter > 17) {
+                                current++;
+                                iter = 0;
+                                returnType = true;
+                            }
+                            break;
+                        case 6:
+                            if (total != 1)
+                            {
+                                current++;
+                                iter = 0;
+                                break;
+                            }
+                            i = input.read();
+                            StringBuilder temp = new StringBuilder();
+                            while(i != 0)
+                            {
+                                temp.append((char)i);
+                                i = input.read();
+                            }
+                            weaponAttackInput[iter].setText(temp.toString());
+                            i = input.read();
+                            temp = new StringBuilder();
+                            while(i != 0)
+                            {
+                                temp.append((char)i);
+                                i = input.read();
+                            }
+                            dmg[iter].setText(temp.toString());
+                            i = input.read();
+                            int type = 0;
+                            while(i != 0)
+                            {
+                                total = (char)i;
+                                i = input.read();
+                            }
+                            WType[iter].setSelection(Character.getNumericValue(total));
+                            iter++;
+                            break;
+                        case 7:
+                            iter = 0;
+                            spAmount.setText(Character.getNumericValue(total));
+                            current++;
+                            break;
+                        case 8:
+                            gpAmount.setText(Character.getNumericValue(total));
+                            current++;
+                            break;
+                        case 9:
+                            characterInventoryInput.setText(Character.getNumericValue(total));
+                            current++;
+                            break;
+                        case 10:
+                            characterBioInput.setText(Character.getNumericValue(total));
+                            current++;
+                            break;
+                        case 11:
+                            Age.setText(Character.getNumericValue(total));
+                            current++;
+                            break;
+                        case 12:
+                            Sex.setText(Character.getNumericValue(total));
+                            current++;
+                            break;
+                        default:
+                            CharName.setText("WTF");
+                            break;
+                    }
+
+
+                    total = 0;
+                    i = input.read();
                 }
-
-
-
-                total = 0;
-                i = input.read();
             }
 
             input.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e){
             e.printStackTrace();
         }
 
