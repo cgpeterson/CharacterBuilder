@@ -155,9 +155,7 @@ public class ProfileActivity extends AppCompatActivity {
         catch (Exception e) {
             e.getStackTrace();
             e.printStackTrace();
-            champForge.add("Character 1");
-            champForge.add("Character 2");
-            champForge.add("Character 3");
+            champForge.add("Empty");
         }
         return champForge;
     }
